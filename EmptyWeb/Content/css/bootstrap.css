@@ -2510,6 +2510,7 @@ label {
   max-width: 100%;
   margin-bottom: 5px;
   font-weight: bold;
+  color:#444;
 }
 input[type="search"] {
   -webkit-box-sizing: border-box;
@@ -3892,7 +3893,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .input-group-addon,
 .input-group-btn {
-  width: 1%;
+  /*width: 1%;*/
   white-space: nowrap;
   vertical-align: middle;
 }
@@ -3903,9 +3904,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   line-height: 1;
   color: #555;
   text-align: center;
-  background-color: #eee;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  /*background-color: #eee;*/
+  border-bottom: 1px solid #ccc;
+  /*border-radius: 4px;*/
 }
 .input-group-addon.input-sm {
   padding: 5px 10px;

@@ -10,54 +10,35 @@
 <hr />
 <form>
     <div class="form-horizontal">
-        <div>
+        <div class="form-group">
             <label>Họ tên:</label>
             <input type="text" name="HoTen" />
         </div>
-        <div>
+        <div class="form-group">
             <label>Ngày sinh:</label>
-            <input type="date" name="NgaySinh" />
+            <div class='input-group date' id='datetimepicker'>
+                <input type='text' class="form-control" name="NgaySinh" />
+                <span class="input-group-addon">
+                    <span class="fa fa-calendar"></span>
+                </span>
+            </div>
         </div>
-        <div>
+        <div class="form-group">
             <label>Giới tính:</label>
-            <select name="GioiTinh">
-                <option value="-1">- Chọn Giới Tính -</option>
+            <select name="GioiTinh" id="selectGioiTinh">
+                <option></option>
                 <option value="0">Nam</option>
                 <option value="1">Nữ</option>
             </select>
         </div>
-        <div>
+        <div class="form-group">
             <label>Quê quán:</label>
-            <input type="text" name="QueQuan" />
+            <select class="js-data-example-ajax">
+                <option value="3620194" selected="selected">select2/select2</option>
+            </select>
         </div>
-        <div>
+        <div class="form-group">
             <label>Địa chỉ thường trú/tạm trú hiện tại:</label>
-            <input />
-        </div>
-
-
-        <div>
-            <label>Họ và tên:</label>
-            <input />
-        </div>
-        <div>
-            <label>Họ và tên:</label>
-            <input />
-        </div>
-        <div>
-            <label>Họ và tên:</label>
-            <input />
-        </div>
-        <div>
-            <label>Họ và tên:</label>
-            <input />
-        </div>
-        <div>
-            <label>Họ và tên:</label>
-            <input />
-        </div>
-        <div>
-            <label>Họ và tên:</label>
             <input />
         </div>
     </div>
