@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Đăng ký làm gia sư";
+}
+<style>
+    select > option {
+        min-height: 48px;
+    }
+</style>
+<h2>Đăng ký thông tin làm gia sư</h2>
+<hr />
+<form>
+    <div class="form-horizontal">
+        <div>
+            <label>Họ tên:</label>
+            <input type="text" name="HoTen" />
+        </div>
+        <div>
+            <label>Ngày sinh:</label>
+            <input type="date" name="NgaySinh" />
+        </div>
+        <div>
+            <label>Giới tính:</label>
+            <select name="GioiTinh">
+                <option value="-1">- Chọn Giới Tính -</option>
+                <option value="0">Nam</option>
+                <option value="1">Nữ</option>
+            </select>
+        </div>
+        <div>
+            <label>Quê quán:</label>
+            <input type="text" name="QueQuan" />
+        </div>
+        <div>
+            <label>Địa chỉ thường trú/tạm trú hiện tại:</label>
+            <input />
+        </div>
+
+
+        <div>
+            <label>Họ và tên:</label>
+            <input />
+        </div>
+        <div>
+            <label>Họ và tên:</label>
+            <input />
+        </div>
+        <div>
+            <label>Họ và tên:</label>
+            <input />
+        </div>
+        <div>
+            <label>Họ và tên:</label>
+            <input />
+        </div>
+        <div>
+            <label>Họ và tên:</label>
+            <input />
+        </div>
+        <div>
+            <label>Họ và tên:</label>
+            <input />
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <script src="~/Scripts/DangKyLamGiaSu/index.js"></script>
+}
