@@ -10,6 +10,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="~/Content/css/bootstrap.css">
+    @*<link rel="stylesheet" href="~/Content/bootstrap.yeti.css" />*@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" />
     <link rel="stylesheet" href="~/Content/select2-bootstrap.css" />
     <link rel="stylesheet" href="~/Content/bootstrap-datetimepicker.css" />
@@ -138,8 +139,8 @@
     </nav>
 
     @*<div class="container body-content">*@
-
-    @RenderBody()
+        @RenderBody()
+    @*</div>*@
 
     <!-- Footer -->
     <footer>
@@ -207,7 +208,7 @@
             offsetTop = offset.top;
             $('html, body').animate({ scrollTop: offsetTop }, 500, 'linear');
         });
-        
+
     </script>
 
     @RenderSection("scripts", required: false)

@@ -2,71 +2,85 @@
     ViewBag.Title = "Đăng ký làm gia sư";
 }
 <style>
-    select > option {
-        min-height: 48px;
+    legend {
+        font-size: 2.4em;
+    }
+
+    #datetimepicker input {
+        max-width: 100px;
+    }
+
+    #selectGioiTinh {
+        max-width:137px;
     }
 </style>
-<h2>Đăng ký thông tin làm gia sư</h2>
-<hr />
-<form>
-    <div class="form-horizontal">
-        <div class="form-group">
-            <label>Họ tên:</label>
-            <input type="text" name="HoTen" />
+@*<h2></h2>*@
+@*<hr />*@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <form class="form-horizontal">
+                <fieldset>
+                    <legend>Đăng ký thông tin làm gia sư</legend>
+
+                    <div class="form-group">
+                        <label>Họ tên:</label>
+                        <input type="text" name="HoTen" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label>Ngày sinh:</label>
+                        <div class='input-group date' id='datetimepicker'>
+                            <input type='text' class="form-control" name="NgaySinh" placeholder="dd/mm/yyyy" />
+                            <span class="input-group-addon">
+                                <span class="fa fa-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Giới tính:</label>
+                        <select name="GioiTinh" id="selectGioiTinh">
+                            <option></option>
+                            <option value="0">Nam</option>
+                            <option value="1">Nữ</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Quê quán:</label>
+                        <select id="selectQueQuan" name="QueQuan">
+                            <option></option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Địa chỉ hiện tại:</label>
+                        <input type="text" name="DiaChi" />
+                    </div>
+                    <div class="form-group">
+                        <label>Số điện thoại:</label>
+                        <input name="SDT" type="tel" />
+                    </div>
+                    <div class="form-group">
+                        <label>Email:</label>
+                        <input name="Email" type="email" />
+                    </div>
+                    <div class="form-group">
+                        <label>Trình độ hiện tại:</label>
+                        <select id="selectTrinhDo" name="TrinhDo">
+                            <option></option>
+                        </select>
+                        <input name="TrinhDoKhac" type="hidden" placeholder="Ví dụ: Cử nhân, Kỹ sư, Thạc sỹ,..." />
+                    </div>
+                    <div class="form-group">
+                        <label>Trường/Cơ quan:</label>
+                        <input name="DonVi" type="text" placeholder="Đơn vị đang học tập, làm việc" />
+                    </div>
+                </fieldset>
+            </form>
         </div>
-        <div class="form-group">
-            <label>Ngày sinh:</label>
-            <div class='input-group date' id='datetimepicker'>
-                <input type='text' class="form-control" name="NgaySinh" />
-                <span class="input-group-addon">
-                    <span class="fa fa-calendar"></span>
-                </span>
-            </div>
-        </div>
-        <div class="form-group">
-            <label>Giới tính:</label>
-            <select name="GioiTinh" id="selectGioiTinh">
-                <option></option>
-                <option value="0">Nam</option>
-                <option value="1">Nữ</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label>Quê quán:</label>
-            <select id="selectQueQuan" name="QueQuan">
-                <option></option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label>Địa chỉ thường trú<br />tạm trú hiện tại:</label>
-            <input type="text" name="DiaChi"/>
-        </div>
-        <div class="form-group">
-            <label>Số điện thoại:</label>
-            <input name="SDT" type="tel" />
-        </div>
-        <div class="form-group">
-            <label>Email:</label>
-            <input name="Email" type="email"/>
-        </div>
-        <div class="form-group">
-            <label>Trình độ hiện tại:</label>
-            <select id="selectTrinhDo" name="TrinhDo">
-                <option></option>
-            </select>
-            <input name="TrinhDoKhac" type="hidden" placeholder="Ví dụ: Cử nhân, Kỹ sư, Thạc sỹ,..."/>
-        </div>
-        <div class="form-group">
-            <label>Đơn vị:</label>
-            <input name="DonVi" type="text" placeholder="Ví dụ: Cử nhân, Kỹ sư, Thạc sỹ,..." />
-        </div>
-        <div class="form-group">
-            <label>Tốt nghiệp trường:</label>
-            <input name="TruongTotNghiep" type="text" />
+        <div class="col-lg-3 col-lg-offset-1">
+
         </div>
     </div>
-</form>
-
+</div>
 @section Scripts {
     <script src="~/Scripts/DangKyLamGiaSu/index.js"></script>
 }
