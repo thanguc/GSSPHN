@@ -10,9 +10,39 @@
         max-width: 100px;
     }
 
-    #selectGioiTinh {
-        max-width:137px;
+    #selectGioiTinh, input[name=SDT], #selectTrinhDo {
+        max-width: 137px;
     }
+
+    #selectQueQuan {
+        max-width: 175px;
+    }
+
+    input[name=DiaChi] {
+        max-width: 350px;
+    }
+
+    input[name=Email], input[name=ChuyenNganh], input[name=DonVi] {
+        max-width: 250px;
+    }
+
+    textarea {
+        background-image: -webkit-linear-gradient(left, white 0px, transparent 0px), -webkit-linear-gradient(right, white 10px, transparent 10px), -webkit-linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
+        background-image: -moz-linear-gradient(left, white 0px, transparent 0px), -moz-linear-gradient(right, white 10px, transparent 10px), -moz-linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
+        background-image: -ms-linear-gradient(left, white 0px, transparent 0px), -ms-linear-gradient(right, white 10px, transparent 10px), -ms-linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
+        background-image: -o-linear-gradient(left, white 0px, transparent 0px), -o-linear-gradient(right, white 10px, transparent 10px), -o-linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
+        background-image: linear-gradient(left, white 10px, transparent 0px), linear-gradient(right, white 10px, transparent 10px), linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
+        background-size: 100% 100%, 100% 100%, 100% 31px;
+        border: none;
+        resize: none;
+        line-height: 32px;
+        max-width: 350px;
+        width: 350px;
+    }
+
+        textarea:focus {
+            outline: none;
+        }
 </style>
 @*<h2></h2>*@
 @*<hr />*@
@@ -71,7 +101,15 @@
                     </div>
                     <div class="form-group">
                         <label>Trường/Cơ quan:</label>
-                        <input name="DonVi" type="text" placeholder="Đơn vị đang học tập, làm việc" />
+                        <input name="DonVi" type="text" placeholder="Nơi đang học tập, làm việc" />
+                    </div>
+                    <div class="form-group">
+                        <label>Chuyên ngành:</label>
+                        <input name="ChuyenNganh" type="text" placeholder="Chuyên ngành giảng dạy,theo học" />
+                    </div>
+                    <div class="form-group">
+                        <label>Giới thiệu:</label>
+                        <textarea name="GioiThieu" rows="3"></textarea>
                     </div>
                 </fieldset>
             </form>
