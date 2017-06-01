@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" />
     <link rel="stylesheet" href="~/Content/select2-bootstrap.css" />
     <link rel="stylesheet" href="~/Content/bootstrap-datetimepicker.css" />
+    @*<link href="~/Content/kartik-v-bootstrap-fileinput-db72623/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />*@
     <!-- Custom CSS -->
     <link href="~/Content/Site.css" rel="stylesheet">
 
@@ -54,7 +55,7 @@
         </div>
     </header>
     <!-- Navigation -->
-    <nav class="navbar navbar-default" role="navigation">
+    <nav class="navbar navbar-default navbar-static-top affix-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -139,11 +140,11 @@
     </nav>
 
     @*<div class="container body-content">*@
-        @RenderBody()
+    @RenderBody()
     @*</div>*@
 
     <!-- Footer -->
-    <footer>
+    <footer style="position:relative;top:50px;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -181,6 +182,8 @@
     <script src="~/Content/js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
+    @*<script src="~/Content/kartik-v-bootstrap-fileinput-db72623/js/plugins/canvas-to-blob.min.js"></script>
+        <script src="~/Content/kartik-v-bootstrap-fileinput-db72623/js/fileinput.min.js"></script>*@
     <script src="~/Scripts/moment.js"></script>
     <script src="~/Content/js/bootstrap.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
@@ -193,10 +196,12 @@
     <script>
         $(window).bind('scroll', function () {
             if ($(window).scrollTop() > 144) {
-                $('nav').addClass('navbar-fixed-top');
+                $('nav').removeClass('affix-top');
+                $('nav').addClass('affix');
                 $('.back-to-top').show();
             } else {
-                $('nav').removeClass('navbar-fixed-top');
+                $('nav').removeClass('affix');
+                $('nav').addClass('affix-top');
                 $('.back-to-top').hide();
             }
         });

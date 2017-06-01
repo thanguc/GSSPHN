@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EmptyWeb.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ namespace EmptyWeb.Controllers
 {
     public class HomeController : Controller
     {
+        private GSSPHNDbContext _dbContext = new GSSPHNDbContext();
         public ActionResult Index()
         {
             return View();

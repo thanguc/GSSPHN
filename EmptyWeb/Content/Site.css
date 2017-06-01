@@ -76,3 +76,19 @@ nav {
         display: none;
     }
 }
+
+.affix-top {
+    align-content:center;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 10;
+}
+
+.affix {
+    top: 0;
+    width: 100%;
+}
+#bs-example-navbar-collapse-1 > ul{
+    margin:auto;
+}

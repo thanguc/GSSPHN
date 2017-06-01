@@ -4,10 +4,6 @@
     genders: ['Nam', 'Nữ']
 }
 
-$('.form-group').find('label').addClass('control-label col-md-4');
-$('.form-group').find('input').addClass('form-control');
-$('.form-group').find('select').addClass('form-control');
-
 bindSelect2('#selectGioiTinh', _rawData.genders, '- Giới tính -', true);
 bindSelect2('#selectQueQuan', _rawData.provinces, '- Tỉnh/Thành phố -', false);
 bindSelect2('#selectTrinhDo', _rawData.academic_levels, '- Trình độ -', true);
@@ -30,9 +26,11 @@ function bindSelect2(selector, rawData, placeholder, hideSearch) {
 }
 
 $('#selectTrinhDo').on('change', function () {
-    if ($("#selectTrinhDo option:selected").text() == 'Khác') {
-        $("input[name='TrinhDoKhac']").attr('type', 'text');
+    if ($("#selectTrinhDo option:selected").text() === 'Khác') {
+        $("#trinhDoKhac").removeClass('hidden');
+        $("#trinhDoKhac input").prop('required','true');
     } else {
-        $("input[name='TrinhDoKhac']").attr('type', 'hidden');
+        $("#trinhDoKhac").addClass('hidden');
+        $("#trinhDoKhac input").removeAttr('required');
     }
 });

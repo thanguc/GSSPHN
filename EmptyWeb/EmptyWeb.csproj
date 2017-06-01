@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -47,7 +48,15 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Imgur.API, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Imgur.API.4.0.1\lib\net45\Imgur.API.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -111,22 +120,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DangKyTimGiaSuController.cs" />
     <Compile Include="Controllers\DangKyLamGiaSuController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Data\GSSPHNDbContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DangKyGiaSu.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ImgurService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-datetimepicker.css" />
@@ -197,6 +205,59 @@
     <Content Include="Content\js\bootstrap.js" />
     <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\js\jquery.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\css\fileinput.css" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\css\fileinput.min.css" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\examples\index.html" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\img\loading-sm.gif" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\img\loading.gif" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\fileinput.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\fileinput.min.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\locales\ar.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\locales\bg.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\locales\ca.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\locales\cr.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\locales\cz.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\locales\da.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\locales\de.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\locales\el.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\locales\es.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\locales\fa.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\locales\fi.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\locales\fr.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\locales\gl.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\locales\hu.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\locales\id.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\locales\it.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\locales\ja.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\locales\kr.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\locales\kz.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\locales\LANG.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\locales\nl.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\locales\no.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\locales\pl.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\locales\pt-BR.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\locales\pt.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\locales\ro.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\locales\ru.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\locales\sk.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\locales\sl.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\locales\sv.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\locales\th.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\locales\tr.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\locales\uk.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\locales\vi.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\locales\zh-TW.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\locales\zh.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\plugins\canvas-to-blob.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\plugins\canvas-to-blob.min.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\plugins\purify.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\plugins\purify.min.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\plugins\sortable.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\js\plugins\sortable.min.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\themes\explorer\theme.css" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\themes\explorer\theme.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\themes\fa\theme.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\themes\gly\theme.js" />
     <Content Include="Content\select2-bootstrap.css" />
     <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
@@ -212,12 +273,26 @@
     <Content Include="Content\select2-bootstrap-build.less" />
     <Content Include="Content\select2-bootstrap.scss" />
     <Content Include="Content\select2-bootstrap.less" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\.github\CONTRIBUTING.md" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\.github\ISSUE_TEMPLATE.md" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\.github\PULL_REQUEST_TEMPLATE.md" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\.gitignore" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\bower.json" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\CHANGE.md" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\composer.json" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\LICENSE.md" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\nuget\build.bat" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\nuget\Package.nuspec" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\package.json" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\README.md" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\sass\fileinput.scss" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\DangKyLamGiaSu\index.js" />
+    <Content Include="Scripts\DangKyTimGiaSu\index.js" />
     <Content Include="Scripts\i18n\az.js" />
     <Content Include="Scripts\i18n\bg.js" />
     <Content Include="Scripts\i18n\ca.js" />
@@ -277,7 +352,9 @@
     <Content Include="Scripts\select2.js" />
     <Content Include="Scripts\select2.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -298,6 +375,9 @@
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\DangKyLamGiaSu\Index.cshtml" />
+    <Content Include="Views\DangKyLamGiaSu\_DieuKhoan.cshtml" />
+    <Content Include="Views\DangKyTimGiaSu\Index.cshtml" />
+    <Content Include="Views\DangKyTimGiaSu\_DieuKhoan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

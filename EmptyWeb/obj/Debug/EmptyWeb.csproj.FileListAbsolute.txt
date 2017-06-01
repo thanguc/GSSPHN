@@ -28,3 +28,5 @@ C:\Users\ThangUC\documents\visual studio 2013\Projects\GSSPHN\EmptyWeb\bin\Entit
 C:\Users\ThangUC\documents\visual studio 2013\Projects\GSSPHN\EmptyWeb\bin\EntityFramework.SqlServer.dll
 C:\Users\ThangUC\documents\visual studio 2013\Projects\GSSPHN\EmptyWeb\bin\EntityFramework.xml
 C:\Users\ThangUC\documents\visual studio 2013\Projects\GSSPHN\EmptyWeb\bin\EntityFramework.SqlServer.xml
+C:\Users\ThangUC\Documents\Visual Studio 2013\Projects\GSSPHN\EmptyWeb\bin\Imgur.API.dll
+C:\Users\ThangUC\Documents\Visual Studio 2013\Projects\GSSPHN\EmptyWeb\bin\Imgur.API.xml
