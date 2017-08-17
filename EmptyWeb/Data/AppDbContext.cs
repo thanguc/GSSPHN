@@ -3,7 +3,7 @@ using System.Data.Entity;
 
 namespace EmptyWeb.Data
 {
-    public class GSSPHNDbContext : DbContext
+    public class AppDbContext : DbContext
     {
         public DbSet<User> User { get; set; }
         public DbSet<DangKyGiaSu> DangKyGiaSu { get; set; }

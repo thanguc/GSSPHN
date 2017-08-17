@@ -10,12 +10,12 @@ namespace EmptyWeb.Services
 {
     public class ImgurService
     {
-        private readonly GSSPHNDbContext _context;
+        private readonly AppDbContext _context;
         private readonly LoggingService _logger;
         private readonly string CLIENT_ID = "20d2359fb178560";
         private readonly string CLIENT_SECRET = "285d1450c3fe69299dbfde9ddc80adbeb83b18db";
 
-        public ImgurService(GSSPHNDbContext context, LoggingService logger)
+        public ImgurService(AppDbContext context, LoggingService logger)
         {
             _context = context;
             _logger = logger;

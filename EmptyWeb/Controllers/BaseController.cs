@@ -12,13 +12,13 @@ namespace EmptyWeb.Controllers
 {
     public class BaseController : Controller
     {
-        protected readonly GSSPHNDbContext BaseContext;
+        protected readonly AppDbContext BaseContext;
         protected readonly LoggingService Logger;
         protected readonly ImgurService Imgur;
 
         public BaseController()
         {
-            BaseContext = new GSSPHNDbContext();
+            BaseContext = new AppDbContext();
             Logger = new LoggingService(BaseContext);
             Imgur = new ImgurService(BaseContext, Logger);
         }

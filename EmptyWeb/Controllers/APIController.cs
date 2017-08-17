@@ -8,7 +8,7 @@ namespace EmptyWeb.Controllers
 {
     public class APIController : Controller
     {
-        private readonly GSSPHNDbContext _db = new GSSPHNDbContext();
+        private readonly AppDbContext _db = new AppDbContext();
 
         public ActionResult Imgur()
         {

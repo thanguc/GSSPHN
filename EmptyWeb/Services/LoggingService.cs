@@ -9,9 +9,9 @@ namespace EmptyWeb.Services
 {
     public class LoggingService
     {
-        private readonly GSSPHNDbContext _context;
+        private readonly AppDbContext _context;
 
-        public LoggingService(GSSPHNDbContext context)
+        public LoggingService(AppDbContext context)
         {
             _context = context;
         }

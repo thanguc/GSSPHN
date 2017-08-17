@@ -13,7 +13,7 @@ namespace EmptyWeb.Controllers
 {
     public class UsersController : Controller
     {
-        private GSSPHNDbContext db = new GSSPHNDbContext();
+        private AppDbContext db = new AppDbContext();
 
         // GET: Users
         public ActionResult Index()

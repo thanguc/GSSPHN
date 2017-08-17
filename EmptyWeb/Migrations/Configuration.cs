@@ -5,14 +5,14 @@ namespace EmptyWeb.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<EmptyWeb.Data.GSSPHNDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<EmptyWeb.Data.AppDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(EmptyWeb.Data.GSSPHNDbContext context)
+        protected override void Seed(EmptyWeb.Data.AppDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 
