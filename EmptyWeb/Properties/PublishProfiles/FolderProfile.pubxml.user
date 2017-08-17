@@ -1,0 +1,803 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_NewBackgroundProfile>True</_NewBackgroundProfile>
+    <_PublishTargetUrl>C:\Users\ThangUC\Documents\Visual Studio 2013\Projects\GSSPHN\EmptyWeb\bin\Release\PublishOutput</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>03/24/2017 21:59:43</publishTime>
+    </File>
+    <File Include="bin/EmptyWeb.dll">
+      <publishTime>08/17/2017 00:06:41</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>03/24/2017 21:59:50</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>03/24/2017 21:59:50</publishTime>
+    </File>
+    <File Include="bin/Imgur.API.dll">
+      <publishTime>04/22/2017 12:49:46</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>03/24/2017 21:59:41</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>04/22/2017 12:49:45</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>03/24/2017 21:59:41</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>03/24/2017 21:59:42</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>03/24/2017 21:59:40</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>03/24/2017 21:59:40</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>03/24/2017 21:59:41</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>03/24/2017 21:59:41</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>03/24/2017 21:59:41</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>03/24/2017 21:59:43</publishTime>
+    </File>
+    <File Include="Content/bootstrap-datetimepicker.css">
+      <publishTime>04/06/2017 13:21:52</publishTime>
+    </File>
+    <File Include="Content/bootstrap-datetimepicker.min.css">
+      <publishTime>04/06/2017 13:21:52</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.css">
+      <publishTime>04/06/2017 11:15:14</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.css.map">
+      <publishTime>04/06/2017 11:15:14</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.min.css">
+      <publishTime>04/06/2017 11:15:14</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>04/06/2017 11:15:15</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css.map">
+      <publishTime>04/06/2017 11:15:15</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>04/06/2017 11:15:15</publishTime>
+    </File>
+    <File Include="Content/bootstrap.yeti.css">
+      <publishTime>04/10/2017 22:34:35</publishTime>
+    </File>
+    <File Include="Content/bootstrap.yeti.min.css">
+      <publishTime>04/10/2017 22:12:17</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap.css">
+      <publishTime>04/07/2017 23:39:40</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap.min.css">
+      <publishTime>03/25/2017 08:19:04</publishTime>
+    </File>
+    <File Include="Content/css/landing-page.css">
+      <publishTime>04/10/2017 22:26:19</publishTime>
+    </File>
+    <File Include="Content/css/select2.css">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Content/css/select2.min.css">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Content/font-awesome/css/font-awesome-animation.min.css">
+      <publishTime>03/29/2017 11:10:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome/css/font-awesome.css">
+      <publishTime>02/12/2016 11:54:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome/css/font-awesome.min.css">
+      <publishTime>02/12/2016 11:54:22</publishTime>
+    </File>
+    <File Include="Content/font-awesome/fonts/fontawesome-webfont.eot">
+      <publishTime>02/12/2016 11:54:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome/fonts/fontawesome-webfont.svg">
+      <publishTime>02/12/2016 11:54:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome/fonts/fontawesome-webfont.ttf">
+      <publishTime>02/12/2016 11:54:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome/fonts/fontawesome-webfont.woff">
+      <publishTime>02/12/2016 11:54:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome/fonts/fontawesome-webfont.woff2">
+      <publishTime>02/12/2016 11:54:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome/fonts/FontAwesome.otf">
+      <publishTime>02/12/2016 11:54:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome/HELP-US-OUT.txt">
+      <publishTime>02/12/2016 11:54:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome/less/animated.less">
+      <publishTime>02/12/2016 11:54:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome/less/bordered-pulled.less">
+      <publishTime>02/12/2016 11:54:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome/less/core.less">
+      <publishTime>02/12/2016 11:54:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome/less/fixed-width.less">
+      <publishTime>02/12/2016 11:54:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome/less/font-awesome.less">
+      <publishTime>02/12/2016 11:54:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome/less/icons.less">
+      <publishTime>02/12/2016 11:54:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome/less/larger.less">
+      <publishTime>02/12/2016 11:54:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome/less/list.less">
+      <publishTime>02/12/2016 11:54:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome/less/mixins.less">
+      <publishTime>02/12/2016 11:54:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome/less/path.less">
+      <publishTime>02/12/2016 11:54:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome/less/rotated-flipped.less">
+      <publishTime>02/12/2016 11:54:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome/less/screen-reader.less">
+      <publishTime>02/12/2016 11:54:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome/less/spinning.less">
+      <publishTime>03/25/2017 08:19:05</publishTime>
+    </File>
+    <File Include="Content/font-awesome/less/stacked.less">
+      <publishTime>02/12/2016 11:54:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome/less/variables.less">
+      <publishTime>02/12/2016 11:54:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome/scss/font-awesome.scss">
+      <publishTime>02/12/2016 11:54:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome/scss/_animated.scss">
+      <publishTime>02/12/2016 11:54:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome/scss/_bordered-pulled.scss">
+      <publishTime>02/12/2016 11:54:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome/scss/_core.scss">
+      <publishTime>02/12/2016 11:54:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome/scss/_fixed-width.scss">
+      <publishTime>02/12/2016 11:54:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome/scss/_icons.scss">
+      <publishTime>02/12/2016 11:54:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome/scss/_larger.scss">
+      <publishTime>02/12/2016 11:54:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome/scss/_list.scss">
+      <publishTime>02/12/2016 11:54:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome/scss/_mixins.scss">
+      <publishTime>02/12/2016 11:54:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome/scss/_path.scss">
+      <publishTime>02/12/2016 11:54:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome/scss/_rotated-flipped.scss">
+      <publishTime>02/12/2016 11:54:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome/scss/_screen-reader.scss">
+      <publishTime>02/12/2016 11:54:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome/scss/_spinning.scss">
+      <publishTime>03/25/2017 08:19:05</publishTime>
+    </File>
+    <File Include="Content/font-awesome/scss/_stacked.scss">
+      <publishTime>02/12/2016 11:54:20</publishTime>
+    </File>
+    <File Include="Content/font-awesome/scss/_variables.scss">
+      <publishTime>02/12/2016 11:54:20</publishTime>
+    </File>
+    <File Include="Content/fonts/glyphicons-halflings-regular.eot">
+      <publishTime>03/25/2017 08:19:05</publishTime>
+    </File>
+    <File Include="Content/fonts/glyphicons-halflings-regular.svg">
+      <publishTime>03/25/2017 08:19:05</publishTime>
+    </File>
+    <File Include="Content/fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>03/25/2017 08:19:05</publishTime>
+    </File>
+    <File Include="Content/fonts/glyphicons-halflings-regular.woff">
+      <publishTime>03/25/2017 08:19:05</publishTime>
+    </File>
+    <File Include="Content/fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>03/25/2017 08:19:05</publishTime>
+    </File>
+    <File Include="Content/img/banner-bg.jpg">
+      <publishTime>03/25/2017 08:19:05</publishTime>
+    </File>
+    <File Include="Content/img/dog.png">
+      <publishTime>03/25/2017 08:19:05</publishTime>
+    </File>
+    <File Include="Content/img/intro-bg.jpg">
+      <publishTime>03/28/2017 22:36:01</publishTime>
+    </File>
+    <File Include="Content/img/ipad.png">
+      <publishTime>03/25/2017 08:19:05</publishTime>
+    </File>
+    <File Include="Content/img/logo.jpg">
+      <publishTime>03/26/2017 09:36:41</publishTime>
+    </File>
+    <File Include="Content/img/phones.png">
+      <publishTime>03/25/2017 08:19:05</publishTime>
+    </File>
+    <File Include="Content/img/topnav-bg.jpg">
+      <publishTime>03/26/2017 10:55:49</publishTime>
+    </File>
+    <File Include="Content/js/bootstrap.js">
+      <publishTime>03/25/2017 08:19:05</publishTime>
+    </File>
+    <File Include="Content/js/bootstrap.min.js">
+      <publishTime>03/25/2017 08:19:05</publishTime>
+    </File>
+    <File Include="Content/js/jquery.js">
+      <publishTime>03/25/2017 08:19:05</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/.github/CONTRIBUTING.md">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/.github/ISSUE_TEMPLATE.md">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/.github/PULL_REQUEST_TEMPLATE.md">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/.gitignore">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/bower.json">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/CHANGE.md">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/composer.json">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/css/fileinput.css">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/css/fileinput.min.css">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/examples/index.html">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/img/loading-sm.gif">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/img/loading.gif">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/fileinput.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/fileinput.min.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/locales/ar.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/locales/bg.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/locales/ca.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/locales/cr.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/locales/cz.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/locales/da.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/locales/de.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/locales/el.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/locales/es.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/locales/fa.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/locales/fi.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/locales/fr.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/locales/gl.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/locales/hu.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/locales/id.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/locales/it.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/locales/ja.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/locales/kr.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/locales/kz.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/locales/LANG.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/locales/nl.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/locales/no.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/locales/pl.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/locales/pt-BR.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/locales/pt.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/locales/ro.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/locales/ru.js">
+      <publishTime>04/22/2017 10:41:01</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/locales/sk.js">
+      <publishTime>04/22/2017 10:41:01</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/locales/sl.js">
+      <publishTime>04/22/2017 10:41:01</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/locales/sv.js">
+      <publishTime>04/22/2017 10:41:01</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/locales/th.js">
+      <publishTime>04/22/2017 10:41:01</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/locales/tr.js">
+      <publishTime>04/22/2017 10:41:01</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/locales/uk.js">
+      <publishTime>04/22/2017 10:41:01</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/locales/vi.js">
+      <publishTime>04/22/2017 10:41:01</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/locales/zh-TW.js">
+      <publishTime>04/22/2017 10:41:01</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/locales/zh.js">
+      <publishTime>04/22/2017 10:41:01</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/plugins/canvas-to-blob.js">
+      <publishTime>04/22/2017 10:41:01</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/plugins/canvas-to-blob.min.js">
+      <publishTime>04/22/2017 10:41:01</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/plugins/purify.js">
+      <publishTime>04/22/2017 10:41:01</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/plugins/purify.min.js">
+      <publishTime>04/22/2017 10:41:01</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/plugins/sortable.js">
+      <publishTime>04/22/2017 10:41:01</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/js/plugins/sortable.min.js">
+      <publishTime>04/22/2017 10:41:01</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/LICENSE.md">
+      <publishTime>04/22/2017 10:41:01</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/nuget/build.bat">
+      <publishTime>04/22/2017 10:41:01</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/nuget/Package.nuspec">
+      <publishTime>04/22/2017 10:41:01</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/package.json">
+      <publishTime>04/22/2017 10:41:01</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/README.md">
+      <publishTime>04/22/2017 10:41:01</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/sass/fileinput.scss">
+      <publishTime>04/22/2017 10:41:01</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/themes/explorer/theme.css">
+      <publishTime>04/22/2017 10:41:01</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/themes/explorer/theme.js">
+      <publishTime>04/22/2017 10:41:01</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/themes/fa/theme.js">
+      <publishTime>04/22/2017 10:41:01</publishTime>
+    </File>
+    <File Include="Content/kartik-v-bootstrap-fileinput-db72623/themes/gly/theme.js">
+      <publishTime>04/22/2017 10:41:01</publishTime>
+    </File>
+    <File Include="Content/select2-bootstrap-build.less">
+      <publishTime>04/06/2017 11:15:15</publishTime>
+    </File>
+    <File Include="Content/select2-bootstrap-build.scss">
+      <publishTime>04/06/2017 11:15:15</publishTime>
+    </File>
+    <File Include="Content/select2-bootstrap.css">
+      <publishTime>04/06/2017 13:13:05</publishTime>
+    </File>
+    <File Include="Content/select2-bootstrap.less">
+      <publishTime>04/06/2017 11:15:15</publishTime>
+    </File>
+    <File Include="Content/select2-bootstrap.scss">
+      <publishTime>04/06/2017 11:15:15</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>08/16/2017 19:57:08</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>03/25/2017 07:46:44</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>04/06/2017 11:15:14</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>04/06/2017 11:15:14</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>04/06/2017 11:15:14</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>04/06/2017 11:15:14</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>04/06/2017 11:15:14</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>03/25/2017 07:46:44</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>08/15/2017 21:21:21</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-datetimepicker.js">
+      <publishTime>04/06/2017 13:21:52</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-datetimepicker.min.js">
+      <publishTime>04/06/2017 13:21:52</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>04/06/2017 11:15:14</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>04/06/2017 11:15:14</publishTime>
+    </File>
+    <File Include="Scripts/common.js">
+      <publishTime>08/16/2017 23:57:51</publishTime>
+    </File>
+    <File Include="Scripts/DangKyLamGiaSu/index.js">
+      <publishTime>08/10/2017 21:56:41</publishTime>
+    </File>
+    <File Include="Scripts/DangKyTimGiaSu/index.js">
+      <publishTime>05/29/2017 23:06:13</publishTime>
+    </File>
+    <File Include="Scripts/i18n/az.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/bg.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/ca.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/cs.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/da.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/de.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/en.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/es.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/et.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/eu.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/fa.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/fi.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/fr.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/gl.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/he.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/hi.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/hr.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/hu.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/id.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/is.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/it.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/ja.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/ko.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/lt.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/lv.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/mk.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/nb.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/nl.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/pl.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/pt-BR.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/pt.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/ro.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/ru.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/sk.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/sr.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/sv.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/th.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/tr.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/uk.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/vi.js">
+      <publishTime>04/06/2017 11:15:12</publishTime>
+    </File>
+    <File Include="Scripts/i18n/zh-CN.js">
+      <publishTime>04/06/2017 11:15:11</publishTime>
+    </File>
+    <File Include="Scripts/i18n/zh-TW.js">
+      <publishTime>04/06/2017 11:15:11</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.js">
+      <publishTime>03/25/2017 07:46:46</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.js">
+      <publishTime>03/25/2017 07:46:46</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.map">
+      <publishTime>03/25/2017 07:46:46</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>03/25/2017 07:46:53</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>03/25/2017 07:46:53</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>03/25/2017 07:46:53</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>03/25/2017 07:46:53</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>03/25/2017 07:46:52</publishTime>
+    </File>
+    <File Include="Scripts/moment-with-locales.js">
+      <publishTime>04/06/2017 13:21:52</publishTime>
+    </File>
+    <File Include="Scripts/moment-with-locales.min.js">
+      <publishTime>04/06/2017 13:21:52</publishTime>
+    </File>
+    <File Include="Scripts/moment.js">
+      <publishTime>04/06/2017 13:21:52</publishTime>
+    </File>
+    <File Include="Scripts/moment.min.js">
+      <publishTime>04/06/2017 13:21:52</publishTime>
+    </File>
+    <File Include="Scripts/QuanLy/index.js">
+      <publishTime>08/16/2017 19:25:22</publishTime>
+    </File>
+    <File Include="Scripts/respond.js">
+      <publishTime>03/25/2017 07:46:53</publishTime>
+    </File>
+    <File Include="Scripts/respond.min.js">
+      <publishTime>03/25/2017 07:46:53</publishTime>
+    </File>
+    <File Include="Scripts/select2.js">
+      <publishTime>04/06/2017 11:15:11</publishTime>
+    </File>
+    <File Include="Scripts/select2.min.js">
+      <publishTime>04/06/2017 11:15:11</publishTime>
+    </File>
+    <File Include="Scripts/site.js">
+      <publishTime>08/16/2017 22:15:05</publishTime>
+    </File>
+    <File Include="Scripts/TrangChu/dangKyLamGiaSu.js">
+      <publishTime>08/16/2017 22:53:46</publishTime>
+    </File>
+    <File Include="Scripts/TrangChu/dangKyTimGiaSu.js">
+      <publishTime>08/17/2017 00:04:30</publishTime>
+    </File>
+    <File Include="Scripts/_references.js">
+      <publishTime>04/22/2017 10:41:02</publishTime>
+    </File>
+    <File Include="Views/DangKyLamGiaSu/Index.cshtml">
+      <publishTime>08/09/2017 22:20:43</publishTime>
+    </File>
+    <File Include="Views/DangKyLamGiaSu/_DieuKhoan.cshtml">
+      <publishTime>05/23/2017 23:02:24</publishTime>
+    </File>
+    <File Include="Views/DangKyTimGiaSu/Index.cshtml">
+      <publishTime>05/29/2017 23:09:53</publishTime>
+    </File>
+    <File Include="Views/DangKyTimGiaSu/_DieuKhoan.cshtml">
+      <publishTime>05/29/2017 23:09:01</publishTime>
+    </File>
+    <File Include="Views/Home/About.cshtml">
+      <publishTime>03/25/2017 07:46:44</publishTime>
+    </File>
+    <File Include="Views/Home/Contact.cshtml">
+      <publishTime>03/25/2017 07:46:44</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>06/10/2017 19:04:15</publishTime>
+    </File>
+    <File Include="Views/Home/_ThongBao.cshtml">
+      <publishTime>06/10/2017 18:56:54</publishTime>
+    </File>
+    <File Include="Views/QuanLy/Index.cshtml">
+      <publishTime>08/10/2017 21:49:26</publishTime>
+    </File>
+    <File Include="Views/QuanLy/_SystemLogs.cshtml">
+      <publishTime>08/16/2017 19:26:18</publishTime>
+    </File>
+    <File Include="Views/QuanLy/_WantToBeTutor.cshtml">
+      <publishTime>08/09/2017 23:30:03</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>03/25/2017 07:46:44</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>08/16/2017 21:10:00</publishTime>
+    </File>
+    <File Include="Views/Shared/_QuanLyLayout.cshtml">
+      <publishTime>08/16/2017 19:15:48</publishTime>
+    </File>
+    <File Include="Views/Shared/_ThongBao.cshtml">
+      <publishTime>08/16/2017 22:05:17</publishTime>
+    </File>
+    <File Include="Views/TrangChu/DangKyLamGiaSu.cshtml">
+      <publishTime>08/16/2017 22:39:42</publishTime>
+    </File>
+    <File Include="Views/TrangChu/Index.cshtml">
+      <publishTime>08/17/2017 00:02:55</publishTime>
+    </File>
+    <File Include="Views/TrangChu/YeuCauTimGiaSu.cshtml">
+      <publishTime>08/17/2017 00:02:06</publishTime>
+    </File>
+    <File Include="Views/TrangChu/_DieuKhoanDangKyGiaSu.cshtml">
+      <publishTime>05/23/2017 23:02:24</publishTime>
+    </File>
+    <File Include="Views/TrangChu/_DieuKhoanTimGiaSu.cshtml">
+      <publishTime>05/29/2017 23:09:01</publishTime>
+    </File>
+    <File Include="Views/Users/Create.cshtml">
+      <publishTime>03/25/2017 07:53:35</publishTime>
+    </File>
+    <File Include="Views/Users/Delete.cshtml">
+      <publishTime>03/25/2017 07:53:35</publishTime>
+    </File>
+    <File Include="Views/Users/Details.cshtml">
+      <publishTime>03/25/2017 07:53:36</publishTime>
+    </File>
+    <File Include="Views/Users/Edit.cshtml">
+      <publishTime>03/25/2017 07:53:36</publishTime>
+    </File>
+    <File Include="Views/Users/Index.cshtml">
+      <publishTime>03/25/2017 07:53:37</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>03/25/2017 07:46:44</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>03/25/2017 07:46:44</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>08/16/2017 19:26:41</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,25 @@
+﻿@model List<EmptyWeb.Models.SystemLog>
+@{
+    int stt = 0;
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Content</th>
+            <th>Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="clickable-row">
+                <td>@stt</td>
+                <td>@item.Content</td>
+                <td>@item.Time</td>
+            </tr>
+
+            stt++;
+        }
+    </tbody>
+</table>

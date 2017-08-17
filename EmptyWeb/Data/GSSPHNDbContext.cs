@@ -1,9 +1,5 @@
 ﻿using EmptyWeb.Models;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Web;
 
 namespace EmptyWeb.Data
 {
@@ -11,5 +7,10 @@ namespace EmptyWeb.Data
     {
         public DbSet<User> User { get; set; }
         public DbSet<DangKyGiaSu> DangKyGiaSu { get; set; }
+        public DbSet<TimGiaSu> TimGiaSu { get; set; }
+        public DbSet<Userrole> Userrole { get; set; }
+        public DbSet<QueQuan> QueQuan { get; set; }
+        public DbSet<TrinhDo> TrinhDo { get; set; }
+        public DbSet<SystemLog> SystemLog { get; set; }
     }
 }

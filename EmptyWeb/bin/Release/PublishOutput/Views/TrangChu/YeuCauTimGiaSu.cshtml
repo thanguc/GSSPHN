@@ -1,0 +1,152 @@
+﻿@using EmptyWeb.Shared
+
+@model EmptyWeb.Models.TimGiaSu
+
+@{
+    ViewBag.Title = "Tìm gia sư";
+}
+<style>
+    legend {
+        font-size: 2.4em;
+    }
+
+    input {
+        background-color: transparent !important;
+    }
+
+    .select2-container--bootstrap .select2-selection {
+        background-color: transparent !important;
+    }
+
+    #datetimepicker input {
+        max-width: 100px;
+    }
+
+    #selectGioiTinh, input[name=SDT], #selectTrinhDo {
+        width: 137px !important;
+    }
+
+    #selectQueQuan {
+        max-width: 175px;
+    }
+
+    input[name=DiaChi] {
+        max-width: 350px;
+    }
+
+    input[name=Email], input[name=ChuyenNganh], input[name=DonVi], input[name=TrinhDoKhac] {
+        max-width: 250px;
+    }
+
+    textarea {
+        background-image: -webkit-linear-gradient(left, white 0px, transparent 0px), -webkit-linear-gradient(right, transparent 10px, transparent 10px), -webkit-linear-gradient(transparent 30px, #ccc 30px, #ccc 31px, white 31px);
+        background-image: -moz-linear-gradient(left, white 0px, transparent 0px), -moz-linear-gradient(right, transparent 10px, transparent 10px), -moz-linear-gradient(transparent 30px, #ccc 30px, #ccc 31px, white 31px);
+        background-image: -ms-linear-gradient(left, white 0px, transparent 0px), -ms-linear-gradient(right, transparent 10px, transparent 10px), -ms-linear-gradient(transparent 30px, #ccc 30px, #ccc 31px, white 31px);
+        background-image: -o-linear-gradient(left, white 0px, transparent 0px), -o-linear-gradient(right, transparent 10px, transparent 10px), -o-linear-gradient(transparent 30px, #ccc 30px, #ccc 31px, white 31px);
+        background-image: linear-gradient(left, white 10px, transparent 0px), linear-gradient(right, transparent 10px, transparent 10px), linear-gradient(transparent 30px, #ccc 30px, #ccc 31px, white 31px);
+        background-size: 100% 100%, 100% 100%, 100% 31px;
+        border: none;
+        resize: none;
+        line-height: 32px;
+        max-width: 350px;
+        width: 350px;
+        background-color: transparent !important;
+    }
+
+        textarea:focus {
+            outline: none;
+        }
+
+    .dk {
+        border: 2px solid #ccc;
+        padding: 10px;
+    }
+
+    .dk-content {
+        height: 550px;
+        overflow-y: auto;
+        padding: 10px;
+    }
+
+    .row {
+        background-color: #f8f8f8;
+    }
+</style>
+
+<div class="container" style="position:relative;top:50px;">
+    <div class="row">
+        <h3 class="text-center" style="text-decoration:underline;">Đăng ký tìm gia sư</h3>
+        <div class="col-lg-12">
+            <form class="form-horizontal" action="/TrangChu/YeuCauTimGiaSu" method="post">
+                <div class="col-sm-12">
+                    <hr />
+                </div>
+                <div class="col-lg-7">
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Họ tên phụ huynh:</label>
+                        <input type="text" name="HoTen" class="form-control" value="@Model.HoTen" required/>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Địa chỉ:</label>
+                        <input type="text" name="DiaChi" class="form-control" value="@Model.DiaChi" required />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Số điện thoại:</label>
+                        <input name="SDT" type="tel" class="form-control" value="@Model.SDT" required />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Email:</label>
+                        <input name="Email" type="email" class="form-control" value="@Model.Email" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Yêu cầu / Ghi chú:</label>
+                        <textarea name="YeuCau" rows="3" placeholder="Ví dụ: Học sinh lớp 3, yếu môn toán, cần gia sư dạy toán...">@Model.YeuCau</textarea>
+                    </div>
+
+                    <button type="button" class="btn btn-info btn-sm center-block" data-toggle="collapse" data-target="#nangcao">Yêu cầu chi tiết</button>
+                    <div id="nangcao" class="collapse">
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Gia sư Nam/Nữ?:</label>
+                            <select name="GioiTinh" id="selectGioiTinh" class="form-control">
+                                <option></option>
+                                <option value="0" @(Model.GioiTinh.HasValue && Model.GioiTinh.Value == GioiTinh.Male ? "selected" : string.Empty)>Nam</option>
+                                <option value="1" @(Model.GioiTinh.HasValue && Model.GioiTinh.Value == GioiTinh.Female ? "selected" : string.Empty)>Nữ</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Trình độ gia sư:</label>
+                            <select id="selectTrinhDo" name="TrinhDoId" class="form-control" value="@Model.TrinhDoId">
+                                <option></option>
+                            </select>
+                        </div>
+                        <div class="form-group hidden" id="trinhDoKhac">
+                            <label class="control-label col-md-3"></label>
+                            <input name="TrinhDoKhac" type="text" placeholder="Ví dụ: Cử nhân, Kỹ sư, Thạc sỹ,..." class="form-control" value="@Model.TrinhDoKhac"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Trường/Cơ quan:</label>
+                            <input name="DonVi" type="text" placeholder="Nơi gia sư học tập, làm việc" class="form-control" value="@Model.DonVi"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Chuyên ngành:</label>
+                            <input name="ChuyenNganh" type="text" placeholder="Chuyên ngành giảng dạy,theo học" class="form-control" value="@Model.ChuyenNganh"/>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-5">
+                    @Html.Partial("_DieuKhoanTimGiaSu")
+                </div>
+                <div class="col-sm-12">
+                    <hr />
+                </div>
+                <div class="col-sm-12">
+                    <button class="btn btn-success center-block" type="submit">Gửi yêu cầu</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script src="~/Scripts/TrangChu/dangKyTimGiaSu.js"></script>
+}

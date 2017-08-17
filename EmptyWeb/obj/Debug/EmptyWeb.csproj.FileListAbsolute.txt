@@ -30,3 +30,9 @@ C:\Users\ThangUC\documents\visual studio 2013\Projects\GSSPHN\EmptyWeb\bin\Entit
 C:\Users\ThangUC\documents\visual studio 2013\Projects\GSSPHN\EmptyWeb\bin\EntityFramework.SqlServer.xml
 C:\Users\ThangUC\Documents\Visual Studio 2013\Projects\GSSPHN\EmptyWeb\bin\Imgur.API.dll
 C:\Users\ThangUC\Documents\Visual Studio 2013\Projects\GSSPHN\EmptyWeb\bin\Imgur.API.xml
+C:\Users\ThangUC\Documents\Visual Studio 2013\Projects\GSSPHN\EmptyWeb\obj\Debug\EmptyWeb.Migrations.Init.resources
+C:\Users\ThangUC\Documents\Visual Studio 2013\Projects\GSSPHN\EmptyWeb\obj\Debug\EmptyWeb.csproj.GenerateResource.Cache
+C:\Users\ThangUC\Documents\Visual Studio 2013\Projects\GSSPHN\EmptyWeb\obj\Debug\EmptyWeb.Migrations.updateLogging.resources
+C:\Users\ThangUC\Documents\Visual Studio 2013\Projects\GSSPHN\EmptyWeb\obj\Debug\EmptyWeb.Migrations.updateTimGiaSu.resources
+C:\Users\ThangUC\Documents\Visual Studio 2013\Projects\GSSPHN\EmptyWeb\obj\Debug\EmptyWeb.Migrations.updateDangKyGiaSu.resources
+C:\Users\ThangUC\Documents\Visual Studio 2013\Projects\GSSPHN\EmptyWeb\obj\Debug\EmptyWeb.Migrations.updateTrinhdo.resources

@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>EmptyWeb</RootNamespace>
     <AssemblyName>EmptyWeb</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -21,6 +21,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -59,16 +60,14 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
@@ -110,6 +109,7 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -123,18 +123,48 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\DangKyTimGiaSuController.cs" />
-    <Compile Include="Controllers\DangKyLamGiaSuController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\APIController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CommonController.cs" />
+    <Compile Include="Controllers\TrangChuController.cs" />
+    <Compile Include="Controllers\QuanLyController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Data\GSSPHNDbContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708091726424_Init.cs" />
+    <Compile Include="Migrations\201708091726424_Init.Designer.cs">
+      <DependentUpon>201708091726424_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708151655237_updateLogging.cs" />
+    <Compile Include="Migrations\201708151655237_updateLogging.Designer.cs">
+      <DependentUpon>201708151655237_updateLogging.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708161501450_updateTimGiaSu.cs" />
+    <Compile Include="Migrations\201708161501450_updateTimGiaSu.Designer.cs">
+      <DependentUpon>201708161501450_updateTimGiaSu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708161525167_updateDangKyGiaSu.cs" />
+    <Compile Include="Migrations\201708161525167_updateDangKyGiaSu.Designer.cs">
+      <DependentUpon>201708161525167_updateDangKyGiaSu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708161546183_updateTrinhdo.cs" />
+    <Compile Include="Migrations\201708161546183_updateTrinhdo.Designer.cs">
+      <DependentUpon>201708161546183_updateTrinhdo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\TimGiaSu.cs" />
     <Compile Include="Models\DangKyGiaSu.cs" />
+    <Compile Include="Models\QueQuan.cs" />
+    <Compile Include="Models\SystemLog.cs" />
+    <Compile Include="Models\TrinhDo.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Userrole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ImgurService.cs" />
+    <Compile Include="Services\LoggingService.cs" />
+    <Compile Include="Shared\Enum.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-datetimepicker.css" />
@@ -204,6 +234,7 @@
     <Content Include="Content\img\topnav-bg.jpg" />
     <Content Include="Content\js\bootstrap.js" />
     <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Scripts\common.js" />
     <Content Include="Content\js\jquery.js" />
     <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\css\fileinput.css" />
     <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\css\fileinput.min.css" />
@@ -286,13 +317,14 @@
     <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\package.json" />
     <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\README.md" />
     <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\sass\fileinput.scss" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\DangKyLamGiaSu\index.js" />
-    <Content Include="Scripts\DangKyTimGiaSu\index.js" />
+    <Content Include="Scripts\TrangChu\dangKyLamGiaSu.js" />
+    <Content Include="Scripts\TrangChu\dangKyTimGiaSu.js" />
     <Content Include="Scripts\i18n\az.js" />
     <Content Include="Scripts\i18n\bg.js" />
     <Content Include="Scripts\i18n\ca.js" />
@@ -347,10 +379,12 @@
     <Content Include="Scripts\moment-with-locales.min.js" />
     <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\QuanLy\index.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\select2.js" />
     <Content Include="Scripts\select2.min.js" />
+    <Content Include="Scripts\site.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -365,26 +399,49 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\TrangChu\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Users\Create.cshtml" />
     <Content Include="Views\Users\Delete.cshtml" />
     <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
-    <Content Include="Views\DangKyLamGiaSu\Index.cshtml" />
-    <Content Include="Views\DangKyLamGiaSu\_DieuKhoan.cshtml" />
-    <Content Include="Views\DangKyTimGiaSu\Index.cshtml" />
-    <Content Include="Views\DangKyTimGiaSu\_DieuKhoan.cshtml" />
+    <Content Include="Views\TrangChu\DangKyLamGiaSu.cshtml" />
+    <Content Include="Views\TrangChu\_DieuKhoanDangKyGiaSu.cshtml" />
+    <Content Include="Views\TrangChu\YeuCauTimGiaSu.cshtml" />
+    <Content Include="Views\TrangChu\_DieuKhoanTimGiaSu.cshtml" />
+    <Content Include="Views\Shared\_ThongBao.cshtml" />
+    <Content Include="Views\Shared\_QuanLyLayout.cshtml" />
+    <Content Include="Views\QuanLy\Index.cshtml" />
+    <Content Include="Views\QuanLy\_WantToBeTutor.cshtml" />
+    <Content Include="Views\QuanLy\_SystemLogs.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\API\" />
+    <Folder Include="Views\Base\" />
+    <Folder Include="Views\Common\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201708091726424_Init.resx">
+      <DependentUpon>201708091726424_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708151655237_updateLogging.resx">
+      <DependentUpon>201708151655237_updateLogging.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708161501450_updateTimGiaSu.resx">
+      <DependentUpon>201708161501450_updateTimGiaSu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708161525167_updateDangKyGiaSu.resx">
+      <DependentUpon>201708161525167_updateDangKyGiaSu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708161546183_updateTrinhdo.resx">
+      <DependentUpon>201708161546183_updateTrinhdo.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

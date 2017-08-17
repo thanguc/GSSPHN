@@ -1,0 +1,255 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>@ViewBag.Title</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/Content/css/bootstrap.css">
+    @*<link rel="stylesheet" href="~/Content/bootstrap.yeti.css" />*@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" />
+    <link rel="stylesheet" href="~/Content/select2-bootstrap.css" />
+    <link rel="stylesheet" href="~/Content/bootstrap-datetimepicker.css" />
+    @*<link href="~/Content/kartik-v-bootstrap-fileinput-db72623/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />*@
+    <!-- Custom CSS -->
+    <link href="~/Content/Site.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/font-awesome/css/font-awesome-animation.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <style>
+        .glyphicon {
+            margin-right: 10px;
+        }
+
+        .panel-body {
+            padding: 0px;
+        }
+
+            .panel-body table tr td {
+                padding-left: 15px
+            }
+
+            .panel-body .table {
+                margin-bottom: 0px;
+            }
+
+            .row{
+                margin:0;
+            }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Default Modernizr JS -->
+    <script src="/Scripts/modernizr-2.6.2.js"></script>
+    <script type="text/javascript">
+        //<![CDATA[
+        window.onload = function () {
+            $(".end").nextAll().hide();
+        }//]]>
+    </script>
+</head>
+<body>
+    <div class="row">
+        <header id="header" class="navbar navbar-default topnav">
+            <div class="container topnav">
+                <a class="navbar-brand topnav" href="/" style="padding:0px;margin-top:0px;"><img src="https://uphinhnhanh.com/images/2017/03/28/logo.jpg" width="128" height="128" /></a>
+                <div class="pull-right phone-call">
+                    <a href="tel:+84981494418">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle-thin fa-stack-2x faa-burst animated"></i>
+                            <i class="fa fa-phone fa-stack-1x faa-ring animated fa-2x"></i>
+                        </span>
+                        0981 494 418
+                    </a>
+                </div>
+
+            </div>
+        </header>
+    </div>
+    <div class="row">
+        <div class="col-md-2" style="padding:0;">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                <span class="glyphicon glyphicon-folder-close">
+                                </span>Content
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-pencil text-primary"></span><a href="http://www.jquery2dotnet.com">Articles</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-flash text-success"></span><a href="http://www.jquery2dotnet.com">News</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-file text-info"></span><a href="http://www.jquery2dotnet.com">Newsletters</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-comment text-success"></span><a href="http://www.jquery2dotnet.com">Comments</a>
+                                        <span class="badge">42</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                <span class="glyphicon glyphicon-th">
+                                </span>Site Modules
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <a href="/QuanLy/AddCategory">Add Category <i class="fa fa-plus-square"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/QuanLy/AddCategoryService">Add Category Service <i class="fa fa-plus-circle"></i></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                <span class="glyphicon glyphicon-user">
+                                </span>Account Management
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <a href="http://www.jquery2dotnet.com">Change Password</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="http://www.jquery2dotnet.com">Notifications</a> <span class="label label-info">5</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="http://www.jquery2dotnet.com">Import/Export</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-trash text-danger"></span><a href="http://www.jquery2dotnet.com" class="text-danger">
+                                            Delete Account
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseReport">
+                                <span class="glyphicon glyphicon-file">
+                                </span>Reports
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseReport" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-graduation-cap"></i> <a href="#" class="btn-load-dangkylamgiasu">Want to be tutor</a> <span class="label label-info pull-right"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-search" style="width:18px;"></i> <a href="#" class="btn-load-dangkytimgiasu">Looking for tutor</a> <span class="label label-success pull-right"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-envelope" style="width:18px;"></i> <a href="#" class="btn-load-feedback">Feedback</a> <span class="label label-warning pull-right"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-file-text" style="width:18px;"></i> <a href="#" class="btn-load-log">Logs</a> <span class="label label-primary pull-right"></span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10" style="padding:0;">
+            <div class="well">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+    <a class="back-to-top" style="display:none">
+        <i class="fa fa-chevron-circle-up fa-4x"></i>
+    </a>
+
+    @*</div>*@
+
+    <!-- jQuery -->
+    <script src="~/Content/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    @*<script src="~/Content/kartik-v-bootstrap-fileinput-db72623/js/plugins/canvas-to-blob.min.js"></script>
+        <script src="~/Content/kartik-v-bootstrap-fileinput-db72623/js/fileinput.min.js"></script>*@
+    <script src="~/Scripts/moment.js"></script>
+    <script src="~/Content/js/bootstrap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/i18n/vi.js"></script>
+    <script src="~/Scripts/bootstrap-datetimepicker.js"></script>
+
+    <!-- Responsive -->
+    <script src="/Scripts/respond.js"></script>
+    <script src="~/Scripts/site.js"></script>
+    <script src="~/Scripts/common.js"></script>
+    @RenderSection("scripts", required: false)
+    <div class="end"></div>
+</body>
+</html>
