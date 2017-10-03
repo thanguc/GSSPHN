@@ -9,6 +9,5 @@ namespace EmptyWeb.Models
         public string Password { get; set; }
         public Guid UserroleID { get; set; }
 
-
     }
 }

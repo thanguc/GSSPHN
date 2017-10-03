@@ -27,5 +27,10 @@ namespace EmptyWeb.Controllers
         {
             ViewBag.AlertMessage = alert;
         }
+
+        protected ActionResult OK()
+        {
+            return new HttpStatusCodeResult(200);
+        }
     }
 }

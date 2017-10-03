@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" />
     <link rel="stylesheet" href="~/Content/select2-bootstrap.css" />
     <link rel="stylesheet" href="~/Content/bootstrap-datetimepicker.css" />
+    <link rel="stylesheet" href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" />
+    <link rel="stylesheet" href="~/Content/bootstrap3-editable/css/bootstrap-editable.css" />
     @*<link href="~/Content/kartik-v-bootstrap-fileinput-db72623/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />*@
     <!-- Custom CSS -->
     <link href="~/Content/Site.css" rel="stylesheet">
@@ -40,9 +42,13 @@
                 margin-bottom: 0px;
             }
 
-            .row{
-                margin:0;
-            }
+        .row {
+            margin: 0;
+        }
+
+        a:hover{
+            cursor:pointer;
+        }
     </style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -53,6 +59,9 @@
     <![endif]-->
     <!-- Default Modernizr JS -->
     <script src="/Scripts/modernizr-2.6.2.js"></script>
+
+    <script src="//cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
+
     <script type="text/javascript">
         //<![CDATA[
         window.onload = function () {
@@ -84,15 +93,56 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseReport">
+                                <span class="glyphicon glyphicon-file">
+                                </span>Reports
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseReport" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-graduation-cap"></i> <a class="btn-load-dangkylamgiasu">Đăng ký làm gia sư</a> <span class="badge pull-right"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-search" style="width:18px;"></i> <a class="btn-load-yeucautimgiasu">Yêu cầu tìm gia sư</a> <span class="badge pull-right"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-envelope" style="width:18px;"></i> <a class="btn-load-feedback">Feedback</a> <span class="badge pull-right"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-file-text" style="width:18px;"></i> <a class="btn-load-log">Logs</a> <span class="badge pull-right"></span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
                                 <span class="glyphicon glyphicon-folder-close">
                                 </span>Content
                             </a>
                         </h4>
                     </div>
-                    <div id="collapseOne" class="panel-collapse collapse in">
+                    <div id="collapseOne" class="panel-collapse collapse">
                         <div class="panel-body">
                             <table class="table">
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-th" style="width:18px;"></i> <a class="btn-load-muc">Mục</a>
+                                    </td>
+                                </tr>
                                 <tr>
                                     <td>
                                         <span class="glyphicon glyphicon-pencil text-primary"></span><a href="http://www.jquery2dotnet.com">Articles</a>
@@ -130,14 +180,10 @@
                     <div id="collapseTwo" class="panel-collapse collapse">
                         <div class="panel-body">
                             <table class="table">
+                                
                                 <tr>
                                     <td>
-                                        <a href="/QuanLy/AddCategory">Add Category <i class="fa fa-plus-square"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="/QuanLy/AddCategoryService">Add Category Service <i class="fa fa-plus-circle"></i></a>
+                                        <i class="fa fa-plus-square"></i> <a class="btn-load-chuyenmuc">Chuyên mục</a>
                                     </td>
                                 </tr>
                             </table>
@@ -182,48 +228,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseReport">
-                                <span class="glyphicon glyphicon-file">
-                                </span>Reports
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="collapseReport" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <table class="table">
-                                <tr>
-                                    <td>
-                                        <i class="fa fa-graduation-cap"></i> <a href="#" class="btn-load-dangkylamgiasu">Want to be tutor</a> <span class="label label-info pull-right"></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <i class="fa fa-search" style="width:18px;"></i> <a href="#" class="btn-load-dangkytimgiasu">Looking for tutor</a> <span class="label label-success pull-right"></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <i class="fa fa-envelope" style="width:18px;"></i> <a href="#" class="btn-load-feedback">Feedback</a> <span class="label label-warning pull-right"></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <i class="fa fa-file-text" style="width:18px;"></i> <a href="#" class="btn-load-log">Logs</a> <span class="label label-primary pull-right"></span>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
         <div class="col-md-10" style="padding:0;">
-            <div class="well">
-                @RenderBody()
-            </div>
+            @RenderBody()
         </div>
     </div>
 
@@ -244,6 +253,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/i18n/vi.js"></script>
     <script src="~/Scripts/bootstrap-datetimepicker.js"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <script src="~/Scripts/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
 
     <!-- Responsive -->
     <script src="/Scripts/respond.js"></script>

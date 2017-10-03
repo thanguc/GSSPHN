@@ -1,15 +1,18 @@
-﻿$.fn.AjaxData = function (url, params, success, failure) {
+﻿$.fn.AjaxData = function (url, params, onSuccess, onFailure) {
     $.ajax({
         url: url,
         type: 'post',
         data: params,
-        dataType: 'json',
         success: function (data) {
-            success(data);
+            if (onSuccess) {
+                onSuccess(data);
+            }
         },
         error: function (data) {
-            if (failure) {
-                failure(data);
+            if (onFailure) {
+                onFailure(data);
+            } else {
+                alert('Có lỗi đã xảy ra! Xin vui lòng thử lại sau hoặc liên hệ với admin.');
             }
         }
     });
@@ -26,6 +29,56 @@ $.fn.AjaxHtml = function (url, params) {
             $this.empty().html(html);
         }
     });
+};
+
+$.fn.AjaxDialog = function (url, params) {
+    var $this = $(this);
+    $.ajax({
+        url: url,
+        type: 'post',
+        data: params,
+        dataType: 'html',
+        success: function (html) {
+            var $modal = $(html);
+            $this.parent().append($modal);
+            $modal.modal('show');
+            $('.modal-backdrop.in:not(.fade)').remove();
+            $modal.on('hidden.bs.modal', function () {
+                $modal.remove();
+            });
+        }
+    });
+};
+
+$.fn.formize = function () {
+    return new Formize($(this));
+};
+
+function Formize($this) {
+    this.self = $this;
+
+    this.action = $this.attr('action');
+
+    this.get = function (field) {
+        return $this.find('[name="' + field + '"]').val();
+    };
+
+    this.set = function (field, value) {
+        $this.find('[name="' + field + '"]').val(value);
+    };
+
+    this.field = function (field) {
+        return $this.find('[name="' + field + '"]');
+    }
+
+    this.destroy = function () {
+        this.self = null;
+        this.action = null;
+        this.get = undefined;
+        this.set = undefined;
+        this.field = undefined;
+        this.destroy = undefined;
+    };
 };
 
 $.fn.bindSelect2 = function (rawData, placeholder, hideSearch, startId) {
@@ -46,3 +99,27 @@ $.fn.bindSelect2 = function (rawData, placeholder, hideSearch, startId) {
         $this.select2('val', $this.attr('value'));
     }
 };
+
+function closeOpeningModal(onHiddenMethod) {
+    $openingModal = $('.modal.in');
+    if (onHiddenMethod != null && onHiddenMethod != undefined) {
+        $openingModal.on('hidden.bs.modal', function () {
+            onHiddenMethod();
+            $openingModal.off('hidden.bs.modal');
+        });
+    }
+    $openingModal.modal('hide');
+}
+
+function normalize(str) {
+    str = str.toLowerCase();
+    str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
+    str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
+    str = str.replace(/ì|í|ị|ỉ|ĩ/g, "i");
+    str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, "o");
+    str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u");
+    str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y");
+    str = str.replace(/đ/g, "d");
+    str = str.replace(/ /g, "-");
+    return str;
+}

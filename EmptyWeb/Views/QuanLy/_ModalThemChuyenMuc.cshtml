@@ -1,0 +1,81 @@
+﻿@using EmptyWeb.Models
+@model ChuyenMuc
+@{
+    var isNew = Model.MucId == null;
+}
+
+
+@if (isNew)
+{
+    <a class="pull-right btn btn-sm btn-primary hide btn-add-chuyen-muc" data-toggle="modal" data-target="#modal-chuyen-muc--@(isNew ? "new" : Model.ChuyenMucId.ToString())">
+        Thêm chuyên mục <i class="fa fa-plus fw"></i>
+    </a>
+}
+else
+{
+    <a class="btn btn-xs btn-warning pull-right btn-edit" data-toggle="modal" data-target="#modal-chuyen-muc--@Model.ChuyenMucId">
+        <i class="fa fa-edit"></i>
+    </a>
+}
+<div id="modal-chuyen-muc--@(isNew ? "new" : Model.ChuyenMucId.ToString())" class="modal fade modal-lg @(isNew ? "create" : "update")" role="dialog">
+    <div class="modal-dialog no-margin" style="width:100%">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">
+                    @if (isNew)
+                    {
+                        <span><i class="fa fa-plus-square"></i> Thêm Chuyên Mục</span>
+                    }
+                    else
+                    {
+                        <span><i class="fa fa-edit fw"></i> Chỉnh sửa Chuyên mục - </span><span class="text-effect-blur">@Model.TieuDe</span>
+                    }
+                </h4>
+            </div>
+            <form action="/QuanLy/AddEditChuyenMuc" method="post" onkeypress="return event.keyCode != 13;">
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        <input type="hidden" name="ChuyenMucId" value="@(isNew ? string.Empty : Model.ChuyenMucId.ToString())" />
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Tiêu đề</label>
+                            <input class="form-control" name="TieuDe" type="text" style="max-width:350px; width:350px;" autocomplete="off" value="@Model.TieuDe" required />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Đường dẫn</label>
+                            <div class="fixed-placeholder" data-placeholder="http://giasu24h.hanoi.vn/ChuyenMuc/">
+                                <input class="form-control" name="Url" type="text" style="max-width:600px; width:600px; padding-left: 240px;" autocomplete="off" value="@Model.Url" required />
+                            </div>
+                        </div>
+                        <div class="checkbox col-md-offset-2">
+                            <label><input name="IsHidden" type="checkbox" @(Model.IsHidden ? "checked" : string.Empty) @(isNew ? string.Empty : "style=margin-top:10px;") /> Ẩn khỏi menu?</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Nội dung</label>
+                        </div>
+                        <textarea class="form-control" name="NoiDung" id="NoiDung-@(isNew ? "new" : Model.ChuyenMucId.ToString())" @*style="max-width:350px; width:350px;"*@>
+                            @Model.NoiDung
+                        </textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success btn-action-confirm">@(isNew ? "Tạo" : "Cập nhật")</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    $(function () {
+        CKEDITOR.replace("NoiDung-@(isNew ? "new" : Model.ChuyenMucId.ToString())");
+
+        var $editModals = $('#modal-chuyen-muc--@(isNew ? "new" : Model.ChuyenMucId.ToString())');
+
+        $editModals.find('input[name="TieuDe"]').on('keyup', function () {
+            $editModals.find('input[name="Url"]').val(normalize($(this).val()));
+        });
+    });
+</script>

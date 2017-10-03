@@ -36,3 +36,12 @@ C:\Users\ThangUC\Documents\Visual Studio 2013\Projects\GSSPHN\EmptyWeb\obj\Debug
 C:\Users\ThangUC\Documents\Visual Studio 2013\Projects\GSSPHN\EmptyWeb\obj\Debug\EmptyWeb.Migrations.updateTimGiaSu.resources
 C:\Users\ThangUC\Documents\Visual Studio 2013\Projects\GSSPHN\EmptyWeb\obj\Debug\EmptyWeb.Migrations.updateDangKyGiaSu.resources
 C:\Users\ThangUC\Documents\Visual Studio 2013\Projects\GSSPHN\EmptyWeb\obj\Debug\EmptyWeb.Migrations.updateTrinhdo.resources
+C:\Users\ThangUC\Documents\Visual Studio 2013\Projects\GSSPHN\EmptyWeb\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\ThangUC\Documents\Visual Studio 2013\Projects\GSSPHN\EmptyWeb\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\ThangUC\Documents\Visual Studio 2013\Projects\GSSPHN\EmptyWeb\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\ThangUC\Documents\Visual Studio 2013\Projects\GSSPHN\EmptyWeb\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\ThangUC\Documents\Visual Studio 2013\Projects\GSSPHN\EmptyWeb\obj\Debug\EmptyWeb.Migrations.addMucChuyenMuc.resources
+C:\Users\ThangUC\Documents\Visual Studio 2013\Projects\GSSPHN\EmptyWeb\obj\Debug\EmptyWeb.Migrations.addMucChuyenMuc2.resources
+C:\Users\ThangUC\Documents\Visual Studio 2013\Projects\GSSPHN\EmptyWeb\obj\Debug\EmptyWeb.Migrations.updateNullableMucId.resources
+C:\Users\ThangUC\Documents\Visual Studio 2013\Projects\GSSPHN\EmptyWeb\obj\Debug\EmptyWeb.Migrations.updateChuyenMuc.resources
+C:\Users\ThangUC\Documents\Visual Studio 2013\Projects\GSSPHN\EmptyWeb\obj\Debug\EmptyWeb.Migrations.UpdateMucSortNumber.resources

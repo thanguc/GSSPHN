@@ -27,4 +27,17 @@
     $('#homeMessage').on('hidden.bs.modal', function () {
         window.location.replace("http://giasu24h.hanoi.vn");
     });
+
+    $('#accordion td a').on('click', function () {
+        $('#accordion td a').parent('td').removeClass('active');
+        $(this).parent('td').addClass('active');
+    });
+
+    $(document).on('show.bs.modal', '.modal', function () {
+        $('body').addClass('hide-scrollbar');
+    });
+
+    $(document).on('hide.bs.modal', '.modal', function () {
+        $('body').removeClass('hide-scrollbar');
+    });
 });

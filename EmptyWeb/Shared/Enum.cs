@@ -30,15 +30,13 @@
 
     public static class Parser
     {
-        public static string TrinhDo(int i)
+        public static string TrangThaiDangKy(TrangThaiDangKy status)
         {
-            switch (i)
+            switch (status)
             {
-                case 0: return "Sinh Viên";
-                case 1: return "Giáo Viên";
-                case 2: return "Giảng Viên";
-                case 3: return "Trợ Giảng";
-                case 4: return "Khác";
+                case Shared.TrangThaiDangKy.Approved: return "<label class='label label-success'>Đã duyệt</label>";
+                case Shared.TrangThaiDangKy.Submitted: return "<label class='label label-warning'>Chưa duyệt</label>";
+                case Shared.TrangThaiDangKy.Rejected: return "<label class='label label-danger'>Đã bỏ</label>";
                 default: return string.Empty;
             }
         }

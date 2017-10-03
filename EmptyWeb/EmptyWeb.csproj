@@ -53,6 +53,12 @@
       <HintPath>..\packages\Imgur.API.4.0.1\lib\net45\Imgur.API.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -153,7 +159,29 @@
     <Compile Include="Migrations\201708161546183_updateTrinhdo.Designer.cs">
       <DependentUpon>201708161546183_updateTrinhdo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708191215361_addMucChuyenMuc.cs" />
+    <Compile Include="Migrations\201708191215361_addMucChuyenMuc.Designer.cs">
+      <DependentUpon>201708191215361_addMucChuyenMuc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708191218452_addMucChuyenMuc2.cs" />
+    <Compile Include="Migrations\201708191218452_addMucChuyenMuc2.Designer.cs">
+      <DependentUpon>201708191218452_addMucChuyenMuc2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708281146218_updateNullableMucId.cs" />
+    <Compile Include="Migrations\201708281146218_updateNullableMucId.Designer.cs">
+      <DependentUpon>201708281146218_updateNullableMucId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709221804127_updateChuyenMuc.cs" />
+    <Compile Include="Migrations\201709221804127_updateChuyenMuc.Designer.cs">
+      <DependentUpon>201709221804127_updateChuyenMuc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710031231244_UpdateMucSortNumber.cs" />
+    <Compile Include="Migrations\201710031231244_UpdateMucSortNumber.Designer.cs">
+      <DependentUpon>201710031231244_UpdateMucSortNumber.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\ChuyenMuc.cs" />
+    <Compile Include="Models\Muc.cs" />
     <Compile Include="Models\TimGiaSu.cs" />
     <Compile Include="Models\DangKyGiaSu.cs" />
     <Compile Include="Models\QueQuan.cs" />
@@ -169,12 +197,18 @@
   <ItemGroup>
     <Content Include="Content\bootstrap-datetimepicker.css" />
     <Content Include="Content\bootstrap-datetimepicker.min.css" />
+    <Content Include="Content\bootstrap-editable\css\bootstrap-editable.css" />
+    <Content Include="Content\bootstrap-editable\img\clear.png" />
+    <Content Include="Content\bootstrap-editable\img\loading.gif" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.yeti.css" />
     <Content Include="Content\bootstrap.yeti.min.css" />
+    <Content Include="Content\bootstrap3-editable\css\bootstrap-editable.css" />
+    <Content Include="Content\bootstrap3-editable\img\clear.png" />
+    <Content Include="Content\bootstrap3-editable\img\loading.gif" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\landing-page.css" />
@@ -232,8 +266,41 @@
     <Content Include="Content\img\logo.jpg" />
     <Content Include="Content\img\phones.png" />
     <Content Include="Content\img\topnav-bg.jpg" />
+    <Content Include="Content\inputs-ext\address\address.css" />
+    <Content Include="Content\inputs-ext\typeaheadjs\lib\typeahead.js-bootstrap.css" />
+    <Content Include="Content\inputs-ext\wysihtml5\bootstrap-wysihtml5-0.0.2\bootstrap-wysihtml5-0.0.2.css" />
+    <Content Include="Content\inputs-ext\wysihtml5\bootstrap-wysihtml5-0.0.2\wysiwyg-color.css" />
+    <Content Include="Content\jquery-editable\css\jquery-editable.css" />
+    <Content Include="Content\jquery-editable\img\clear.png" />
+    <Content Include="Content\jquery-editable\img\loading.gif" />
+    <Content Include="Content\jquery-editable\jquery-ui-datepicker\css\redmond\images\animated-overlay.gif" />
+    <Content Include="Content\jquery-editable\jquery-ui-datepicker\css\redmond\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\jquery-editable\jquery-ui-datepicker\css\redmond\images\ui-bg_flat_55_fbec88_40x100.png" />
+    <Content Include="Content\jquery-editable\jquery-ui-datepicker\css\redmond\images\ui-bg_glass_75_d0e5f5_1x400.png" />
+    <Content Include="Content\jquery-editable\jquery-ui-datepicker\css\redmond\images\ui-bg_glass_85_dfeffc_1x400.png" />
+    <Content Include="Content\jquery-editable\jquery-ui-datepicker\css\redmond\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\jquery-editable\jquery-ui-datepicker\css\redmond\images\ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
+    <Content Include="Content\jquery-editable\jquery-ui-datepicker\css\redmond\images\ui-bg_inset-hard_100_f5f8f9_1x100.png" />
+    <Content Include="Content\jquery-editable\jquery-ui-datepicker\css\redmond\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="Content\jquery-editable\jquery-ui-datepicker\css\redmond\images\ui-icons_217bc0_256x240.png" />
+    <Content Include="Content\jquery-editable\jquery-ui-datepicker\css\redmond\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\jquery-editable\jquery-ui-datepicker\css\redmond\images\ui-icons_469bdd_256x240.png" />
+    <Content Include="Content\jquery-editable\jquery-ui-datepicker\css\redmond\images\ui-icons_6da8d5_256x240.png" />
+    <Content Include="Content\jquery-editable\jquery-ui-datepicker\css\redmond\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\jquery-editable\jquery-ui-datepicker\css\redmond\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="Content\jquery-editable\jquery-ui-datepicker\css\redmond\images\ui-icons_f9bd01_256x240.png" />
+    <Content Include="Content\jquery-editable\jquery-ui-datepicker\css\redmond\jquery-ui-1.10.3.custom.css" />
+    <Content Include="Content\jquery-editable\jquery-ui-datepicker\css\redmond\jquery-ui-1.10.3.custom.min.css" />
+    <Content Include="Content\jqueryui-editable\css\jqueryui-editable.css" />
+    <Content Include="Content\jqueryui-editable\img\clear.png" />
+    <Content Include="Content\jqueryui-editable\img\loading.gif" />
     <Content Include="Content\js\bootstrap.js" />
     <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap-editable\js\bootstrap-editable.js" />
+    <Content Include="Scripts\bootstrap-editable\js\bootstrap-editable.min.js" />
+    <Content Include="Scripts\bootstrap-toggle.js" />
+    <Content Include="Scripts\bootstrap3-editable\js\bootstrap-editable.js" />
+    <Content Include="Scripts\bootstrap3-editable\js\bootstrap-editable.min.js" />
     <Content Include="Scripts\common.js" />
     <Content Include="Content\js\jquery.js" />
     <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\css\fileinput.css" />
@@ -317,12 +384,27 @@
     <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\package.json" />
     <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\README.md" />
     <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\sass\fileinput.scss" />
+    <Content Include="Content\bootstrap-toggle.less" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\inputs-ext\address\address.js" />
+    <Content Include="Scripts\inputs-ext\typeaheadjs\lib\typeahead.js" />
+    <Content Include="Scripts\inputs-ext\typeaheadjs\typeaheadjs.js" />
+    <Content Include="Scripts\inputs-ext\wysihtml5\bootstrap-wysihtml5-0.0.2\bootstrap-wysihtml5-0.0.2.js" />
+    <Content Include="Scripts\inputs-ext\wysihtml5\bootstrap-wysihtml5-0.0.2\bootstrap-wysihtml5-0.0.2.min.js" />
+    <Content Include="Scripts\inputs-ext\wysihtml5\bootstrap-wysihtml5-0.0.2\wysihtml5-0.3.0.js" />
+    <Content Include="Scripts\inputs-ext\wysihtml5\bootstrap-wysihtml5-0.0.2\wysihtml5-0.3.0.min.js" />
+    <Content Include="Scripts\inputs-ext\wysihtml5\wysihtml5.js" />
+    <Content Include="Scripts\jquery-editable\jquery-ui-datepicker\js\jquery-ui-1.10.3.custom.js" />
+    <Content Include="Scripts\jquery-editable\jquery-ui-datepicker\js\jquery-ui-1.10.3.custom.min.js" />
+    <Content Include="Scripts\jquery-editable\js\jquery-editable-poshytip.js" />
+    <Content Include="Scripts\jquery-editable\js\jquery-editable-poshytip.min.js" />
+    <Content Include="Scripts\jqueryui-editable\js\jqueryui-editable.js" />
+    <Content Include="Scripts\jqueryui-editable\js\jqueryui-editable.min.js" />
     <Content Include="Scripts\TrangChu\dangKyLamGiaSu.js" />
     <Content Include="Scripts\TrangChu\dangKyTimGiaSu.js" />
     <Content Include="Scripts\i18n\az.js" />
@@ -415,6 +497,11 @@
     <Content Include="Views\QuanLy\Index.cshtml" />
     <Content Include="Views\QuanLy\_WantToBeTutor.cshtml" />
     <Content Include="Views\QuanLy\_SystemLogs.cshtml" />
+    <Content Include="Views\QuanLy\_LookingForTutor.cshtml" />
+    <Content Include="Views\QuanLy\_Muc.cshtml" />
+    <Content Include="Views\QuanLy\_ChuyenMuc.cshtml" />
+    <Content Include="Views\QuanLy\_ChiTietMuc.cshtml" />
+    <Content Include="Views\QuanLy\_ModalThemChuyenMuc.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -441,6 +528,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708161546183_updateTrinhdo.resx">
       <DependentUpon>201708161546183_updateTrinhdo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708191215361_addMucChuyenMuc.resx">
+      <DependentUpon>201708191215361_addMucChuyenMuc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708191218452_addMucChuyenMuc2.resx">
+      <DependentUpon>201708191218452_addMucChuyenMuc2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708281146218_updateNullableMucId.resx">
+      <DependentUpon>201708281146218_updateNullableMucId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709221804127_updateChuyenMuc.resx">
+      <DependentUpon>201709221804127_updateChuyenMuc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710031231244_UpdateMucSortNumber.resx">
+      <DependentUpon>201710031231244_UpdateMucSortNumber.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
