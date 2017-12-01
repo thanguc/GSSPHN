@@ -7,13 +7,13 @@ namespace EmptyWeb.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class addMucChuyenMuc : IMigrationMetadata
+    public sealed partial class init : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addMucChuyenMuc));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(init));
         
         string IMigrationMetadata.Id
         {
-            get { return "201708191215361_addMucChuyenMuc"; }
+            get { return "201712011402314_init"; }
         }
         
         string IMigrationMetadata.Source

@@ -45,3 +45,42 @@ C:\Users\ThangUC\Documents\Visual Studio 2013\Projects\GSSPHN\EmptyWeb\obj\Debug
 C:\Users\ThangUC\Documents\Visual Studio 2013\Projects\GSSPHN\EmptyWeb\obj\Debug\EmptyWeb.Migrations.updateNullableMucId.resources
 C:\Users\ThangUC\Documents\Visual Studio 2013\Projects\GSSPHN\EmptyWeb\obj\Debug\EmptyWeb.Migrations.updateChuyenMuc.resources
 C:\Users\ThangUC\Documents\Visual Studio 2013\Projects\GSSPHN\EmptyWeb\obj\Debug\EmptyWeb.Migrations.UpdateMucSortNumber.resources
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\EmptyWeb.dll.config
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\EmptyWeb.dll
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\EmptyWeb.pdb
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\Antlr3.Runtime.dll
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\EntityFramework.dll
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\EntityFramework.SqlServer.dll
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\Imgur.API.dll
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\Newtonsoft.Json.dll
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\System.Web.Helpers.dll
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\System.Web.Mvc.dll
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\System.Web.Optimization.dll
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\System.Web.Razor.dll
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\System.Web.WebPages.Deployment.dll
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\System.Web.WebPages.dll
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\System.Web.WebPages.Razor.dll
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\WebGrease.dll
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\EntityFramework.xml
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\EntityFramework.SqlServer.xml
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\Imgur.API.xml
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\Newtonsoft.Json.xml
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\System.Web.Helpers.xml
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\System.Web.Mvc.xml
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\System.Web.Optimization.xml
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\System.Web.Razor.xml
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\System.Web.WebPages.xml
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\System.Web.WebPages.Deployment.xml
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\System.Web.WebPages.Razor.xml
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\Antlr3.Runtime.pdb
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\obj\Debug\EmptyWeb.csprojResolveAssemblyReference.cache
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\obj\Debug\EmptyWeb.csproj.CoreCompileInputs.cache
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\obj\Debug\EmptyWeb.dll
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\obj\Debug\EmptyWeb.pdb
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\obj\Debug\EmptyWeb.Migrations.init.resources
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\obj\Debug\EmptyWeb.csproj.GenerateResource.Cache

@@ -22,6 +22,7 @@
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <TargetFrameworkProfile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -139,45 +140,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201708091726424_Init.cs" />
-    <Compile Include="Migrations\201708091726424_Init.Designer.cs">
-      <DependentUpon>201708091726424_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708151655237_updateLogging.cs" />
-    <Compile Include="Migrations\201708151655237_updateLogging.Designer.cs">
-      <DependentUpon>201708151655237_updateLogging.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708161501450_updateTimGiaSu.cs" />
-    <Compile Include="Migrations\201708161501450_updateTimGiaSu.Designer.cs">
-      <DependentUpon>201708161501450_updateTimGiaSu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708161525167_updateDangKyGiaSu.cs" />
-    <Compile Include="Migrations\201708161525167_updateDangKyGiaSu.Designer.cs">
-      <DependentUpon>201708161525167_updateDangKyGiaSu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708161546183_updateTrinhdo.cs" />
-    <Compile Include="Migrations\201708161546183_updateTrinhdo.Designer.cs">
-      <DependentUpon>201708161546183_updateTrinhdo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708191215361_addMucChuyenMuc.cs" />
-    <Compile Include="Migrations\201708191215361_addMucChuyenMuc.Designer.cs">
-      <DependentUpon>201708191215361_addMucChuyenMuc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708191218452_addMucChuyenMuc2.cs" />
-    <Compile Include="Migrations\201708191218452_addMucChuyenMuc2.Designer.cs">
-      <DependentUpon>201708191218452_addMucChuyenMuc2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708281146218_updateNullableMucId.cs" />
-    <Compile Include="Migrations\201708281146218_updateNullableMucId.Designer.cs">
-      <DependentUpon>201708281146218_updateNullableMucId.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709221804127_updateChuyenMuc.cs" />
-    <Compile Include="Migrations\201709221804127_updateChuyenMuc.Designer.cs">
-      <DependentUpon>201709221804127_updateChuyenMuc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710031231244_UpdateMucSortNumber.cs" />
-    <Compile Include="Migrations\201710031231244_UpdateMucSortNumber.Designer.cs">
-      <DependentUpon>201710031231244_UpdateMucSortNumber.cs</DependentUpon>
+    <Compile Include="Migrations\201712011402314_init.cs" />
+    <Compile Include="Migrations\201712011402314_init.Designer.cs">
+      <DependentUpon>201712011402314_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ChuyenMuc.cs" />
@@ -514,35 +479,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201708091726424_Init.resx">
-      <DependentUpon>201708091726424_Init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708151655237_updateLogging.resx">
-      <DependentUpon>201708151655237_updateLogging.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708161501450_updateTimGiaSu.resx">
-      <DependentUpon>201708161501450_updateTimGiaSu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708161525167_updateDangKyGiaSu.resx">
-      <DependentUpon>201708161525167_updateDangKyGiaSu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708161546183_updateTrinhdo.resx">
-      <DependentUpon>201708161546183_updateTrinhdo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708191215361_addMucChuyenMuc.resx">
-      <DependentUpon>201708191215361_addMucChuyenMuc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708191218452_addMucChuyenMuc2.resx">
-      <DependentUpon>201708191218452_addMucChuyenMuc2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708281146218_updateNullableMucId.resx">
-      <DependentUpon>201708281146218_updateNullableMucId.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709221804127_updateChuyenMuc.resx">
-      <DependentUpon>201709221804127_updateChuyenMuc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710031231244_UpdateMucSortNumber.resx">
-      <DependentUpon>201710031231244_UpdateMucSortNumber.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712011402314_init.resx">
+      <DependentUpon>201712011402314_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
