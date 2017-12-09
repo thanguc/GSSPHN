@@ -1,5 +1,5 @@
 ﻿@using EmptyWeb.Shared
-@{ 
+@{
     AlertMessage? msg = (AlertMessage?)ViewBag.AlertMessage;
 }
 
@@ -75,68 +75,52 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-left">
                     <li>@Html.ActionLink("GIỚI THIỆU", "About", "Home")</li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">GIA SƯ CẤP <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">GIA SƯ TIỂU HỌC (LỚP 1 - 5)</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">GIA SƯ TRUNG HỌC CƠ SỞ (LỚP 6 - 9)</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">GIA SƯ TRUNG HỌC PHỔ THÔNG (LỚP 10 - 12)</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">LUYỆN THI <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">ÔN THI VÀO LỚP 10</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">ÔN THI TỐT NGHIỆP CẤP 3</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">LUYỆN THI ĐẠI HỌC</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">LUYỆN THI OLYMPIC</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">NGOẠI NGỮ <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">GIA SƯ TIẾNG ANH</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">GIA SƯ TIẾNG PHÁP</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">GIA SƯ TIẾNG ĐỨC</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">GIA SƯ TIẾNG HÀN</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">GIA SƯ TIẾNG TRUNG</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">NGOẠI NGỮ CHO NGƯỜI ĐI LÀM</a></li>
+                    @{
+                        var mucs = PageHelper.GetAllMuc().Where(m => !m.IsHidden);
+                        foreach (var muc in mucs)
+                        {
+                            var cms = muc.ChuyenMucs.Where(c => !c.IsHidden).ToList();
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@muc.TieuDe.ToUpper() <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
 
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">GIA SƯ MÔN <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">GIA SƯ TOÁN - LÝ - HÓA</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">GIA SƯ NGỮ VĂN</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">GIA SƯ LỊCH SỬ</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">GIA SƯ SINH HỌC</a></li>
-                        </ul>
-                    </li>
-                    <li>@Html.ActionLink("GIA SƯ DẠY NĂNG KHIẾU", "About", "Home")</li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">GIA SƯ KHÁC <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">GIA SƯ DẠY VIẾT</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">GIA SƯ TẬP ĐỌC</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">GIA SƯ TRẺ TỰ KỶ</a></li>
-                        </ul>
-                    </li>
+                                    @foreach (var cm in cms)
+                                    {
+                                        <li><a href="http://giasu24h.hanoi.vn/ChuyenMuc/@cm.Url">@cm.TieuDe.ToUpper()</a></li>
+                                        if (cms.IndexOf(cm) != cms.Count - 1)
+                                        {
+                                            <li role="separator" class="divider"></li>
+                                        }
+                                    }
+                                </ul>
+                            </li>
+                        }
+                    }
+                    @if (PageHelper.IsAuthenticated())
+                    {
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@PageHelper.CurrentUserName() <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/QuanLy/"><i class="fa fa-user-circle fa-fw"></i> Quản lý</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li>
+                                    <a href="javascript:{}" onclick="$('.form-logout').submit();"><i class="fa fa-sign-out fa-fw"></i> Đăng xuất</a>
+                                    <form action="/TaiKhoan/Logout" method="post" class="form-logout"></form>
+                                </li>
+                            </ul>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Thành viên <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/TrangChu/DangKyLamGiaSu"><i class="fa fa-user-plus fa-fw"></i> Đăng ký</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="/TaiKhoan/Login"><i class="fa fa-sign-in fa-fw"></i> Đăng nhập</a></li>
+                            </ul>
+                        </li>
+                    }
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

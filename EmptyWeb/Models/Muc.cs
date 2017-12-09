@@ -1,12 +1,12 @@
-﻿using System;
+﻿using EmptyWeb.Data;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EmptyWeb.Models
 {
-    public class Muc
+    public class Muc : IValidatableObject
     {
         public Guid MucId { get; set; } = Guid.NewGuid();
         public string TieuDe { get; set; }
@@ -14,5 +14,14 @@ namespace EmptyWeb.Models
         public int SortNumber { get; set; }
 
         public virtual ICollection<ChuyenMuc> ChuyenMucs { get; set; }
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            using (var db = new AppDbContext())
+            {
+                if (db.Muc.Any(m => m.TieuDe == this.TieuDe && m.MucId != this.MucId))
+                    yield return new ValidationResult("Tiêu đề mục đã tồn tại", new[] { "TieuDe" });
+            }
+        }
     }
 }

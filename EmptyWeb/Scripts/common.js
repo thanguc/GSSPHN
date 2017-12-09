@@ -1,22 +1,56 @@
-﻿$.fn.AjaxData = function (url, params, onSuccess, onFailure) {
+﻿$.fn.AjaxPost = function (options) {
     $.ajax({
-        url: url,
+        url: options.url,
         type: 'post',
-        data: params,
-        success: function (data) {
-            if (onSuccess) {
-                onSuccess(data);
+        data: options.data,
+        success: function (r) {
+            if (r.Error) {
+                if (options.onError) {
+                    options.onError(r.Error);
+                } else {
+                    alert(r.Error);
+                }
+            } else if (options.onSuccess) {
+                options.onSuccess(r);
             }
         },
-        error: function (data) {
-            if (onFailure) {
-                onFailure(data);
+        error: function (r) {
+            if (options.onError) {
+                options.onError(r);
             } else {
                 alert('Có lỗi đã xảy ra! Xin vui lòng thử lại sau hoặc liên hệ với admin.');
             }
         }
     });
-}
+};
+
+$.fn.AjaxFormData = function (options) {
+    $.ajax({
+        url: options.url,
+        type: 'post',
+        data: options.data,
+        processData: false,
+        contentType: false,
+        success: function (r) {
+            if (r.Error) {
+                if (options.onError) {
+                    options.onError(r.Error);
+                } else {
+                    alert(r.Error);
+                }
+            } else if (options.onSuccess) {
+                options.onSuccess(r);
+            }
+        },
+        error: function (r) {
+            if (options.onError) {
+                options.onError(r);
+            } else {
+                alert('Có lỗi đã xảy ra! Xin vui lòng thử lại sau hoặc liên hệ với admin.');
+            }
+        }
+    });
+};
 
 $.fn.AjaxHtml = function (url, params) {
     var $this = $(this);
@@ -69,7 +103,17 @@ function Formize($this) {
 
     this.field = function (field) {
         return $this.find('[name="' + field + '"]');
-    }
+    };
+
+    //this.isValid = function () {
+    //    console.log('ivl');
+    //    $this.on("submit", function (e) {
+    //        console.log('sm');
+    //        e.preventDefault();
+    //    });
+    //    $this.submit();
+    //    return $this.checkValidity();
+    //};
 
     this.destroy = function () {
         this.self = null;
@@ -79,7 +123,7 @@ function Formize($this) {
         this.field = undefined;
         this.destroy = undefined;
     };
-};
+}
 
 $.fn.bindSelect2 = function (rawData, placeholder, hideSearch, startId) {
     var selectData = [];
@@ -100,26 +144,28 @@ $.fn.bindSelect2 = function (rawData, placeholder, hideSearch, startId) {
     }
 };
 
-function closeOpeningModal(onHiddenMethod) {
-    $openingModal = $('.modal.in');
-    if (onHiddenMethod != null && onHiddenMethod != undefined) {
-        $openingModal.on('hidden.bs.modal', function () {
-            onHiddenMethod();
-            $openingModal.off('hidden.bs.modal');
-        });
-    }
-    $openingModal.modal('hide');
-}
+var SITE = new function () {
+    this.normalize = function (str) {
+        str = str.toLowerCase();
+        str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
+        str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
+        str = str.replace(/ì|í|ị|ỉ|ĩ/g, "i");
+        str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, "o");
+        str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u");
+        str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y");
+        str = str.replace(/đ/g, "d");
+        str = str.replace(/ /g, "-");
+        return str;
+    };
 
-function normalize(str) {
-    str = str.toLowerCase();
-    str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
-    str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
-    str = str.replace(/ì|í|ị|ỉ|ĩ/g, "i");
-    str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, "o");
-    str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u");
-    str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y");
-    str = str.replace(/đ/g, "d");
-    str = str.replace(/ /g, "-");
-    return str;
-}
+    this.closeOpeningModal = function (onHiddenMethod) {
+        $openingModal = $('.modal.in');
+        if (onHiddenMethod !== null && onHiddenMethod !== undefined) {
+            $openingModal.on('hidden.bs.modal', function () {
+                onHiddenMethod();
+                $openingModal.off('hidden.bs.modal');
+            });
+        }
+        $openingModal.modal('hide');
+    };
+};

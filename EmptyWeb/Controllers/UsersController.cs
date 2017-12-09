@@ -8,10 +8,12 @@ using System.Web;
 using System.Web.Mvc;
 using EmptyWeb.Models;
 using EmptyWeb.Data;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNet.Identity;
 
 namespace EmptyWeb.Controllers
 {
-    public class UsersController : Controller
+    public class UsersController : BaseController
     {
         private AppDbContext db = new AppDbContext();
 
@@ -46,17 +48,29 @@ namespace EmptyWeb.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "UserID,Username,Password")] User user)
+        public ActionResult Create(User model)
         {
-            if (ModelState.IsValid)
-            {
-                db.User.Add(user);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+            //if (ModelState.IsValid)
+            //{
+            //    db.User.Add(user);
+            //    db.SaveChanges();
+            //    return RedirectToAction("Index");
+            //}
 
-            return View(user);
+            var userStore = new UserStore<IdentityUser>();
+            var manager = new UserManager<IdentityUser>(userStore);
+
+            var user = new IdentityUser() { UserName = model.Username };
+            IdentityResult result = manager.Create(user, model.Password);
+
+            if (result.Succeeded)
+            {
+                return OK();
+            }
+            else
+            {
+                return Error(result.Errors);
+            }
         }
 
         // GET: Users/Edit/5

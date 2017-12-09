@@ -75,7 +75,7 @@ else
         var $editModals = $('#modal-chuyen-muc--@(isNew ? "new" : Model.ChuyenMucId.ToString())');
 
         $editModals.find('input[name="TieuDe"]').on('keyup', function () {
-            $editModals.find('input[name="Url"]').val(normalize($(this).val()));
+            $editModals.find('input[name="Url"]').val(SITE.normalize($(this).val()));
         });
     });
 </script>

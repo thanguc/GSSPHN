@@ -28,6 +28,11 @@
         Male, Female
     }
 
+    public class UserRole
+    {
+        public const string ADMIN = "Admin";
+    }
+
     public static class Parser
     {
         public static string TrangThaiDangKy(TrangThaiDangKy status)

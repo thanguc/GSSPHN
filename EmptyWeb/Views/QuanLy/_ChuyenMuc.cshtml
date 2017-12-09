@@ -143,16 +143,15 @@
             TieuDe: $form.find('[name="TieuDe"]').val(),
             IsHidden: $form.find('[name="IsHidden"]').is(":checked")
         }
-        $('#themchuyenmuc').AjaxData(
-            '/QuanLy/ThemChuyenMuc',
-            data,
-            refreshGrid(), null
-        )
+        $('#themchuyenmuc').AjaxPost({
+            url: '/QuanLy/ThemChuyenMuc',
+            data: data,
+            onSuccess: function () {
+                SITE.closeOpeningModal(function () {
+                    $('.place-holder').AjaxHtml('/QuanLy/ChuyenMuc', null);
+                });
+            }
+        });
     });
 
-    function refreshGrid(data) {
-        closeOpeningModal(function () {
-            $('.place-holder').AjaxHtml('/QuanLy/ChuyenMuc', null);
-        });
-    }
 </script>

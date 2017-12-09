@@ -16,7 +16,7 @@
     });
 
     $('.back-to-top').on('click', function () {
-        verticalOffset = typeof (verticalOffset) != 'undefined' ? verticalOffset : 0;
+        verticalOffset = typeof verticalOffset !== 'undefined' ? verticalOffset : 0;
         element = $('body');
         offset = element.offset();
         offsetTop = offset.top;

@@ -129,38 +129,38 @@
             var row = $(this).closest('tr');
             var id = row.attr('data-chuyen-muc-id');
             if ($(this).is(".btn-order-up")) {
-                row.AjaxData(
-                    '/QuanLy/MoveChuyenMuc',
-                    {
+                row.AjaxPost({
+                    url: '/QuanLy/MoveChuyenMuc',
+                    data: {
                         id: id,
                         value: -1
                     },
-                    null, null
-                );
-                row.insertBefore(row.prev());
+                    onSuccess: function () {
+                        row.insertBefore(row.prev());
+                    }
+                });
             } else {
-                row.AjaxData(
-                    '/QuanLy/MoveChuyenMuc',
-                    {
+                row.AjaxPost({
+                    url: '/QuanLy/MoveChuyenMuc',
+                    data: {
                         id: id,
                         value: 1
                     },
-                    null, null
-                );
-                row.insertAfter(row.next());
+                    onSuccess: function () {
+                        row.insertAfter(row.next());
+                    }
+                });
             }
         });
 
         $('input[type="checkbox"][data-toggle="toggle"]').bootstrapToggle().change(function () {
-            $(this).AjaxData(
-                '/QuanLy/SwitchChuyenMucAnHien',
-                {
+            $(this).AjaxPost({
+                url: '/QuanLy/SwitchChuyenMucAnHien',
+                data: {
                     id: $(this).closest('tr').attr('data-chuyen-muc-id'),
                     status: $(this).prop('checked')
-                },
-                null,
-                null
-            );
+                }
+            });
         });
     });
 </script>

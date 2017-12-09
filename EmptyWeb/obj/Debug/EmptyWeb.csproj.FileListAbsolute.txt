@@ -84,3 +84,16 @@ C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\obj\Debug\EmptyWeb.dll
 C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\obj\Debug\EmptyWeb.pdb
 C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\obj\Debug\EmptyWeb.Migrations.init.resources
 C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\obj\Debug\EmptyWeb.csproj.GenerateResource.Cache
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\Microsoft.Owin.dll
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\Microsoft.Owin.Security.dll
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\Owin.dll
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\Microsoft.Owin.xml
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\Microsoft.Owin.Security.xml
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\Microsoft.Owin.Security.OAuth.xml

@@ -279,25 +279,17 @@
 </div>
 <script>
     $(function () {
-        //$('tr.clickable-row td')
-        //    .on('click', function () {
-        //        var $this = $(this);
-        //        $($this.attr('data-target')).modal('show');
-        //    });
         var currentActiveMucId = "";
 
-        $('input[type="checkbox"][data-toggle="toggle"]')
-            .bootstrapToggle().change(function () {
-                $(this).AjaxData(
-                    '/QuanLy/SwitchMucAnHien',
-                    {
-                        id: $(this).closest('tr').attr('data-mucid'),
-                        status: $(this).prop('checked')
-                    },
-                    null,
-                    null
-                );
+        $('input[type="checkbox"][data-toggle="toggle"]').bootstrapToggle().change(function () {
+            $(this).AjaxPost({
+                url: '/QuanLy/SwitchMucAnHien',
+                data: {
+                    id: $(this).closest('tr').attr('data-mucid'),
+                    status: $(this).prop('checked')
+                }
             });
+        });
 
         /* Edit tieude START */
         $.fn.editable.defaults.mode = 'inline';
@@ -306,24 +298,35 @@
         });
         $('a[name="TieuDe"]').click(function (e) {
             e.stopPropagation();
+            $(this).editable({
+                success: function (r) {
+                    if (r.Error) {
+                        return r.Error[0];
+                    }
+                }
+            });
             $(this).editable('show');
         });
         /* Edit tieude END */
 
         $('#themmuc .btn-action-add').on('click', function () {
-            var $form = $('#themmuc form');
-            var data = {
-                TieuDe: $form.find('[name="TieuDe"]').val(),
-                IsHidden: $form.find('[name="IsHidden"]').is(":checked")
-            };
-            $('#themuc').AjaxData('/QuanLy/ThemMuc', data, refreshMuc(), null);
+            var form = $('#themmuc form').formize();
+            if (form.isValid()) {
+                var data = {
+                    TieuDe: form.get('TieuDe'),
+                    IsHidden: form.field('IsHidden').is(":checked")
+                };
+                $('#themuc').AjaxPost({
+                    url: '/QuanLy/ThemMuc',
+                    data: data,
+                    onSuccess: function () {
+                        SITE.closeOpeningModal(function () {
+                            $('.place-holder').AjaxHtml('/QuanLy/Muc', null);
+                        });
+                    }
+                });
+            }
         });
-
-        function refreshMuc(data) {
-            closeOpeningModal(function () {
-                $('.place-holder').AjaxHtml('/QuanLy/Muc', null);
-            });
-        }
 
         $('.record-muc').click(function (e) {
             var $target = $(e.target);
@@ -357,31 +360,53 @@
                 NoiDung: isNew ? CKEDITOR.instances["NoiDung-new"].getData() : CKEDITOR.instances["NoiDung-" + form.get('ChuyenMucId')].getData(),
                 IsHidden: form.field('IsHidden').is(":checked")
             };
-            $modal.AjaxData(form.action, data, refreshChuyenMuc(), null);
-        });
-
-        function refreshChuyenMuc(data) {
-            closeOpeningModal(function () {
-                for (name in CKEDITOR.instances) {
-                    if (name != "NoiDung-new") {
-                        CKEDITOR.instances[name].destroy(true);
-                    }
+            $modal.AjaxPost({
+                url: form.action,
+                data: data,
+                onSuccess: function () {
+                    SITE.closeOpeningModal(function () {
+                        for (name in CKEDITOR.instances) {
+                            if (name != "NoiDung-new") {
+                                CKEDITOR.instances[name].destroy(true);
+                            }
+                        }
+                        $('.muc-detail').AjaxHtml('/QuanLy/ChiTietMuc', { id: currentActiveMucId });
+                        $('.active .record-muc').AjaxPost({
+                            url: '/QuanLy/GetSoLuongChuyenMuc',
+                            data: { id: currentActiveMucId },
+                            onSuccess: function (result) {
+                                $('.active .record-muc > i').html("(" + result + " Chuyên mục)");
+                            }
+                        });
+                    });
                 }
-                $('.muc-detail').AjaxHtml('/QuanLy/ChiTietMuc', { id: currentActiveMucId });
-                $('.active .record-muc').AjaxData(
-                    '/QuanLy/GetSoLuongChuyenMuc',
-                    { id: currentActiveMucId },
-                    function (data) {
-                        $('.active .record-muc > i').html("(" + data + " Chuyên mục)");
-                    }, null
-                );
             });
-        }
+        });
 
         $('.muc-detail').on('click', '.btn-action-delete', function () {
             var $modal = $(this).closest('.modal');
             var id = $modal.attr('data-chuyen-muc-id');
-            $modal.AjaxData('/QuanLy/XoaChuyenMuc', { id: id }, refreshChuyenMuc(), null);
+            $modal.AjaxPost({
+                url: '/QuanLy/XoaChuyenMuc',
+                data: { id: id },
+                onSuccess: function () {
+                    SITE.closeOpeningModal(function () {
+                        for (name in CKEDITOR.instances) {
+                            if (name != "NoiDung-new") {
+                                CKEDITOR.instances[name].destroy(true);
+                            }
+                        }
+                        $('.muc-detail').AjaxHtml('/QuanLy/ChiTietMuc', { id: currentActiveMucId });
+                        $('.active .record-muc').AjaxPost({
+                            url: '/QuanLy/GetSoLuongChuyenMuc',
+                            data: { id: currentActiveMucId },
+                            onSuccess: function (result) {
+                                $('.active .record-muc > i').html("(" + result + " Chuyên mục)");
+                            }
+                        });
+                    });
+                }
+            });
         });
 
         $('#modal-confirm-delete-muc').on('shown.bs.modal', function () {
@@ -389,32 +414,42 @@
         });
 
         $('#modal-confirm-delete-muc').on('click', '.btn-action-delete', function () {
-            $(this).AjaxData('/QuanLy/XoaMuc', { id: currentActiveMucId }, refreshMuc(), null);
+            $(this).AjaxPost({
+                url: '/QuanLy/XoaMuc',
+                data: { id: currentActiveMucId },
+                onSuccess: function () {
+                    SITE.closeOpeningModal(function () {
+                        $('.place-holder').AjaxHtml('/QuanLy/Muc', null);
+                    });
+                }
+            });
         });
 
         $('.btn-order-up,.btn-order-down', '.muc').click(function () {
             var row = $(this).closest('tr');
             var id = row.attr('data-mucid');
             if ($(this).is(".btn-order-up")) {
-                row.AjaxData(
-                    '/QuanLy/MoveMuc',
-                    {
+                row.AjaxPost({
+                    url: '/QuanLy/MoveMuc',
+                    data: {
                         id: id,
                         value: -1
                     },
-                    null, null
-                );
-                row.insertBefore(row.prev());
+                    onSuccess: function () {
+                        row.insertBefore(row.prev());
+                    }
+                });
             } else {
-                row.AjaxData(
-                    '/QuanLy/MoveMuc',
-                    {
+                row.AjaxPost({
+                    url: '/QuanLy/MoveMuc',
+                    data: {
                         id: id,
                         value: 1
                     },
-                    null, null
-                );
-                row.insertAfter(row.next());
+                    onSuccess: function () {
+                        row.insertAfter(row.next());
+                    }
+                });
             }
         });
     });

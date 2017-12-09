@@ -32,8 +32,8 @@ namespace EmptyWeb.Controllers
                     model.ID = Guid.NewGuid().ToString();
                     model.TrangThai = TrangThaiDangKy.Submitted;
                     model.NgayTao = DateTime.Now;
-                    BaseContext.DangKyGiaSu.Add(model);
-                    await BaseContext.SaveChangesAsync();
+                    DBContext.DangKyGiaSu.Add(model);
+                    await DBContext.SaveChangesAsync();
                 //}
                 Alert(AlertMessage.DangKyLamGiaSuThanhCong);
             }
@@ -60,8 +60,8 @@ namespace EmptyWeb.Controllers
                 model.ID = Guid.NewGuid().ToString();
                 model.TrangThai = TrangThaiYeuCau.Submitted;
                 model.NgayTao = DateTime.Now;
-                BaseContext.TimGiaSu.Add(model);
-                await BaseContext.SaveChangesAsync();
+                DBContext.TimGiaSu.Add(model);
+                await DBContext.SaveChangesAsync();
                 Alert(AlertMessage.DangKyTimGiaSuThanhCong);
             }
             catch (Exception e)

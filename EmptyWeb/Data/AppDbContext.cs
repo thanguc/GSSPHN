@@ -1,6 +1,7 @@
 ﻿using EmptyWeb.Models;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Linq;
 
 namespace EmptyWeb.Data
 {
@@ -15,6 +16,8 @@ namespace EmptyWeb.Data
         public DbSet<SystemLog> SystemLog { get; set; }
         public DbSet<Muc> Muc { get; set; }
         public DbSet<ChuyenMuc> ChuyenMuc { get; set; }
+
+        public bool IsValid { get { return this.GetValidationErrors().Count() == 0; } }
 
         public void SaveObject(params object[] obj)
         {
