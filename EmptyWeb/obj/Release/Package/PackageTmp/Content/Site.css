@@ -1,6 +1,32 @@
-﻿body {
+﻿html {
+    overflow-y: scroll;
+}
+
+body {
     /*padding-top: 50px;*/
     padding-bottom: 20px;
+}
+
+    body.hide-scrollbar {
+        padding-right: 5px;
+    }
+
+        body.hide-scrollbar::-webkit-scrollbar {
+            position: relative;
+            z-index: 100000;
+            width: 0px;
+            background-color: transparent;
+        }
+
+::-webkit-scrollbar {
+    position: relative;
+    z-index: 100000;
+    width: 5px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #CCCDCF;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -78,7 +104,7 @@ nav {
 }
 
 .affix-top {
-    align-content:center;
+    align-content: center;
     position: absolute;
     width: 100%;
     left: 0;
@@ -89,8 +115,9 @@ nav {
     top: 0;
     width: 100%;
 }
-#bs-example-navbar-collapse-1 > ul{
-    margin:auto;
+
+#bs-example-navbar-collapse-1 > ul {
+    margin: auto;
 }
 
 .select2-selection__placeholder,
@@ -99,4 +126,42 @@ textarea::-webkit-input-placeholder {
     font-size: 14px;
     font-style: italic;
     color: #aeaeae;
+}
+
+#accordion td {
+    border-left: 4px solid transparent;
+    border-top: none;
+}
+
+    #accordion td.active {
+        border-left: 4px solid #11b6ff;
+        font-weight: bold;
+    }
+
+tr.active, tr.active:hover {
+    background-color: #e2e2e2 !important;
+    color: white !important;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.flex-center-both {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.valign-middle{
+    vertical-align:middle !important;
+}
+
+.text-effect-blur,
+.modal-header{
+    text-shadow:0 0 1px;
 }

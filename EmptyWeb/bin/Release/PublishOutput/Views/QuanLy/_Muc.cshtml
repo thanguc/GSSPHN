@@ -1,0 +1,456 @@
+﻿@using EmptyWeb.Shared
+@using EmptyWeb.Models
+@model List<EmptyWeb.Models.Muc>
+@{
+    int stt = 0;
+}
+
+<style>
+    .addon-right {
+        border: 1px solid #777777;
+        position: relative;
+        right: -3px;
+        top: 1px;
+        padding-left: 3px;
+        padding-right: 1px;
+        color: #777777;
+        font-size: 13px;
+        background-color: #f9f9f9;
+        display: none;
+    }
+
+    .place-holder .panel-heading {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+        .place-holder .panel-heading > .row > div > span {
+            /*margin-left: 20px;*/
+            font-weight: bold;
+        }
+
+            .place-holder .panel-heading > .row > div > span > .fa {
+                width: 18px;
+            }
+
+    .toggle.android {
+        border-radius: 0px;
+    }
+
+        .toggle.android .toggle-handle {
+            border-radius: 0px;
+        }
+
+    .editable-buttons .glyphicon {
+        margin: 0;
+    }
+
+    .editable-buttons .btn-sm {
+        padding: 0px 10px;
+        border-radius: 0 !important;
+        height: 22px;
+    }
+
+    .editable-input .input-sm {
+        height: 23px;
+        border-radius: 0;
+    }
+
+    .table-list {
+        height: 340px;
+    }
+
+    @@media(min-height:700px) {
+        .table-list {
+            height: 650px;
+        }
+    }
+
+    .clickable-row:hover .label,
+    .clickable-row.active .label {
+        background-color: #454545;
+    }
+
+    .clickable-row .label:hover {
+        position: relative;
+    }
+
+        .clickable-row .label:hover:before,
+        .clickable-row .label:hover:after {
+            z-index: -1;
+            position: absolute;
+            content: "";
+            bottom: 15px;
+            left: 10px;
+            width: 50%;
+            top: 80%;
+            max-width: 300px;
+            background: #777;
+            -webkit-box-shadow: 0 15px 10px #777;
+            -moz-box-shadow: 0 15px 10px #777;
+            box-shadow: 0 15px 10px #777;
+            -webkit-transform: rotate(-3deg);
+            -moz-transform: rotate(-3deg);
+            -o-transform: rotate(-3deg);
+            -ms-transform: rotate(-3deg);
+            transform: rotate(-3deg);
+        }
+
+        .clickable-row .label:hover:after {
+            -webkit-transform: rotate(3deg);
+            -moz-transform: rotate(3deg);
+            -o-transform: rotate(3deg);
+            -ms-transform: rotate(3deg);
+            transform: rotate(3deg);
+            right: 10px;
+            left: auto;
+        }
+
+    .clickable-row:not(:hover) .btn-success {
+        background-color: #92c292;
+    }
+
+    .clickable-row:not(:hover) .btn-danger {
+        background-color: #bb605e;
+    }
+
+    .clickable-row:not(:hover) .btn-warning {
+        background-color: #eebd78;
+    }
+
+    .record-muc [name="TieuDe"]:hover {
+        box-shadow: 0 2px 3px #5f5f5f;
+        padding-right: 0;
+    }
+
+        .record-muc [name="TieuDe"]:hover .addon-right {
+            display: inline;
+        }
+
+    .btn-delete-muc {
+        margin-right: 10px;
+    }
+
+    .muc tr:not(:hover) .btn-order-up,
+    .muc tr:not(:hover) .btn-order-down {
+        display: none;
+    }
+
+    .btn-order-up, .btn-order-down {
+        color: #808080;
+        line-height: 0;
+    }
+
+    .muc tr:not(:first-child) .btn-order-up:hover > .fa:before {
+        content: "\f139";
+        font-family: FontAwesome;
+    }
+
+    .muc tr:not(:last-child) .btn-order-down:hover > .fa:before {
+        content: "\f13a";
+        font-family: FontAwesome;
+    }
+</style>
+
+<div class="col-md-12">
+    <div class="panel panel-default panel-table">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col col-xs-4" style="border-right:1px solid #ddd">
+                    <span style="line-height:30px;" class="text-effect-blur"><i class="fa fa-th"></i> Mục</span>
+                    <a class="pull-right btn btn-sm btn-primary btn-add-muc" data-toggle="modal" data-target="#themmuc">Thêm mục <i class="fa fa-plus"></i></a>
+                </div>
+                <div class="col col-xs-8" style="border-left:1px solid #ddd">
+                    <span style="line-height:30px;" class="text-effect-blur"><i class="fa fa-list"></i> Danh sách chuyên mục</span>
+                    @Html.Partial("_ModalThemChuyenMuc", new ChuyenMuc())
+                    <a class="pull-right btn btn-sm btn-danger hide btn-delete-muc" data-toggle="modal" data-target="#modal-confirm-delete-muc">Xóa <i class="fa fa-trash fw"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <table class="table table-striped table-bordered table-list">
+                @if (Model.Count > 0)
+                {
+                    <tbody>
+                        <tr>
+                            <td class="col-xs-4 no-padding">
+                                <table class="col-lg-12 muc">
+                                    @foreach (var item in Model.OrderBy(m => m.SortNumber))
+                                    {
+                                        <tr class="clickable-row" data-mucid="@item.MucId">
+                                            <td style="width:33px;">
+                                                <a class="col-xs-12 no-padding btn-order-up"><i class="fa fa-angle-up fa-fw"></i></a>
+                                                <a class="col-xs-12 no-padding btn-order-down"><i class="fa fa-angle-down fa-fw"></i></a>
+                                            </td>
+                                            <td class="record-muc">
+                                                <a class="label label-default" name="TieuDe" title="Click để sửa tiêu đề"
+                                                   data-type="text" data-pk="@item.MucId" data-url="/QuanLy/UpdateTieuDeMuc" data-title="Nhập tiêu đề">
+                                                    @item.TieuDe<span class="addon-right"><i class="fa fa-pencil fw"></i></span>
+                                                </a>
+                                                <i class="small text-muted" style="margin-left:4px;">(@item.ChuyenMucs.Count Chuyên mục)</i>
+                                            </td>
+                                            <td class="col-lg-1" style="padding-right:10px !important">
+                                                <input type="checkbox" @(!item.IsHidden ? "checked" : string.Empty)
+                                                       data-toggle="toggle" data-on="<i class='fa fa-eye'></i>" data-off="<i class='fa fa-eye-slash'></i>"
+                                                       data-onstyle="success" data-offstyle="danger" data-size="mini" data-style="android" />
+                                            </td>
+                                        </tr>
+                                        stt++;
+                                    }
+                                </table>
+                            </td>
+                            <td class="muc-detail col-xs-8 no-padding"></td>
+                        </tr>
+                    </tbody>
+                }
+            </table>
+
+        </div>
+        <div class="panel-footer">
+            <div class="row">
+                <div class="col col-xs-4">
+                    Page 1 of 5
+                </div>
+                <div class="col col-xs-8">
+                    <ul class="pagination hidden-xs pull-right">
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                    </ul>
+                    <ul class="pagination visible-xs pull-right">
+                        <li><a href="#">«</a></li>
+                        <li><a href="#">»</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="themmuc" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Thêm mục</h4>
+            </div>
+            <form action="/QuanLy/ThemMuc" method="post" onkeypress="return event.keyCode != 13;">
+                <div class="modal-body">
+                    <div class="form-inline">
+                        <div class="form-group">
+                            <label class="label-control">Tiêu đề</label>
+                            <input class="form-control" name="TieuDe" type="text" style="max-width:350px; width:350px;" autocomplete="off" />
+                        </div>
+                        <div class="checkbox col-md-offset-1">
+                            <label><input name="IsHidden" type="checkbox" /> Ẩn khỏi menu?</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success btn-action-add">Thêm</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<div id="modal-confirm-delete-muc" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title"><i class="fa fa-exclamation-triangle fa-fw text-danger"></i> Xác nhận xóa</h4>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">Xác nhận xóa Mục <span class="text-effect-blur"></span>?</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger btn-action-delete"><i class="fa fa-trash fa-fw"></i> XÓA</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        var currentActiveMucId = "";
+
+        $('input[type="checkbox"][data-toggle="toggle"]').bootstrapToggle().change(function () {
+            $(this).AjaxPost({
+                url: '/QuanLy/SwitchMucAnHien',
+                data: {
+                    id: $(this).closest('tr').attr('data-mucid'),
+                    status: $(this).prop('checked')
+                }
+            });
+        });
+
+        /* Edit tieude START */
+        $.fn.editable.defaults.mode = 'inline';
+        $('a[name="TieuDe"]').on('hidden', function (e, reason) {
+            $(this).editable('destroy');
+        });
+        $('a[name="TieuDe"]').click(function (e) {
+            e.stopPropagation();
+            $(this).editable({
+                success: function (r) {
+                    if (r.Error) {
+                        return r.Error[0];
+                    }
+                }
+            });
+            $(this).editable('show');
+        });
+        /* Edit tieude END */
+
+        $('#themmuc .btn-action-add').on('click', function () {
+            var form = $('#themmuc form').formize();
+            if (form.isValid()) {
+                var data = {
+                    TieuDe: form.get('TieuDe'),
+                    IsHidden: form.field('IsHidden').is(":checked")
+                };
+                $('#themuc').AjaxPost({
+                    url: '/QuanLy/ThemMuc',
+                    data: data,
+                    onSuccess: function () {
+                        SITE.closeOpeningModal(function () {
+                            $('.place-holder').AjaxHtml('/QuanLy/Muc', null);
+                        });
+                    }
+                });
+            }
+        });
+
+        $('.record-muc').click(function (e) {
+            var $target = $(e.target);
+            if ($target.closest('.editable-container').length == 0) {
+                currentActiveMucId = $(this).parent().attr('data-mucid');
+                $(this).parent().siblings('tr').removeClass('active');
+                $(this).parent().addClass('active');
+                if ($('.btn-add-chuyen-muc').hasClass('hide')) {
+                    $('.btn-add-chuyen-muc').removeClass('hide');
+                    $('.btn-delete-muc').removeClass('hide');
+                }
+                for (name in CKEDITOR.instances) {
+                    if (name != "NoiDung-new") {
+                        CKEDITOR.instances[name].destroy(true);
+                    }
+                }
+                $('.muc-detail').AjaxHtml('/QuanLy/ChiTietMuc', { id: currentActiveMucId });
+            }
+        });
+
+        $('.panel').on('click', '.modal[id^=modal-chuyen-muc--] .btn-action-confirm', function (e) {
+            var $this = $(e.target);
+            var form = $this.closest('form').formize();
+            var isNew = form.get('ChuyenMucId').length == 0;
+            var $modal = $this.closest('.modal');
+            var data = {
+                ChuyenMucId: form.get('ChuyenMucId'),
+                MucId: currentActiveMucId,
+                TieuDe: form.get('TieuDe'),
+                Url: form.get('Url'),
+                NoiDung: isNew ? CKEDITOR.instances["NoiDung-new"].getData() : CKEDITOR.instances["NoiDung-" + form.get('ChuyenMucId')].getData(),
+                IsHidden: form.field('IsHidden').is(":checked")
+            };
+            $modal.AjaxPost({
+                url: form.action,
+                data: data,
+                onSuccess: function () {
+                    SITE.closeOpeningModal(function () {
+                        for (name in CKEDITOR.instances) {
+                            if (name != "NoiDung-new") {
+                                CKEDITOR.instances[name].destroy(true);
+                            }
+                        }
+                        $('.muc-detail').AjaxHtml('/QuanLy/ChiTietMuc', { id: currentActiveMucId });
+                        $('.active .record-muc').AjaxPost({
+                            url: '/QuanLy/GetSoLuongChuyenMuc',
+                            data: { id: currentActiveMucId },
+                            onSuccess: function (result) {
+                                $('.active .record-muc > i').html("(" + result + " Chuyên mục)");
+                            }
+                        });
+                    });
+                }
+            });
+        });
+
+        $('.muc-detail').on('click', '.btn-action-delete', function () {
+            var $modal = $(this).closest('.modal');
+            var id = $modal.attr('data-chuyen-muc-id');
+            $modal.AjaxPost({
+                url: '/QuanLy/XoaChuyenMuc',
+                data: { id: id },
+                onSuccess: function () {
+                    SITE.closeOpeningModal(function () {
+                        for (name in CKEDITOR.instances) {
+                            if (name != "NoiDung-new") {
+                                CKEDITOR.instances[name].destroy(true);
+                            }
+                        }
+                        $('.muc-detail').AjaxHtml('/QuanLy/ChiTietMuc', { id: currentActiveMucId });
+                        $('.active .record-muc').AjaxPost({
+                            url: '/QuanLy/GetSoLuongChuyenMuc',
+                            data: { id: currentActiveMucId },
+                            onSuccess: function (result) {
+                                $('.active .record-muc > i').html("(" + result + " Chuyên mục)");
+                            }
+                        });
+                    });
+                }
+            });
+        });
+
+        $('#modal-confirm-delete-muc').on('shown.bs.modal', function () {
+            $(this).find('.text-effect-blur').html($('.clickable-row[data-mucid="' + currentActiveMucId + '"]').find('a[name="TieuDe"]').html());
+        });
+
+        $('#modal-confirm-delete-muc').on('click', '.btn-action-delete', function () {
+            $(this).AjaxPost({
+                url: '/QuanLy/XoaMuc',
+                data: { id: currentActiveMucId },
+                onSuccess: function () {
+                    SITE.closeOpeningModal(function () {
+                        $('.place-holder').AjaxHtml('/QuanLy/Muc', null);
+                    });
+                }
+            });
+        });
+
+        $('.btn-order-up,.btn-order-down', '.muc').click(function () {
+            var row = $(this).closest('tr');
+            var id = row.attr('data-mucid');
+            if ($(this).is(".btn-order-up")) {
+                row.AjaxPost({
+                    url: '/QuanLy/MoveMuc',
+                    data: {
+                        id: id,
+                        value: -1
+                    },
+                    onSuccess: function () {
+                        row.insertBefore(row.prev());
+                    }
+                });
+            } else {
+                row.AjaxPost({
+                    url: '/QuanLy/MoveMuc',
+                    data: {
+                        id: id,
+                        value: 1
+                    },
+                    onSuccess: function () {
+                        row.insertAfter(row.next());
+                    }
+                });
+            }
+        });
+    });
+</script>

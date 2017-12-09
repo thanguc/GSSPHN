@@ -1,11 +1,12 @@
 ﻿var $slGioiTinh = $('#selectGioiTinh');
 var $slTrinhDo = $('#selectTrinhDo');
 
-$slTrinhDo.AjaxData('/Common/GetListTrinhDo', null,
-    function (data) {
+$slTrinhDo.AjaxPost({
+    url: '/CommonList/GetListTrinhDo',
+    onSuccess: function (data) {
         $slTrinhDo.bindSelect2(data, '- Trình độ -', true, 1);
-    }, null
-);
+    }
+});
 
 $slGioiTinh.bindSelect2(['Nam', 'Nữ'], '- Giới tính -', true, null);
 

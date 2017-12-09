@@ -1,0 +1,166 @@
+﻿@model EmptyWeb.Models.Muc
+<style>
+    .tieude {
+        color: #686868;
+    }
+
+    .btn-edit {
+        margin-right: 10px;
+    }
+
+    .chitietmuc tr:hover .tieude {
+        color: #444444;
+    }
+
+    .chitietmuc .toggle {
+        float: right;
+        margin-right: 10px;
+    }
+
+    .chitietmuc tr:not(:hover) .btn-order-up,
+    .chitietmuc tr:not(:hover) .btn-order-down {
+        display: none;
+    }
+
+    .btn-order-up, .btn-order-down {
+        color: #808080;
+        line-height: 0;
+    }
+
+    .chitietmuc tr:not(:first-child) .btn-order-up:hover > .fa:before {
+        content: "\f139";
+        font-family: FontAwesome;
+    }
+
+    .chitietmuc tr:not(:last-child) .btn-order-down:hover > .fa:before {
+        content: "\f13a";
+        font-family: FontAwesome;
+    }
+
+    .chitietmuc tr:nth-of-type(odd) {
+        background-color: #fff;
+    }
+
+    [id^=modal-chuyen-muc--] {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+        [id^=modal-chuyen-muc--] .fixed-placeholder {
+            position: relative;
+        }
+
+            [id^=modal-chuyen-muc--] .fixed-placeholder::after {
+                font-style: italic;
+                position: absolute;
+                left: 17%;
+                top: 0;
+                content: attr(data-placeholder);
+                pointer-events: none;
+                opacity: 0.6;
+            }
+
+        [id^=modal-chuyen-muc--].create .fixed-placeholder::after {
+            top: 7px;
+        }
+
+        [id^=modal-chuyen-muc--].update .control-label,
+        [id^=modal-chuyen-muc--].update .checkbox {
+            padding-top: 0;
+        }
+
+        [id^=modal-chuyen-muc--].modal-lg {
+            width: 80%;
+            margin: auto;
+        }
+</style>
+<div class="chitietmuc" data-mucid="@Model.MucId">
+    <table class="col-lg-12">
+        @foreach (var cm in Model.ChuyenMucs.OrderBy(c => c.SortNumber).ToList())
+        {
+            <tr class="clickable-row" data-chuyen-muc-id="@cm.ChuyenMucId" style="border-bottom: 1px solid #ccc">
+                <td style="width:33px;">
+                    <a class="col-xs-12 no-padding btn-order-up"><i class="fa fa-angle-up fa-fw"></i></a>
+                    <a class="col-xs-12 no-padding btn-order-down"><i class="fa fa-angle-down fa-fw"></i></a>
+                </td>
+                <td>
+                    <strong class="tieude">@cm.TieuDe</strong>
+                </td>
+                <td class="col-md-3">
+                    <a class="btn btn-xs btn-danger pull-right btn-remove" data-toggle="modal" data-target="#modal-confirm-delete-chuyen-muc--@cm.ChuyenMucId"><i class="fa fa-trash"></i></a>
+                    <input type="checkbox" @(!cm.IsHidden ? "checked" : string.Empty)
+                           data-toggle="toggle" data-on="<i class='fa fa-eye'></i>" data-off="<i class='fa fa-eye-slash'></i>"
+                           data-onstyle="success" data-offstyle="danger" data-size="mini" data-style="android" />
+                    @Html.Partial("_ModalThemChuyenMuc", cm)
+                </td>
+            </tr>
+        }
+    </table>
+
+</div>
+
+@foreach (var cm in Model.ChuyenMucs)
+{
+    <div id="modal-confirm-delete-chuyen-muc--@cm.ChuyenMucId" class="modal fade" role="dialog" data-chuyen-muc-id="@cm.ChuyenMucId">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"><i class="fa fa-exclamation-triangle fa-fw text-danger"></i> Xác nhận xóa</h4>
+                </div>
+                <div class="modal-body">
+                    <h3 class="text-center">Xác nhận xóa Chuyên Mục <span class="text-effect-blur">@cm.TieuDe</span>?</h3>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger btn-action-delete"><i class="fa fa-trash fa-fw"></i> XÓA</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+}
+
+<script>
+    $(function () {
+        $('.btn-order-up,.btn-order-down', '.chitietmuc').click(function () {
+            var row = $(this).closest('tr');
+            var id = row.attr('data-chuyen-muc-id');
+            if ($(this).is(".btn-order-up")) {
+                row.AjaxPost({
+                    url: '/QuanLy/MoveChuyenMuc',
+                    data: {
+                        id: id,
+                        value: -1
+                    },
+                    onSuccess: function () {
+                        row.insertBefore(row.prev());
+                    }
+                });
+            } else {
+                row.AjaxPost({
+                    url: '/QuanLy/MoveChuyenMuc',
+                    data: {
+                        id: id,
+                        value: 1
+                    },
+                    onSuccess: function () {
+                        row.insertAfter(row.next());
+                    }
+                });
+            }
+        });
+
+        $('input[type="checkbox"][data-toggle="toggle"]').bootstrapToggle().change(function () {
+            $(this).AjaxPost({
+                url: '/QuanLy/SwitchChuyenMucAnHien',
+                data: {
+                    id: $(this).closest('tr').attr('data-chuyen-muc-id'),
+                    status: $(this).prop('checked')
+                }
+            });
+        });
+    });
+</script>
