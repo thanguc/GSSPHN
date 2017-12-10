@@ -82,8 +82,6 @@ C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\obj\Debug\EmptyWeb.csprojResolve
 C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\obj\Debug\EmptyWeb.csproj.CoreCompileInputs.cache
 C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\obj\Debug\EmptyWeb.dll
 C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\obj\Debug\EmptyWeb.pdb
-C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\obj\Debug\EmptyWeb.Migrations.init.resources
-C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\obj\Debug\EmptyWeb.csproj.GenerateResource.Cache
 C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\Microsoft.AspNet.Identity.Owin.dll
 C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\Microsoft.Owin.dll
 C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\Microsoft.Owin.Host.SystemWeb.dll

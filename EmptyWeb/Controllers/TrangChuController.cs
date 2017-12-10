@@ -1,4 +1,5 @@
-﻿using EmptyWeb.Models;
+﻿using EmptyWeb.Contexts;
+using EmptyWeb.Models;
 using EmptyWeb.Shared;
 using System;
 using System.Threading.Tasks;
@@ -7,6 +8,7 @@ using System.Web.Mvc;
 
 namespace EmptyWeb.Controllers
 {
+    [TraceLog]
     public class TrangChuController : BaseController
     {
         public ActionResult Index()
@@ -39,7 +41,7 @@ namespace EmptyWeb.Controllers
             }
             catch (Exception e)
             {
-                Logger.WriteLog(e.Message);
+                LogContext.Record(e.Message);
                 Alert(PageEnums.AlertMessage.DangKyLamGiaSuThatBai);
             }
             return View(model);
@@ -55,19 +57,13 @@ namespace EmptyWeb.Controllers
         [HttpPost]
         public async Task<ActionResult> YeuCauTimGiaSu(TimGiaSu model)
         {
-            try
+            if (ModelState.IsValid)
             {
-                model.ID = Guid.NewGuid().ToString();
                 model.TrangThai = PageEnums.TrangThaiYeuCau.Submitted;
                 model.NgayTao = DateTime.Now;
                 EntityContext.TimGiaSu.Add(model);
                 await EntityContext.SaveChangesAsync();
                 Alert(PageEnums.AlertMessage.DangKyTimGiaSuThanhCong);
-            }
-            catch (Exception e)
-            {
-                Logger.WriteLog(e.Message);
-                Alert(PageEnums.AlertMessage.DangKyTimGiaSuThatBai);
             }
             return View(model);
         }

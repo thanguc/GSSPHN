@@ -1,4 +1,5 @@
-﻿using EmptyWeb.Shared;
+﻿using EmptyWeb.Contexts;
+using EmptyWeb.Shared;
 using EmptyWeb.ViewModels;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -11,9 +12,9 @@ using System.Web.Mvc;
 
 namespace EmptyWeb.Controllers
 {
+    [TraceLog]
     public class TaiKhoanController : BaseController
     {
-        // GET: TaiKhoan
         public ActionResult Login(string returnUrl)
         {
             if (PageHelper.IsAuthenticated())
@@ -36,10 +37,7 @@ namespace EmptyWeb.Controllers
         [HttpPost]
         public ActionResult Login(LoginViewModel model)
         {
-            //var userStore = new UserStore<IdentityUser>(IdentityContext);
-            //var userManager = new UserManager<IdentityUser>(userStore);
             var user = IdentityContext.UserManager.Find(model.Username, model.Password);
-
             if (user != null)
             {
                 var authenticationManager = System.Web.HttpContext.Current.GetOwinContext().Authentication;
@@ -71,13 +69,10 @@ namespace EmptyWeb.Controllers
 
         [Authorize(Roles = PageEnums.UserRole.ADMIN)]
         [HttpPost]
-        public ActionResult Create(string username, string password)
+        public ActionResult Create(string Username, string Password)
         {
-            //var userStore = new UserStore<IdentityUser>(IdentityContext);
-            //var manager = new UserManager<IdentityUser>(userStore);
-
-            var user = new IdentityUser() { UserName = username };
-            IdentityResult result = IdentityContext.UserManager.Create(user, password);
+            var user = new IdentityUser() { UserName = Username };
+            IdentityResult result = IdentityContext.UserManager.Create(user, Password);
 
             if (result.Succeeded)
             {

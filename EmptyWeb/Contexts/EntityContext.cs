@@ -16,7 +16,6 @@ namespace EmptyWeb.Contexts
         public DbSet<Userrole> Userrole { get; set; }
         public DbSet<QueQuan> QueQuan { get; set; }
         public DbSet<TrinhDo> TrinhDo { get; set; }
-        public DbSet<SystemLog> SystemLog { get; set; }
         public DbSet<Muc> Muc { get; set; }
         public DbSet<ChuyenMuc> ChuyenMuc { get; set; }
 

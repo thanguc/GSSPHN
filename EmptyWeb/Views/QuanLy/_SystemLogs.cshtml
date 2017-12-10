@@ -1,4 +1,5 @@
-﻿@model List<EmptyWeb.Models.SystemLog>
+﻿@using EmptyWeb.Shared
+@model List<EmptyWeb.Models.Log>
 @{
     int stt = 0;
 }
@@ -6,8 +7,12 @@
     <thead>
         <tr>
             <th>#</th>
-            <th>Content</th>
-            <th>Time</th>
+            <th>Timestamp</th>
+            <th>Username</th>
+            <th>IP Address</th>
+            <th>Browser</th>
+            <th>Url</th>
+            <th>Message</th>
         </tr>
     </thead>
     <tbody>
@@ -15,8 +20,12 @@
         {
             <tr class="clickable-row">
                 <td>@stt</td>
-                <td>@item.Content</td>
-                <td>@item.Time</td>
+                <td>@item.Timestamp</td>
+                <td>@item.Username</td>
+                <td>@item.IPAddress</td>
+                <td>@item.Browser</td>
+                <td>@item.UrlAccessed</td>
+                <td>@(PageHelper.Limit(item.Message, 100))</td>
             </tr>
 
             stt++;

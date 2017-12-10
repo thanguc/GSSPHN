@@ -1,4 +1,5 @@
-﻿using EmptyWeb.Models;
+﻿using EmptyWeb.Contexts;
+using EmptyWeb.Models;
 using EmptyWeb.Shared;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Web.Mvc;
 
 namespace EmptyWeb.Controllers
 {
+    [TraceLog]
     [Authorize]
     public class QuanLyController : BaseController
     {
@@ -51,7 +53,7 @@ namespace EmptyWeb.Controllers
         [HttpPost]
         public ActionResult GetAllLog()
         {
-            return PartialView("_SystemLogs", EntityContext.SystemLog.ToList());
+            return PartialView("_SystemLogs", LogContext.Logs.ToList());
         }
         #endregion
 

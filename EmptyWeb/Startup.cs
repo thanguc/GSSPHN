@@ -22,46 +22,45 @@ namespace EmptyWeb
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
                 LoginPath = new PathString("/TaiKhoan/Login")
             });
-            CreateRolesAndUsers();
+            CreateRolesAndAccounts();
         }
 
-        private void CreateRolesAndUsers()
+        private void CreateRolesAndAccounts()
         {
-            // In Startup, creating default Admin Role and default Admin User
             using (var identityContext = new IdentityContext())
             {
                 if (!identityContext.RoleManager.RoleExists(PageEnums.UserRole.ADMIN))
                 {
                     identityContext.RoleManager.Create(new IdentityRole(PageEnums.UserRole.ADMIN));
 
-                    var adminUser1 = new IdentityUser("admin")
+                    var superAdmin = new IdentityUser("admin")
                     {
                         Email = "thanguc.94@gmail.com",
                         EmailConfirmed = true,
                         PhoneNumber = "01679659990",
                         PhoneNumberConfirmed = true
                     };
-                    identityContext.UserManager.Create(adminUser1, "140316");
-                    identityContext.UserManager.AddToRole(adminUser1.Id, PageEnums.UserRole.ADMIN);
+                    identityContext.UserManager.Create(superAdmin, "140316");
+                    identityContext.UserManager.AddToRole(superAdmin.Id, PageEnums.UserRole.ADMIN);
 
-                    var adminUser2 = new IdentityUser("giasu24h")
+                    var admin = new IdentityUser("giasu24h")
                     {
                         Email = "hotro.giasusuphamhanoi@gmail.com",
                         EmailConfirmed = true,
                         PhoneNumber = "0981494418",
                         PhoneNumberConfirmed = true
                     };
-                    identityContext.UserManager.Create(adminUser2, "140316");
-                    identityContext.UserManager.AddToRole(adminUser2.Id, PageEnums.UserRole.ADMIN);
+                    identityContext.UserManager.Create(admin, "140316");
+                    identityContext.UserManager.AddToRole(admin.Id, PageEnums.UserRole.ADMIN);
+
+                    var anonymous = new IdentityUser("anonymous");
+                    identityContext.UserManager.Create(anonymous, "140316");
                 }
 
-                // creating Creating Manager role    
-                //if (!roleManager.RoleExists("Manager"))
-                //{
-                //    var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-                //    role.Name = "Manager";
-                //    roleManager.Create(role);
-                //}
+                if (!identityContext.RoleManager.RoleExists(PageEnums.UserRole.USER))
+                {
+                    identityContext.RoleManager.Create(new IdentityRole(PageEnums.UserRole.USER));
+                }
             }
         }
     }

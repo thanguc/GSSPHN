@@ -10,15 +10,13 @@ namespace EmptyWeb.Services
 {
     public class ImgurService
     {
-        private readonly EntityContext _context;
-        private readonly LoggingService _logger;
+        private readonly LogContext logContext;
         private readonly string CLIENT_ID = "20d2359fb178560";
         private readonly string CLIENT_SECRET = "285d1450c3fe69299dbfde9ddc80adbeb83b18db";
 
-        public ImgurService(EntityContext context, LoggingService logger)
+        public ImgurService(LogContext _logContext)
         {
-            _context = context;
-            _logger = logger;
+            logContext = _logContext;
         }
 
         public async Task<IImage> UploadImage(Stream stream)
@@ -28,12 +26,12 @@ namespace EmptyWeb.Services
                 var client = new ImgurClient(CLIENT_ID, CLIENT_SECRET);
                 var endpoint = new ImageEndpoint(client);
                 IImage image = await endpoint.UploadImageStreamAsync(stream);
-                _logger.WriteLog(string.Format("{0} (ID: {1}, SIZE: {2}, BW: {3}) was uploaded on {4}", image.Name, image.Id, image.Size, image.Bandwidth, image.DateTime));
+                logContext.Record(string.Format("IMGUR: {0} (ID: {1}, SIZE: {2}, BW: {3}) was uploaded on {4}", image.Name, image.Id, image.Size, image.Bandwidth, image.DateTime));
                 return image;
             }
             catch (ImgurException imgurEx)
             {
-                _logger.WriteLog(imgurEx.Message);
+                logContext.Record(imgurEx.Message);
             }
             return null;
         }

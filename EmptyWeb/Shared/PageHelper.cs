@@ -28,5 +28,9 @@ namespace EmptyWeb.Shared
             return HttpContext.Current.User.Identity.Name;
         }
 
+        public static string Limit(string src, int limit)
+        {
+            return src.Length > limit ? src.Substring(0, limit) + "..." : src;
+        }
     }
 }

@@ -1,9 +1,6 @@
 ﻿using EmptyWeb.Contexts;
 using EmptyWeb.Services;
 using EmptyWeb.Shared;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
@@ -13,16 +10,16 @@ namespace EmptyWeb.Controllers
     public class BaseController : Controller
     {
         protected readonly EntityContext EntityContext;
-        protected readonly LoggingService Logger;
-        protected readonly ImgurService Imgur;
+        protected readonly LogContext LogContext;
+        protected readonly ImgurService ImgurService;
         protected readonly IdentityContext IdentityContext;
 
         public BaseController()
         {
+            LogContext = new LogContext();
             EntityContext = new EntityContext();
-            Logger = new LoggingService(EntityContext);
-            Imgur = new ImgurService(EntityContext, Logger);
             IdentityContext = new IdentityContext();
+            ImgurService = new ImgurService(LogContext);
         }
 
         protected void Alert(PageEnums.AlertMessage alert)

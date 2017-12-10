@@ -153,33 +153,28 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Contexts\EntityContext.cs" />
     <Compile Include="Contexts\IdentityContext.cs" />
+    <Compile Include="Contexts\LogContext.cs" />
     <Compile Include="Controllers\APIController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="Controllers\TaiKhoanController.cs" />
     <Compile Include="Controllers\TrangChuController.cs" />
     <Compile Include="Controllers\QuanLyController.cs" />
-    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712011402314_init.cs" />
-    <Compile Include="Migrations\201712011402314_init.Designer.cs">
-      <DependentUpon>201712011402314_init.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ChuyenMuc.cs" />
+    <Compile Include="Models\Log.cs" />
     <Compile Include="Models\Muc.cs" />
     <Compile Include="Models\TimGiaSu.cs" />
     <Compile Include="Models\DangKyGiaSu.cs" />
     <Compile Include="Models\QueQuan.cs" />
-    <Compile Include="Models\SystemLog.cs" />
     <Compile Include="Models\TrinhDo.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Userrole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ImgurService.cs" />
-    <Compile Include="Services\LoggingService.cs" />
     <Compile Include="Shared\PageEnums.cs" />
     <Compile Include="Shared\PageHelper.cs" />
     <Compile Include="Startup.cs" />
@@ -474,11 +469,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\TrangChu\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Users\Create.cshtml" />
-    <Content Include="Views\Users\Delete.cshtml" />
-    <Content Include="Views\Users\Details.cshtml" />
-    <Content Include="Views\Users\Edit.cshtml" />
-    <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\TrangChu\DangKyLamGiaSu.cshtml" />
     <Content Include="Views\TrangChu\_DieuKhoanDangKyGiaSu.cshtml" />
     <Content Include="Views\TrangChu\YeuCauTimGiaSu.cshtml" />
@@ -503,11 +493,6 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712011402314_init.resx">
-      <DependentUpon>201712011402314_init.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
