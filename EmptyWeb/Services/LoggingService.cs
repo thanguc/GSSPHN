@@ -1,4 +1,4 @@
-﻿using EmptyWeb.Data;
+﻿using EmptyWeb.Contexts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +9,9 @@ namespace EmptyWeb.Services
 {
     public class LoggingService
     {
-        private readonly AppDbContext _context;
+        private readonly EntityContext _context;
 
-        public LoggingService(AppDbContext context)
+        public LoggingService(EntityContext context)
         {
             _context = context;
         }

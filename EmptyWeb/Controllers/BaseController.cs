@@ -1,6 +1,8 @@
-﻿using EmptyWeb.Data;
+﻿using EmptyWeb.Contexts;
 using EmptyWeb.Services;
 using EmptyWeb.Shared;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,18 +12,20 @@ namespace EmptyWeb.Controllers
 {
     public class BaseController : Controller
     {
-        protected readonly AppDbContext DBContext;
+        protected readonly EntityContext EntityContext;
         protected readonly LoggingService Logger;
         protected readonly ImgurService Imgur;
+        protected readonly IdentityContext IdentityContext;
 
         public BaseController()
         {
-            DBContext = new AppDbContext();
-            Logger = new LoggingService(DBContext);
-            Imgur = new ImgurService(DBContext, Logger);
+            EntityContext = new EntityContext();
+            Logger = new LoggingService(EntityContext);
+            Imgur = new ImgurService(EntityContext, Logger);
+            IdentityContext = new IdentityContext();
         }
 
-        protected void Alert(AlertMessage alert)
+        protected void Alert(PageEnums.AlertMessage alert)
         {
             ViewBag.AlertMessage = alert;
         }
@@ -57,9 +61,9 @@ namespace EmptyWeb.Controllers
             return Json(new { Error = errors });
         }
 
-        protected ActionResult Error(AppDbContext baseContext)
+        protected ActionResult Error(EntityContext entityContext)
         {
-            var errors = baseContext.GetValidationErrors().SelectMany(v => v.ValidationErrors).Select(e => e.ErrorMessage);
+            var errors = entityContext.GetValidationErrors().SelectMany(v => v.ValidationErrors).Select(e => e.ErrorMessage);
             return Json(new { Error = errors });
         }
     }

@@ -11,14 +11,14 @@ namespace EmptyWeb.Controllers
         [HttpPost]
         public ActionResult GetListQueQuan()
         {
-            var result = DBContext.QueQuan.Select(q => q.Ten).ToArray();
+            var result = EntityContext.QueQuan.Select(q => q.Ten).ToArray();
             return Json(result);
         }
 
         [HttpPost]
         public ActionResult GetListTrinhDo()
         {
-            var result = DBContext.TrinhDo.Select(q => q.TenTrinhDo).ToArray();
+            var result = EntityContext.TrinhDo.Select(q => q.TenTrinhDo).ToArray();
             return Json(result);
         }
     }

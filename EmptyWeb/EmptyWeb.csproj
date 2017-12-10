@@ -151,6 +151,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Contexts\EntityContext.cs" />
+    <Compile Include="Contexts\IdentityContext.cs" />
     <Compile Include="Controllers\APIController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CommonController.cs" />
@@ -158,7 +160,6 @@
     <Compile Include="Controllers\TrangChuController.cs" />
     <Compile Include="Controllers\QuanLyController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
-    <Compile Include="Data\AppDbContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -179,7 +180,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ImgurService.cs" />
     <Compile Include="Services\LoggingService.cs" />
-    <Compile Include="Shared\Enum.cs" />
+    <Compile Include="Shared\PageEnums.cs" />
     <Compile Include="Shared\PageHelper.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
@@ -498,9 +499,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\API\" />
-    <Folder Include="Views\Base\" />
-    <Folder Include="Views\Common\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

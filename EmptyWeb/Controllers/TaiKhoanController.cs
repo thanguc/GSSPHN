@@ -36,14 +36,14 @@ namespace EmptyWeb.Controllers
         [HttpPost]
         public ActionResult Login(LoginViewModel model)
         {
-            var userStore = new UserStore<IdentityUser>();
-            var userManager = new UserManager<IdentityUser>(userStore);
-            var user = userManager.Find(model.Username, model.Password);
+            //var userStore = new UserStore<IdentityUser>(IdentityContext);
+            //var userManager = new UserManager<IdentityUser>(userStore);
+            var user = IdentityContext.UserManager.Find(model.Username, model.Password);
 
             if (user != null)
             {
                 var authenticationManager = System.Web.HttpContext.Current.GetOwinContext().Authentication;
-                var userIdentity = userManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
+                var userIdentity = IdentityContext.UserManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
 
                 authenticationManager.SignIn(new AuthenticationProperties() { IsPersistent = false }, userIdentity);
                 if (!string.IsNullOrEmpty(model.ReturnUrl) && Url.IsLocalUrl(model.ReturnUrl))
@@ -67,6 +67,26 @@ namespace EmptyWeb.Controllers
             var authenticationManager = System.Web.HttpContext.Current.GetOwinContext().Authentication;
             authenticationManager.SignOut();
             return RedirectToAction("Index", "TrangChu");
+        }
+
+        [Authorize(Roles = PageEnums.UserRole.ADMIN)]
+        [HttpPost]
+        public ActionResult Create(string username, string password)
+        {
+            //var userStore = new UserStore<IdentityUser>(IdentityContext);
+            //var manager = new UserManager<IdentityUser>(userStore);
+
+            var user = new IdentityUser() { UserName = username };
+            IdentityResult result = IdentityContext.UserManager.Create(user, password);
+
+            if (result.Succeeded)
+            {
+                return OK();
+            }
+            else
+            {
+                return Error(result.Errors);
+            }
         }
     }
 }

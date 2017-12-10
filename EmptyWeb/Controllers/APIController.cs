@@ -1,6 +1,5 @@
-﻿using EmptyWeb.Data;
+﻿using EmptyWeb.Contexts;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Net;
 using System.Web.Mvc;
 
@@ -8,7 +7,7 @@ namespace EmptyWeb.Controllers
 {
     public class APIController : Controller
     {
-        private readonly AppDbContext _db = new AppDbContext();
+        private readonly EntityContext _db = new EntityContext();
 
         public ActionResult Imgur()
         {

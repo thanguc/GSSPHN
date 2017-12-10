@@ -109,8 +109,8 @@
                             <label class="control-label col-md-3">Gia sư Nam/Nữ?:</label>
                             <select name="GioiTinh" id="selectGioiTinh" class="form-control">
                                 <option></option>
-                                <option value="0" @(Model.GioiTinh.HasValue && Model.GioiTinh.Value == GioiTinh.Male ? "selected" : string.Empty)>Nam</option>
-                                <option value="1" @(Model.GioiTinh.HasValue && Model.GioiTinh.Value == GioiTinh.Female ? "selected" : string.Empty)>Nữ</option>
+                                <option value="0" @(Model.GioiTinh.HasValue && Model.GioiTinh.Value == PageEnums.GioiTinh.Male ? "selected" : string.Empty)>Nam</option>
+                                <option value="1" @(Model.GioiTinh.HasValue && Model.GioiTinh.Value == PageEnums.GioiTinh.Female ? "selected" : string.Empty)>Nữ</option>
                             </select>
                         </div>
                         <div class="form-group">

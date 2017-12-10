@@ -37,11 +37,11 @@
                             <td>@stt</td>
                             <td>@item.HoTen</td>
                             <td>@item.NgaySinh</td>
-                            <td>@Parser.GioiTinh((int)item.GioiTinh)</td>
+                            <td>@PageEnums.Parser.GioiTinh((int)item.GioiTinh)</td>
                             <td>@item.QueQuan.Ten</td>
                             <td>@item.SDT</td>
                             <td>@(item.TrinhDo.TenTrinhDo == "Khác" ? item.TrinhDoKhac : item.TrinhDo.TenTrinhDo)</td>
-                            <td class="text-center">@Html.Raw(@Parser.TrangThaiDangKy(item.TrangThai))</td>
+                            <td class="text-center">@Html.Raw(@PageEnums.Parser.TrangThaiDangKy(item.TrangThai))</td>
                         </tr>
 
                         stt++;

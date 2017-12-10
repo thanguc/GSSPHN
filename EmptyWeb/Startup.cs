@@ -4,7 +4,7 @@ using Microsoft.Owin;
 using Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.AspNet.Identity;
-using EmptyWeb.Data;
+using EmptyWeb.Contexts;
 using Microsoft.AspNet.Identity.EntityFramework;
 using EmptyWeb.Shared;
 
@@ -22,21 +22,17 @@ namespace EmptyWeb
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
                 LoginPath = new PathString("/TaiKhoan/Login")
             });
-
             CreateRolesAndUsers();
         }
 
         private void CreateRolesAndUsers()
         {
             // In Startup, creating default Admin Role and default Admin User
-            using (var roleStore = new RoleStore<IdentityRole>())
-            using (var roleManager = new RoleManager<IdentityRole>(roleStore))
-            using (var userStore = new UserStore<IdentityUser>())
-            using (var userManager = new UserManager<IdentityUser>(userStore))
+            using (var identityContext = new IdentityContext())
             {
-                if (!roleManager.RoleExists(UserRole.ADMIN))
+                if (!identityContext.RoleManager.RoleExists(PageEnums.UserRole.ADMIN))
                 {
-                    roleManager.Create(new IdentityRole(UserRole.ADMIN));
+                    identityContext.RoleManager.Create(new IdentityRole(PageEnums.UserRole.ADMIN));
 
                     var adminUser1 = new IdentityUser("admin")
                     {
@@ -45,8 +41,8 @@ namespace EmptyWeb
                         PhoneNumber = "01679659990",
                         PhoneNumberConfirmed = true
                     };
-                    userManager.Create(adminUser1, "140316");
-                    userManager.AddToRole(adminUser1.Id, UserRole.ADMIN);
+                    identityContext.UserManager.Create(adminUser1, "140316");
+                    identityContext.UserManager.AddToRole(adminUser1.Id, PageEnums.UserRole.ADMIN);
 
                     var adminUser2 = new IdentityUser("giasu24h")
                     {
@@ -55,8 +51,8 @@ namespace EmptyWeb
                         PhoneNumber = "0981494418",
                         PhoneNumberConfirmed = true
                     };
-                    userManager.Create(adminUser2, "140316");
-                    userManager.AddToRole(adminUser2.Id, UserRole.ADMIN);
+                    identityContext.UserManager.Create(adminUser2, "140316");
+                    identityContext.UserManager.AddToRole(adminUser2.Id, PageEnums.UserRole.ADMIN);
                 }
 
                 // creating Creating Manager role    

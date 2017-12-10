@@ -1,4 +1,4 @@
-﻿using EmptyWeb.Data;
+﻿using EmptyWeb.Contexts;
 using EmptyWeb.Models;
 using System;
 using System.Collections.Generic;
@@ -12,7 +12,7 @@ namespace EmptyWeb.Shared
     {
         public static List<Muc> GetAllMuc()
         {
-            using (var db = new AppDbContext())
+            using (var db = new EntityContext())
             {
                 return db.Muc.Include(m => m.ChuyenMucs).ToList();
             }
@@ -27,5 +27,6 @@ namespace EmptyWeb.Shared
         {
             return HttpContext.Current.User.Identity.Name;
         }
+
     }
 }

@@ -28,19 +28,19 @@ namespace EmptyWeb.Controllers
                 //var imgurResult = await Imgur.UploadImage(fileAnhThe.InputStream);
                 //if (imgurResult != null)
                 //{
-                    //model.AnhThe = imgurResult.Link;
-                    model.ID = Guid.NewGuid().ToString();
-                    model.TrangThai = TrangThaiDangKy.Submitted;
-                    model.NgayTao = DateTime.Now;
-                    DBContext.DangKyGiaSu.Add(model);
-                    await DBContext.SaveChangesAsync();
+                //model.AnhThe = imgurResult.Link;
+                model.ID = Guid.NewGuid().ToString();
+                model.TrangThai = PageEnums.TrangThaiDangKy.Submitted;
+                model.NgayTao = DateTime.Now;
+                EntityContext.DangKyGiaSu.Add(model);
+                await EntityContext.SaveChangesAsync();
                 //}
-                Alert(AlertMessage.DangKyLamGiaSuThanhCong);
+                Alert(PageEnums.AlertMessage.DangKyLamGiaSuThanhCong);
             }
             catch (Exception e)
             {
                 Logger.WriteLog(e.Message);
-                Alert(AlertMessage.DangKyLamGiaSuThatBai);
+                Alert(PageEnums.AlertMessage.DangKyLamGiaSuThatBai);
             }
             return View(model);
         }
@@ -58,16 +58,16 @@ namespace EmptyWeb.Controllers
             try
             {
                 model.ID = Guid.NewGuid().ToString();
-                model.TrangThai = TrangThaiYeuCau.Submitted;
+                model.TrangThai = PageEnums.TrangThaiYeuCau.Submitted;
                 model.NgayTao = DateTime.Now;
-                DBContext.TimGiaSu.Add(model);
-                await DBContext.SaveChangesAsync();
-                Alert(AlertMessage.DangKyTimGiaSuThanhCong);
+                EntityContext.TimGiaSu.Add(model);
+                await EntityContext.SaveChangesAsync();
+                Alert(PageEnums.AlertMessage.DangKyTimGiaSuThanhCong);
             }
             catch (Exception e)
             {
                 Logger.WriteLog(e.Message);
-                Alert(AlertMessage.DangKyTimGiaSuThatBai);
+                Alert(PageEnums.AlertMessage.DangKyTimGiaSuThatBai);
             }
             return View(model);
         }

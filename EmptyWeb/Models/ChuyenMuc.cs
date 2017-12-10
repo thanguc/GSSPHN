@@ -1,4 +1,4 @@
-﻿using EmptyWeb.Data;
+﻿using EmptyWeb.Contexts;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -22,7 +22,7 @@ namespace EmptyWeb.Models
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
-            using (var db = new AppDbContext())
+            using (var db = new EntityContext())
             {
                 if (db.ChuyenMuc.Any(c => c.TieuDe == this.TieuDe && c.ChuyenMucId != this.ChuyenMucId))
                     yield return new ValidationResult("Tiêu đề chuyên mục đã tồn tại", new[] { "TieuDe" });

@@ -1,12 +1,15 @@
 ﻿using EmptyWeb.Models;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 
-namespace EmptyWeb.Data
+namespace EmptyWeb.Contexts
 {
-    public class AppDbContext : DbContext
+    public class EntityContext : DbContext
     {
+        public EntityContext() : base("EntityContext")
+        {
+        }
+
         public DbSet<User> User { get; set; }
         public DbSet<DangKyGiaSu> DangKyGiaSu { get; set; }
         public DbSet<TimGiaSu> TimGiaSu { get; set; }

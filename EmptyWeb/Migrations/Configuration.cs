@@ -1,16 +1,16 @@
 namespace EmptyWeb.Migrations
 {
-    using EmptyWeb.Data;
+    using EmptyWeb.Contexts;
     using System.Data.Entity.Migrations;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<EmptyWeb.Data.AppDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<EmptyWeb.Contexts.EntityContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(AppDbContext context)
+        protected override void Seed(EntityContext context)
         {
         }
     }

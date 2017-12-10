@@ -7,7 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using EmptyWeb.Models;
-using EmptyWeb.Data;
+using EmptyWeb.Contexts;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity;
 
@@ -15,7 +15,7 @@ namespace EmptyWeb.Controllers
 {
     public class UsersController : BaseController
     {
-        private AppDbContext db = new AppDbContext();
+        private EntityContext db = new EntityContext();
 
         // GET: Users
         public ActionResult Index()
@@ -47,31 +47,7 @@ namespace EmptyWeb.Controllers
         // POST: Users/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        public ActionResult Create(User model)
-        {
-            //if (ModelState.IsValid)
-            //{
-            //    db.User.Add(user);
-            //    db.SaveChanges();
-            //    return RedirectToAction("Index");
-            //}
 
-            var userStore = new UserStore<IdentityUser>();
-            var manager = new UserManager<IdentityUser>(userStore);
-
-            var user = new IdentityUser() { UserName = model.Username };
-            IdentityResult result = manager.Create(user, model.Password);
-
-            if (result.Succeeded)
-            {
-                return OK();
-            }
-            else
-            {
-                return Error(result.Errors);
-            }
-        }
 
         // GET: Users/Edit/5
         public ActionResult Edit(string id)

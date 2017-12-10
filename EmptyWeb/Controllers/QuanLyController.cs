@@ -22,8 +22,8 @@ namespace EmptyWeb.Controllers
         [HttpPost]
         public ActionResult GetReportData()
         {
-            var wantToBeTutorCount = DBContext.DangKyGiaSu.Count(d => d.TrangThai == TrangThaiDangKy.Submitted);
-            var lookForTutorCount = DBContext.TimGiaSu.Count(d => d.TrangThai == TrangThaiYeuCau.Submitted);
+            var wantToBeTutorCount = EntityContext.DangKyGiaSu.Count(d => d.TrangThai == PageEnums.TrangThaiDangKy.Submitted);
+            var lookForTutorCount = EntityContext.TimGiaSu.Count(d => d.TrangThai == PageEnums.TrangThaiYeuCau.Submitted);
             var feedbackCount = 0;
             var result = new
             {
@@ -37,21 +37,21 @@ namespace EmptyWeb.Controllers
         [HttpPost]
         public ActionResult GetAllDangKyLamGiaSu()
         {
-            var submitting = DBContext.DangKyGiaSu.Include(d => d.QueQuan).Include(d => d.TrinhDo).OrderBy(d => d.NgayTao);
+            var submitting = EntityContext.DangKyGiaSu.Include(d => d.QueQuan).Include(d => d.TrinhDo).OrderBy(d => d.NgayTao);
             return PartialView("_WantToBeTutor", submitting.ToList());
         }
 
         [HttpPost]
         public ActionResult GetAllYeuCauTimGiaSu()
         {
-            var submitting = DBContext.TimGiaSu.Include(d => d.TrinhDo).OrderBy(d => d.NgayTao);
+            var submitting = EntityContext.TimGiaSu.Include(d => d.TrinhDo).OrderBy(d => d.NgayTao);
             return PartialView("_LookingForTutor", submitting.ToList());
         }
 
         [HttpPost]
         public ActionResult GetAllLog()
         {
-            return PartialView("_SystemLogs", DBContext.SystemLog.ToList());
+            return PartialView("_SystemLogs", EntityContext.SystemLog.ToList());
         }
         #endregion
 
@@ -65,16 +65,16 @@ namespace EmptyWeb.Controllers
                 Value = string.Empty,
                 Text = "- Không có mục -"
             });
-            listMuc.AddRange(DBContext.Muc.Select(m => new SelectListItem { Value = m.MucId.ToString(), Text = m.TieuDe }).ToList());
+            listMuc.AddRange(EntityContext.Muc.Select(m => new SelectListItem { Value = m.MucId.ToString(), Text = m.TieuDe }).ToList());
             ViewBag.Muc = listMuc;
 
-            var result = DBContext.Muc.ToList();
+            var result = EntityContext.Muc.ToList();
             return PartialView("_Muc", result);
         }
 
         public ActionResult ChuyenMuc()
         {
-            var result = DBContext.ChuyenMuc.Include(x => x.Muc).ToList();
+            var result = EntityContext.ChuyenMuc.Include(x => x.Muc).ToList();
             return PartialView("_ChuyenMuc", result);
         }
 
@@ -82,9 +82,9 @@ namespace EmptyWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                model.SortNumber = DBContext.Muc.Count() + 1;
-                DBContext.Muc.Add(model);
-                DBContext.SaveChanges();
+                model.SortNumber = EntityContext.Muc.Count() + 1;
+                EntityContext.Muc.Add(model);
+                EntityContext.SaveChanges();
                 return OK();
             }
             return Error(ModelState);
@@ -92,33 +92,33 @@ namespace EmptyWeb.Controllers
 
         public ActionResult UpdateTieuDeMuc(Guid pk, string value)
         {
-            var muc = DBContext.Muc.Find(pk);
+            var muc = EntityContext.Muc.Find(pk);
             muc.TieuDe = value;
-            if (DBContext.IsValid)
+            if (EntityContext.IsValid)
             {
-                DBContext.SaveObject(muc);
+                EntityContext.SaveObject(muc);
                 return OK();
             }
             else
             {
-                return Error(DBContext);
+                return Error(EntityContext);
             }
         }
 
         public ActionResult AddEditChuyenMuc(ChuyenMuc model)
         {
-            ChuyenMuc cm = DBContext.ChuyenMuc.Find(model.ChuyenMucId);
+            ChuyenMuc cm = EntityContext.ChuyenMuc.Find(model.ChuyenMucId);
             if (cm == null)
             {
-                model.SortNumber = DBContext.ChuyenMuc.Count(c => c.MucId == model.MucId) + 1;
-                DBContext.ChuyenMuc.Add(model);
-                if (DBContext.IsValid)
+                model.SortNumber = EntityContext.ChuyenMuc.Count(c => c.MucId == model.MucId) + 1;
+                EntityContext.ChuyenMuc.Add(model);
+                if (EntityContext.IsValid)
                 {
-                    DBContext.SaveChanges();
+                    EntityContext.SaveChanges();
                 }
                 else
                 {
-                    return Error(DBContext);
+                    return Error(EntityContext);
                 }
             }
             else
@@ -127,13 +127,13 @@ namespace EmptyWeb.Controllers
                 cm.Url = model.Url;
                 cm.TieuDe = model.TieuDe;
                 cm.NoiDung = model.NoiDung;
-                if (DBContext.IsValid)
+                if (EntityContext.IsValid)
                 {
-                    DBContext.SaveObject(cm);
+                    EntityContext.SaveObject(cm);
                 }
                 else
                 {
-                    return Error(DBContext);
+                    return Error(EntityContext);
                 }
             }
             return OK();
@@ -141,113 +141,113 @@ namespace EmptyWeb.Controllers
 
         public ActionResult GetSoLuongChuyenMuc(Guid id)
         {
-            return Json(DBContext.Muc.Find(id).ChuyenMucs.Count);
+            return Json(EntityContext.Muc.Find(id).ChuyenMucs.Count);
         }
 
         public ActionResult ChiTietMuc(Guid id)
         {
-            var result = DBContext.Muc.Find(id);
+            var result = EntityContext.Muc.Find(id);
             return PartialView("_ChiTietMuc", result);
         }
 
         public ActionResult SwitchMucAnHien(Guid id, bool status)
         {
-            var muc = DBContext.Muc.Find(id);
+            var muc = EntityContext.Muc.Find(id);
             muc.IsHidden = !status;
-            DBContext.SaveObject(muc);
+            EntityContext.SaveObject(muc);
             return OK();
         }
 
         public ActionResult SwitchChuyenMucAnHien(Guid id, bool status)
         {
-            var chuyenMuc = DBContext.ChuyenMuc.Find(id);
+            var chuyenMuc = EntityContext.ChuyenMuc.Find(id);
             chuyenMuc.IsHidden = !status;
-            DBContext.SaveObject(chuyenMuc);
+            EntityContext.SaveObject(chuyenMuc);
             return OK();
         }
 
         public ActionResult XoaMuc(Guid id)
         {
-            var muc = DBContext.Muc.Find(id);
-            var nextMucs = DBContext.Muc.Where(m => m.SortNumber > muc.SortNumber);
+            var muc = EntityContext.Muc.Find(id);
+            var nextMucs = EntityContext.Muc.Where(m => m.SortNumber > muc.SortNumber);
             foreach (var m in nextMucs)
             {
                 m.SortNumber--;
             }
-            DBContext.ChuyenMuc.RemoveRange(muc.ChuyenMucs);
-            DBContext.DeleteObject(muc);
+            EntityContext.ChuyenMuc.RemoveRange(muc.ChuyenMucs);
+            EntityContext.DeleteObject(muc);
             return OK();
         }
 
         public ActionResult XoaChuyenMuc(Guid id)
         {
-            var chuyenMuc = DBContext.ChuyenMuc.Find(id);
-            var nextChuyenMucs = DBContext.ChuyenMuc.Where(m => m.SortNumber > chuyenMuc.SortNumber);
+            var chuyenMuc = EntityContext.ChuyenMuc.Find(id);
+            var nextChuyenMucs = EntityContext.ChuyenMuc.Where(m => m.SortNumber > chuyenMuc.SortNumber);
             foreach (var m in nextChuyenMucs)
             {
                 m.SortNumber--;
             }
-            if (DBContext.IsValid)
+            if (EntityContext.IsValid)
             {
-                DBContext.DeleteObject(chuyenMuc);
+                EntityContext.DeleteObject(chuyenMuc);
             }
             else
             {
-                return Error(DBContext);
+                return Error(EntityContext);
             }
             return OK();
         }
 
         public ActionResult MoveMuc(Guid id, int value)
         {
-            var muc = DBContext.Muc.Find(id);
+            var muc = EntityContext.Muc.Find(id);
             if (value == -1 && muc.SortNumber > 1)
             {
-                var preMuc = DBContext.Muc.Single(c => c.SortNumber == muc.SortNumber - 1);
+                var preMuc = EntityContext.Muc.Single(c => c.SortNumber == muc.SortNumber - 1);
                 muc.SortNumber--;
                 preMuc.SortNumber++;
-                if (DBContext.IsValid)
+                if (EntityContext.IsValid)
                 {
-                    DBContext.SaveObject(muc, preMuc);
+                    EntityContext.SaveObject(muc, preMuc);
                 }
                 else
                 {
-                    return Error(DBContext);
+                    return Error(EntityContext);
                 }
             }
-            else if (value == 1 && muc.SortNumber < DBContext.Muc.Count())
+            else if (value == 1 && muc.SortNumber < EntityContext.Muc.Count())
             {
-                var nextMuc = DBContext.Muc.Single(c => c.SortNumber == muc.SortNumber + 1);
+                var nextMuc = EntityContext.Muc.Single(c => c.SortNumber == muc.SortNumber + 1);
                 muc.SortNumber++;
                 nextMuc.SortNumber--;
-                DBContext.SaveObject(muc, nextMuc);
+                EntityContext.SaveObject(muc, nextMuc);
             }
             return OK();
         }
 
         public ActionResult MoveChuyenMuc(Guid id, int value)
         {
-            var chuyenMuc = DBContext.ChuyenMuc.Find(id);
+            var chuyenMuc = EntityContext.ChuyenMuc.Find(id);
             if (value == -1 && chuyenMuc.SortNumber > 1)
             {
-                var preChuyenMuc = DBContext.ChuyenMuc.Single(c => c.SortNumber == chuyenMuc.SortNumber - 1 && c.MucId == chuyenMuc.MucId);
+                var preChuyenMuc = EntityContext.ChuyenMuc.Single(c => c.SortNumber == chuyenMuc.SortNumber - 1 && c.MucId == chuyenMuc.MucId);
                 chuyenMuc.SortNumber--;
                 preChuyenMuc.SortNumber++;
-                DBContext.SaveObject(chuyenMuc, preChuyenMuc);
+                EntityContext.SaveObject(chuyenMuc, preChuyenMuc);
             }
-            else if (value == 1 && chuyenMuc.SortNumber < DBContext.ChuyenMuc.Count(c => c.MucId == chuyenMuc.MucId))
+            else if (value == 1 && chuyenMuc.SortNumber < EntityContext.ChuyenMuc.Count(c => c.MucId == chuyenMuc.MucId))
             {
-                var nextChuyenMuc = DBContext.ChuyenMuc.Single(c => c.SortNumber == chuyenMuc.SortNumber + 1 && c.MucId == chuyenMuc.MucId);
+                var nextChuyenMuc = EntityContext.ChuyenMuc.Single(c => c.SortNumber == chuyenMuc.SortNumber + 1 && c.MucId == chuyenMuc.MucId);
                 chuyenMuc.SortNumber++;
                 nextChuyenMuc.SortNumber--;
-                DBContext.SaveObject(chuyenMuc, nextChuyenMuc);
+                EntityContext.SaveObject(chuyenMuc, nextChuyenMuc);
             }
             return OK();
         }
 
         public ActionResult GetChuyenMucModal(Guid? id)
         {
-            return PartialView("_ModalThemChuyenMuc", id.HasValue ? DBContext.ChuyenMuc.Find(id) : null);
+            return PartialView("_ModalThemChuyenMuc", id.HasValue ? EntityContext.ChuyenMuc.Find(id) : null);
         }
 
         #endregion
@@ -255,7 +255,7 @@ namespace EmptyWeb.Controllers
         #region Account
         public ActionResult _TaiKhoan()
         {
-            var accounts = DBContext.User;
+            var accounts = EntityContext.User;
             return PartialView("_TaiKhoan/_TaiKhoan", accounts.ToList());
         }
         #endregion
