@@ -9,7 +9,6 @@ using System.Web.Mvc;
 
 namespace EmptyWeb.Controllers
 {
-    [TraceLog]
     [Authorize]
     public class QuanLyController : BaseController
     {
@@ -53,7 +52,7 @@ namespace EmptyWeb.Controllers
         [HttpPost]
         public ActionResult GetAllLog()
         {
-            return PartialView("_SystemLogs", LogContext.Logs.ToList());
+            return PartialView("_SystemLogs", LogContext.Logs.OrderByDescending(l => l.Timestamp).ToList());
         }
         #endregion
 
@@ -80,6 +79,7 @@ namespace EmptyWeb.Controllers
             return PartialView("_ChuyenMuc", result);
         }
 
+        [TraceLog]
         public ActionResult ThemMuc(Muc model)
         {
             if (ModelState.IsValid)
@@ -92,6 +92,7 @@ namespace EmptyWeb.Controllers
             return Error(ModelState);
         }
 
+        [TraceLog]
         public ActionResult UpdateTieuDeMuc(Guid pk, string value)
         {
             var muc = EntityContext.Muc.Find(pk);
@@ -107,6 +108,7 @@ namespace EmptyWeb.Controllers
             }
         }
 
+        [TraceLog]
         public ActionResult AddEditChuyenMuc(ChuyenMuc model)
         {
             ChuyenMuc cm = EntityContext.ChuyenMuc.Find(model.ChuyenMucId);
@@ -152,6 +154,7 @@ namespace EmptyWeb.Controllers
             return PartialView("_ChiTietMuc", result);
         }
 
+        [TraceLog]
         public ActionResult SwitchMucAnHien(Guid id, bool status)
         {
             var muc = EntityContext.Muc.Find(id);
@@ -160,6 +163,7 @@ namespace EmptyWeb.Controllers
             return OK();
         }
 
+        [TraceLog]
         public ActionResult SwitchChuyenMucAnHien(Guid id, bool status)
         {
             var chuyenMuc = EntityContext.ChuyenMuc.Find(id);
@@ -168,6 +172,7 @@ namespace EmptyWeb.Controllers
             return OK();
         }
 
+        [TraceLog]
         public ActionResult XoaMuc(Guid id)
         {
             var muc = EntityContext.Muc.Find(id);
@@ -181,6 +186,7 @@ namespace EmptyWeb.Controllers
             return OK();
         }
 
+        [TraceLog]
         public ActionResult XoaChuyenMuc(Guid id)
         {
             var chuyenMuc = EntityContext.ChuyenMuc.Find(id);
@@ -200,6 +206,7 @@ namespace EmptyWeb.Controllers
             return OK();
         }
 
+        [TraceLog]
         public ActionResult MoveMuc(Guid id, int value)
         {
             var muc = EntityContext.Muc.Find(id);
@@ -227,6 +234,7 @@ namespace EmptyWeb.Controllers
             return OK();
         }
 
+        [TraceLog]
         public ActionResult MoveChuyenMuc(Guid id, int value)
         {
             var chuyenMuc = EntityContext.ChuyenMuc.Find(id);

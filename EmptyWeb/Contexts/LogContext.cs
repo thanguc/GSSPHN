@@ -48,6 +48,11 @@ namespace EmptyWeb.Contexts
                 {
                     logContext.Record(log);
                 }
+                if (exceptionContext.HttpContext.Request.IsAjaxRequest())
+                {
+                    exceptionContext.HttpContext.Response.StatusCode = 500;
+                    exceptionContext.Result = new EmptyResult();
+                }
                 exceptionContext.Result = new RedirectResult("/Shared/Error");
                 exceptionContext.ExceptionHandled = true;
             }
