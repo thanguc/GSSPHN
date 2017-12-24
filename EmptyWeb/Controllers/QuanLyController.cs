@@ -60,23 +60,8 @@ namespace EmptyWeb.Controllers
 
         public ActionResult Muc()
         {
-            List<SelectListItem> listMuc = new List<SelectListItem>();
-            listMuc.Add(new SelectListItem
-            {
-                Value = string.Empty,
-                Text = "- Không có mục -"
-            });
-            listMuc.AddRange(EntityContext.Muc.Select(m => new SelectListItem { Value = m.MucId.ToString(), Text = m.TieuDe }).ToList());
-            ViewBag.Muc = listMuc;
-
             var result = EntityContext.Muc.ToList();
             return PartialView("_Muc", result);
-        }
-
-        public ActionResult ChuyenMuc()
-        {
-            var result = EntityContext.ChuyenMuc.Include(x => x.Muc).ToList();
-            return PartialView("_ChuyenMuc", result);
         }
 
         [TraceLog]
@@ -258,6 +243,178 @@ namespace EmptyWeb.Controllers
         public ActionResult GetChuyenMucModal(Guid? id)
         {
             return PartialView("_ModalThemChuyenMuc", id.HasValue ? EntityContext.ChuyenMuc.Find(id) : null);
+        }
+
+        public ActionResult _BaiViet()
+        {
+            var result = new List<BaiViet>();
+            result.AddRange(EntityContext.BaiViet.Where(b => b.IsPinned).OrderBy(b => b.SortNumber).ToList());
+            result.AddRange(EntityContext.BaiViet.Where(b => !b.IsPinned).OrderByDescending(b => b.SortNumber).ToList());
+            return PartialView("_BaiViet/_BaiViet", result);
+        }
+
+        [TraceLog]
+        [HttpPost]
+        public ActionResult ThemBaiViet(BaiViet model)
+        {
+            model.SortNumber = EntityContext.BaiViet.Count() + 1;
+            EntityContext.BaiViet.Add(model);
+            if (EntityContext.IsValid)
+            {
+                EntityContext.SaveChanges();
+                return OK();
+            }
+            return Error(EntityContext);
+        }
+
+        [TraceLog]
+        [HttpPost]
+        public ActionResult SuaBaiViet(BaiViet model)
+        {
+            var bv = EntityContext.BaiViet.Find(model.BaiVietId);
+            if (bv != null)
+            {
+                bv.NoiDung = model.NoiDung;
+                bv.TieuDe = model.TieuDe;
+                bv.UrlAnhBia = model.UrlAnhBia;
+                bv.UrlBaiViet = model.UrlBaiViet;
+                if (EntityContext.IsValid)
+                {
+                    EntityContext.SaveObject(bv);
+                    return OK();
+                }
+                else
+                {
+                    return Error(EntityContext);
+                }
+            }
+            return Error();
+        }
+
+        [TraceLog]
+        public ActionResult SwitchBaiVietAnHien(Guid id, bool status)
+        {
+            var bv = EntityContext.BaiViet.Find(id);
+            bv.IsHidden = !status;
+            if (EntityContext.IsValid)
+            {
+                EntityContext.SaveObject(bv);
+                return OK();
+            }
+            return Error(EntityContext);
+        }
+
+        [TraceLog]
+        [HttpPost]
+        public ActionResult GhimBaiViet(Guid id)
+        {
+            var bv = EntityContext.BaiViet.Find(id);
+            if (bv != null && !bv.IsPinned)
+            {
+                if (EntityContext.BaiViet.Count(b => b.IsPinned && b.BaiVietId != id) == 5)
+                {
+                    return Error("Số bài viết được ghim đã đạt tối đa 5 bài, hãy bỏ ghim 1 bài viết trước");
+                }
+                else
+                {
+                    var previouses = EntityContext.BaiViet.Where(b => b.SortNumber < bv.SortNumber);
+                    foreach (var pre in previouses)
+                    {
+                        pre.SortNumber++;
+                    }
+                    bv.SortNumber = 1;
+                    bv.IsPinned = true;
+                    if (EntityContext.IsValid)
+                    {
+                        EntityContext.SaveChanges();
+                        return OK();
+                    }
+                    return Error(EntityContext);
+                }
+            }
+            return Error();
+        }
+
+        [TraceLog]
+        [HttpPost]
+        public ActionResult BoGhimBaiViet(Guid id)
+        {
+            var bv = EntityContext.BaiViet.Find(id);
+            if (bv != null && bv.IsPinned)
+            {
+                var nexts = EntityContext.BaiViet.Where(b => b.SortNumber > bv.SortNumber && (b.IsPinned || (!b.IsPinned && b.NgayDang < bv.NgayDang)));
+                foreach (var next in nexts)
+                {
+                    next.SortNumber--;
+                }
+                bv.SortNumber = EntityContext.BaiViet.Where(b => b.IsPinned || (!b.IsPinned && b.NgayDang < bv.NgayDang)).Count();
+                bv.IsPinned = false;
+                EntityContext.SaveChanges();
+                return OK();
+            }
+            return Error();
+        }
+
+        [TraceLog]
+        [HttpPost]
+        public ActionResult SwapBaiViet(Guid idFrom, Guid idTo)
+        {
+            var bvFrom = EntityContext.BaiViet.Find(idFrom);
+            var bvTo = EntityContext.BaiViet.Find(idTo);
+            if (bvFrom != null && bvTo != null && bvFrom.IsPinned && bvTo.IsPinned)
+            {
+                var tmp = bvFrom.SortNumber;
+                bvFrom.SortNumber = bvTo.SortNumber;
+                bvTo.SortNumber = tmp;
+                EntityContext.SaveObject(bvFrom, bvTo);
+                return OK();
+            }
+            return Error();
+        }
+
+        [TraceLog]
+        public ActionResult XoaBaiViet(Guid id)
+        {
+            var bv = EntityContext.BaiViet.Find(id);
+            if (bv.IsPinned)
+            {
+                return Error("Không được xóa bài viết đang ghim");
+            }
+            if (bv != null)
+            {
+                var nextBaiViets = EntityContext.BaiViet.Where(m => m.SortNumber > bv.SortNumber);
+                foreach (var m in nextBaiViets)
+                {
+                    m.SortNumber--;
+                }
+                if (EntityContext.IsValid)
+                {
+                    EntityContext.DeleteObject(bv);
+                    return OK();
+                }
+                return Error(EntityContext);
+            }
+            return Error();
+        }
+
+        [TraceLog]
+        public ActionResult ResetThuTuBaiViet()
+        {
+            var allBaiViets = EntityContext.BaiViet.OrderBy(b => b.NgayDang);
+            int i = 1;
+            foreach (var m in allBaiViets)
+            {
+                m.IsPinned = false;
+                m.IsHidden = false;
+                m.SortNumber = i;
+                i++;
+            }
+            if (EntityContext.IsValid)
+            {
+                EntityContext.SaveChanges();
+                return OK();
+            }
+            return Error(EntityContext);
         }
 
         #endregion

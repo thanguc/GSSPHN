@@ -1,29 +1,50 @@
 ﻿@using EmptyWeb.Shared
 @model List<EmptyWeb.Models.DangKyGiaSu>
 @{
-    int stt = 0;
+    int stt = 1;
 }
+<style>
+    .table-danh-sach-dang-ky tbody {
+        display: block;
+        height: calc(100vh - 350px);
+        overflow: auto;
+    }
 
+        .table-danh-sach-dang-ky thead, .table-danh-sach-dang-ky tbody > tr {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+
+    .table-danh-sach-dang-ky thead {
+        width: calc(100% - 5px);
+    }
+
+    .table-danh-sach-dang-ky tbody > tr > td:first-of-type {
+        width: 100px;
+        text-align: center;
+    }
+</style>
 <div class="col-md-12">
-    <div class="panel panel-default panel-table">
+    <div class="panel panel-primary panel-table">
         <div class="panel-heading">
             <div class="row">
                 <div class="col col-xs-6">
                     <h3 class="panel-title">Panel Heading</h3>
                 </div>
                 <div class="col col-xs-6 text-right">
-                    <button type="button" class="btn btn-sm btn-primary btn-create">Create New</button>
+                    <button type="button" class="btn btn-sm btn-success btn-create">Create New</button>
                 </div>
             </div>
         </div>
         <div class="panel-body">
-            <table class="table table-striped table-bordered table-list">
+            <table class="table table-striped table-bordered table-list table-danh-sach-dang-ky">
                 <thead>
                     <tr>
                         <th>#</th>
                         <th>Họ Tên</th>
-                        <th>Ngày Sinh</th>
-                        <th>Giới Tính</th>
+                        <th width="120">Ngày Sinh</th>
+                        <th width="100">Giới Tính</th>
                         <th>Quê Quán</th>
                         <th>SĐT</th>
                         <th>Trình Độ</th>
@@ -36,12 +57,12 @@
                         <tr class="clickable-row" data-target="#dklgs-@item.ID">
                             <td>@stt</td>
                             <td>@item.HoTen</td>
-                            <td>@item.NgaySinh</td>
-                            <td>@Parser.GioiTinh((int)item.GioiTinh)</td>
+                            <td width="120">@item.NgaySinh</td>
+                            <td width="100">@PageEnums.Parser.GioiTinh((int)item.GioiTinh)</td>
                             <td>@item.QueQuan.Ten</td>
                             <td>@item.SDT</td>
                             <td>@(item.TrinhDo.TenTrinhDo == "Khác" ? item.TrinhDoKhac : item.TrinhDo.TenTrinhDo)</td>
-                            <td class="text-center">@Html.Raw(@Parser.TrangThaiDangKy(item.TrangThai))</td>
+                            <td class="text-center">@Html.Raw(@PageEnums.Parser.TrangThaiDangKy(item.TrangThai))</td>
                         </tr>
 
                         stt++;

@@ -164,6 +164,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\BaiViet.cs" />
     <Compile Include="Models\ChuyenMuc.cs" />
     <Compile Include="Models\Log.cs" />
     <Compile Include="Models\Muc.cs" />
@@ -480,12 +481,13 @@
     <Content Include="Views\QuanLy\_SystemLogs.cshtml" />
     <Content Include="Views\QuanLy\_LookingForTutor.cshtml" />
     <Content Include="Views\QuanLy\_Muc.cshtml" />
-    <Content Include="Views\QuanLy\_ChuyenMuc.cshtml" />
     <Content Include="Views\QuanLy\_ChiTietMuc.cshtml" />
     <Content Include="Views\QuanLy\_ModalThemChuyenMuc.cshtml" />
     <Content Include="Views\QuanLy\_TaiKhoan\_TaiKhoan.cshtml" />
     <Content Include="Views\QuanLy\_TaiKhoan\_ModalThemTaiKhoan.cshtml" />
     <Content Include="Views\TaiKhoan\Login.cshtml" />
+    <Content Include="Views\QuanLy\_BaiViet\_BaiViet.cshtml" />
+    <Content Include="Views\QuanLy\_BaiViet\_ModalBaiViet.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

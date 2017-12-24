@@ -1,0 +1,82 @@
+﻿@using EmptyWeb.Models
+@model BaiViet
+@{
+    var isNew = string.IsNullOrEmpty(Model.BaiVietId.ToString().Replace("0","").Replace("-",""));
+}
+
+
+@if (isNew)
+{
+    <a class="pull-right btn btn-sm btn-success btn-them-bai-viet" data-toggle="modal" data-target="#modal-bai-viet--@(isNew ? "new" : Model.BaiVietId.ToString())">
+        Thêm bài viết <i class="fa fa-plus fa-fw"></i>
+    </a>
+}
+else
+{
+    <a class="btn btn-xs btn-warning pull-right btn-edit" data-toggle="modal" data-target="#modal-bai-viet--@Model.BaiVietId" title="Sửa bài viết">
+        <i class="fa fa-edit"></i>
+    </a>
+}
+<div id="modal-bai-viet--@(isNew ? "new" : Model.BaiVietId.ToString())" class="modal fade modal-lg @(isNew ? "create" : "update")" role="dialog">
+    <div class="modal-dialog no-margin" style="width:100%">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title text-left" style="color:black;">
+                    @if (isNew)
+                    {
+                        <span><i class="fa fa-plus-square"></i> Thêm Bài Viết</span>
+                    }
+                    else
+                    {
+                        <span><i class="fa fa-edit fa-fw"></i> Chỉnh sửa Bài viết - </span><span class="text-effect-blur">@Model.TieuDe</span>
+                    }
+                </h4>
+            </div>
+            <form action="/QuanLy/@(isNew ? "ThemBaiViet" : "SuaBaiViet")" method="post" onkeypress="return event.keyCode != 13;">
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        <input type="hidden" name="BaiVietId" value="@(isNew ? string.Empty : Model.BaiVietId.ToString())" />
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Tiêu đề</label>
+                            <input class="form-control" name="TieuDe" type="text" style="max-width:600px; width:600px;" autocomplete="off" value="@Model.TieuDe" required />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Đường dẫn bài viết</label>
+                            <div class="fixed-placeholder" data-placeholder="http://giasu24h.hanoi.vn/BaiViet/">
+                                <input class="form-control" name="UrlBaiViet" type="text" style="max-width:600px; width:600px; padding-left: 210px;" autocomplete="off" value="@Model.UrlBaiViet" required />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Đường dẫn ảnh bìa</label>
+                            <input class="form-control" name="UrlAnhBia" type="text" style="max-width:600px; width:600px;" autocomplete="off" value="@Model.UrlAnhBia" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Nội dung</label>
+                        </div>
+                        <textarea class="form-control" name="NoiDung" id="NoiDungBaiViet-@(isNew ? "new" : Model.BaiVietId.ToString())" @*style="max-width:350px; width:350px;"*@>
+                            @Model.NoiDung
+                        </textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success btn-action-confirm">@(isNew ? "Tạo" : "Cập nhật")</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    $(function () {
+        CKEDITOR.replace("NoiDungBaiViet-@(isNew ? "new" : Model.BaiVietId.ToString())");
+
+        var $editModals = $('#modal-bai-viet--@(isNew ? "new" : Model.BaiVietId.ToString())');
+
+        $editModals.find('input[name="TieuDe"]').on('keyup', function () {
+            $editModals.find('input[name="UrlBaiViet"]').val(SITE.normalize($(this).val()));
+        });
+    });
+</script>

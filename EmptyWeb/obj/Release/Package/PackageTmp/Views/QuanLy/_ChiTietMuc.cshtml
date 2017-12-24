@@ -87,11 +87,12 @@
                     <strong class="tieude">@cm.TieuDe</strong>
                 </td>
                 <td class="col-md-3">
-                    <a class="btn btn-xs btn-danger pull-right btn-remove" data-toggle="modal" data-target="#modal-confirm-delete-chuyen-muc--@cm.ChuyenMucId"><i class="fa fa-trash"></i></a>
-                    <input type="checkbox" @(!cm.IsHidden ? "checked" : string.Empty)
+                    <a class="btn btn-xs btn-danger pull-right btn-remove" data-toggle="modal" data-target="#modal-confirm-delete-chuyen-muc--@cm.ChuyenMucId" title="Xóa chuyên mục"><i class="fa fa-trash"></i></a>
+                    <input type="checkbox" @(!cm.IsHidden ? "checked" : string.Empty) title="Ẩn/Hiện khỏi menu trang chủ"
                            data-toggle="toggle" data-on="<i class='fa fa-eye'></i>" data-off="<i class='fa fa-eye-slash'></i>"
                            data-onstyle="success" data-offstyle="danger" data-size="mini" data-style="android" />
                     @Html.Partial("_ModalThemChuyenMuc", cm)
+                    <a target="_blank" href="/ChuyenMuc/@cm.Url" class="btn btn-xs btn-info pull-right" style="margin-right:10px;" title="Xem trước"><i class="fa fa-external-link"></i></a>
                 </td>
             </tr>
         }

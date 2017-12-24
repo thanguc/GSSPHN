@@ -83,8 +83,6 @@ C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\System.Web.WebPages.Deployme
 C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\System.Web.WebPages.Razor.xml
 C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\Antlr3.Runtime.pdb
 C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\obj\Release\EmptyWeb.csprojResolveAssemblyReference.cache
-C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\obj\Release\EmptyWeb.Migrations.init.resources
-C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\obj\Release\EmptyWeb.csproj.GenerateResource.Cache
 C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\obj\Release\EmptyWeb.csproj.CoreCompileInputs.cache
 C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\obj\Release\EmptyWeb.dll
 C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\obj\Release\EmptyWeb.pdb

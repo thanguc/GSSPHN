@@ -18,6 +18,7 @@ namespace EmptyWeb.Contexts
         public DbSet<TrinhDo> TrinhDo { get; set; }
         public DbSet<Muc> Muc { get; set; }
         public DbSet<ChuyenMuc> ChuyenMuc { get; set; }
+        public DbSet<BaiViet> BaiViet { get; set; }
 
         public bool IsValid { get { return this.GetValidationErrors().Count() == 0; } }
 

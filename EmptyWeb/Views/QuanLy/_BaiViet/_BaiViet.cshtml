@@ -1,0 +1,401 @@
+﻿@using EmptyWeb.Shared
+@using EmptyWeb.Models
+@model List<BaiViet>
+@{
+}
+<style>
+    .toggle.android {
+        border-radius: 0px;
+    }
+
+        .toggle.android .toggle-handle {
+            border-radius: 0px;
+        }
+
+    [id^=modal-bai-viet--] {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+        [id^=modal-bai-viet--] .fixed-placeholder {
+            position: relative;
+        }
+
+            [id^=modal-bai-viet--] .fixed-placeholder::after {
+                color: black;
+                font-style: italic;
+                position: absolute;
+                left: 17%;
+                top: 7px;
+                content: attr(data-placeholder);
+                pointer-events: none;
+                opacity: 0.6;
+            }
+
+        [id^=modal-bai-viet--].create .fixed-placeholder::after {
+            top: 7px;
+        }
+
+        [id^=modal-bai-viet--].update .control-label,
+        [id^=modal-bai-viet--].update .checkbox {
+            padding-top: 0;
+        }
+
+        [id^=modal-bai-viet--].modal-lg {
+            width: 80%;
+            margin: auto;
+        }
+
+        [id^=modal-bai-viet--].update form .control-label {
+            line-height: 34px;
+        }
+
+    .card-bv-holder {
+        width: 290px;
+        height: 220px;
+        border: 1px solid #ccc;
+        margin: 7px;
+        border-radius: 2px;
+        background-color: #f5f5f5;
+        float: left;
+    }
+
+        .card-bv-holder:hover {
+            box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+        }
+
+    .card-bv {
+        width: 288px;
+        height: 218px;
+    }
+
+        .card-bv > .card-bv--anh-bia {
+            height: 162px;
+        }
+
+            .card-bv > .card-bv--anh-bia > img {
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+            }
+
+        .card-bv > .card-bv--tieu-de {
+            height: 28px;
+            padding: 0 4px;
+            line-height: 28px;
+            overflow: hidden;
+        }
+
+            .card-bv > .card-bv--tieu-de > a {
+                color: #6d6d6d;
+                font-weight: bold;
+            }
+
+        .card-bv > .card-bv--actions {
+            height: 28px;
+            padding: 0 6px;
+        }
+
+            .card-bv > .card-bv--actions .fa-thumb-tack {
+                opacity: 0.4;
+            }
+
+            .card-bv > .card-bv--actions .btn-pin-bai-viet .fa-thumb-tack:hover,
+            .card-bv > .card-bv--actions .btn-pin-bai-viet.pinned .fa-thumb-tack {
+                opacity: 1;
+            }
+
+            .card-bv > .card-bv--actions .toggle {
+                margin-right: 5px;
+                float: right;
+            }
+
+    @@media(max-width:1366px) {
+        .card-bv-holder {
+            width: 210px;
+            height: 175px;
+            margin: 4px;
+        }
+
+        .card-bv {
+            width: 208px;
+            height: 173px;
+        }
+
+            .card-bv > .card-bv--anh-bia {
+                height: 117px;
+            }
+    }
+
+    .draggable {
+        cursor: -webkit-grab;
+    }
+
+    .ui-draggable-dragging {
+        background: #ccc;
+        cursor: -webkit-grabbing;
+    }
+
+    .hoverHolder {
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    }
+</style>
+
+
+
+<div class="col-md-12">
+    <div class="panel panel-primary panel-table">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col col-xs-6 no-padding">
+                    <h3 class="panel-title text-effect-blur"><i class="fa fa-list fa-fw"></i> Danh sách bài viết</h3>
+                </div>
+                <div class="col col-xs-6 text-right">
+                    @Html.Partial("_BaiViet/_ModalBaiViet", new BaiViet() { BaiVietId = new Guid() })
+                    <a class="btn btn-sm btn-danger pull-right btn-reset-thu-tu" style="margin-right:10px;"><i class="fa fa-repeat fa-fw"></i> Reset thứ tự bài viết</a>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body" style="padding:5px;height: calc(100vh - 307px);overflow: auto;">
+            <h4 class="text-effect-blur" style="margin-left: 5px;"><i class="fa fa-thumb-tack fa-fw"></i>Bài viết đã ghim</h4>
+            @foreach (var bv in Model.Where(b => b.IsPinned))
+            {
+                <div class="card-bv-holder droppable">
+                    <div class="card-bv draggable" data-bai-viet-id="@bv.BaiVietId">
+                        <div class="card-bv--anh-bia">
+                            <img src="@bv.UrlAnhBia" />
+                        </div>
+                        <div class="card-bv--tieu-de">
+                            <a href="/BaiViet/@bv.UrlBaiViet" target="_blank" title="@bv.TieuDe"><span>@bv.TieuDe</span></a>
+                        </div>
+                        <div class="card-bv--actions">
+                            <span class="text-muted" title="@bv.NgayDang.ToString()">@bv.NgayDang.ToShortDateString()</span>
+                            @Html.Partial("_BaiViet/_ModalBaiViet", bv)
+                            <input type="checkbox" @(!bv.IsHidden ? "checked" : string.Empty)
+                                   data-toggle="toggle" data-on="<i class='fa fa-eye'></i>" data-off="<i class='fa fa-eye-slash'></i>"
+                                   data-onstyle="success" data-offstyle="danger" data-size="mini" data-style="android" />
+                            <a class="btn-pin-bai-viet pull-right pinned" title="Ghim bài viết" style="margin-right:10px;"><i class="fa fa-thumb-tack fa-fw"></i></a>
+                        </div>
+                    </div>
+                </div>
+            }
+            <div class="clearfix"></div>
+            <hr style="margin-left:5px" />
+            <h4 class="text-effect-blur" style="margin-left: 5px;"><i class="fa fa-history fa-fw"></i>Bài viết gần đây</h4>
+            @foreach (var bv in Model.Where(b => !b.IsPinned))
+            {
+                <div class="card-bv-holder">
+                    <div class="card-bv" data-bai-viet-id="@bv.BaiVietId">
+                        <div class="card-bv--anh-bia">
+                            <img src="@bv.UrlAnhBia" />
+                        </div>
+                        <div class="card-bv--tieu-de">
+                            <a href="/BaiViet/@bv.UrlBaiViet" target="_blank" title="@bv.TieuDe"><span>@bv.TieuDe</span></a>
+                        </div>
+                        <div class="card-bv--actions">
+                            <span class="text-muted" title="@bv.NgayDang.ToString()">@bv.NgayDang.ToShortDateString()</span>
+                            @Html.Partial("_BaiViet/_ModalBaiViet", bv)
+                            <a class="btn btn-xs btn-danger pull-right btn-remove" data-toggle="modal" data-target="#modal-confirm-delete-bai-viet--@bv.BaiVietId" title="Xóa bài viết" style="margin-right: 5px;"><i class="fa fa-trash fa-fw"></i></a>
+                            <input type="checkbox" @(!bv.IsHidden ? "checked" : string.Empty)
+                                   data-toggle="toggle" data-on="<i class='fa fa-eye'></i>" data-off="<i class='fa fa-eye-slash'></i>"
+                                   data-onstyle="success" data-offstyle="danger" data-size="mini" data-style="android" />
+                            <a class="btn-pin-bai-viet pull-right" title="Ghim bài viết" style="margin-right:5px;"><i class="fa fa-thumb-tack fa-fw"></i></a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="panel-footer">
+            <div class="row">
+                <div class="col col-xs-4">
+                    @*Page 1 of 5*@
+                </div>
+                <div class="col col-xs-8">
+                    @*<ul class="pagination hidden-xs pull-right">
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                        </ul>
+                        <ul class="pagination visible-xs pull-right">
+                            <li><a href="#">«</a></li>
+                            <li><a href="#">»</a></li>
+                        </ul>*@
+                </div>
+            </div>
+        </div>
+        @foreach (var bv in Model)
+        {
+            <div id="modal-confirm-delete-bai-viet--@bv.BaiVietId" class="modal fade" role="dialog" data-bai-viet-id="@bv.BaiVietId">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title"><i class="fa fa-exclamation-triangle fa-fw text-danger"></i> Xác nhận xóa</h4>
+                        </div>
+                        <div class="modal-body">
+                            <h3 class="text-center">Xác nhận xóa Bài Viết <span class="text-effect-blur">@bv.TieuDe</span>?</h3>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger btn-confirm-xoa-bai-viet"><i class="fa fa-trash fa-fw"></i> XÓA</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('input[type="checkbox"][data-toggle="toggle"]').bootstrapToggle().change(function () {
+            var $this = $(this);
+            $this.AjaxPost({
+                url: '/QuanLy/SwitchBaiVietAnHien',
+                data: {
+                    id: $this.closest('.card-bv').attr('data-bai-viet-id'),
+                    status: $this.prop('checked')
+                },
+                onError: function (error) {
+                    alert(error);
+                    $this.bootstrapToggle('toggle');
+                }
+            });
+        });
+
+        $('.panel').on('click', '.modal[id^=modal-bai-viet--] .btn-action-confirm', function (e) {
+            var $this = $(e.target);
+            var form = $this.closest('form').formize();
+            var isNew = form.get('BaiVietId').length == 0;
+            var $modal = $this.closest('.modal');
+            var data = {
+                BaiVietId: form.get('BaiVietId'),
+                TieuDe: form.get('TieuDe'),
+                UrlBaiViet: form.get('UrlBaiViet'),
+                UrlAnhBia: form.get('UrlAnhBia'),
+                NoiDung: isNew ? CKEDITOR.instances["NoiDungBaiViet-new"].getData() : CKEDITOR.instances["NoiDungBaiViet-" + form.get('BaiVietId')].getData(),
+                IsHidden: form.field('IsHidden').is(":checked")
+            };
+            $modal.AjaxPost({
+                url: form.action,
+                data: data,
+                onSuccess: function () {
+                    SITE.closeOpeningModal(function () {
+                        for (name in CKEDITOR.instances) {
+                            if (name != "NoiDungBaiViet-new") {
+                                CKEDITOR.instances[name].destroy(true);
+                            }
+                        }
+                        $('.place-holder').AjaxHtml('/QuanLy/_BaiViet', null);
+                    });
+                }
+            });
+        });
+
+        $('.panel').on('click', ".btn-pin-bai-viet", function () {
+            var $this = $(this);
+            var id = $this.closest(".card-bv").attr("data-bai-viet-id");
+            $this.AjaxPost({
+                url: $this.is(".pinned") ? "/QuanLy/BoGhimBaiViet" : "/QuanLy/GhimBaiViet",
+                data: { id: id },
+                onSuccess: function () {
+                    $('.place-holder').AjaxHtml('/QuanLy/_BaiViet', null);
+                }
+            });
+        });
+
+        $('.panel').on('click', '.btn-confirm-xoa-bai-viet', function () {
+            var $modal = $(this).closest('.modal');
+            var id = $modal.attr('data-bai-viet-id');
+            $modal.AjaxPost({
+                url: '/QuanLy/XoaBaiViet',
+                data: { id: id },
+                onSuccess: function () {
+                    SITE.closeOpeningModal(function () {
+                        $('.place-holder').AjaxHtml('/QuanLy/_BaiViet', null);
+                    });
+                }
+            });
+        });
+
+        $('.panel').on('click', ".btn-reset-thu-tu", function () {
+            var $this = $(this);
+            $this.AjaxPost({
+                url: "/QuanLy/ResetThuTuBaiViet",
+                onSuccess: function () {
+                    $('.place-holder').AjaxHtml('/QuanLy/_BaiViet', null);
+                }
+            });
+        });
+
+        /*Swap vi tri bai viet - START*/
+        var startPos = {};
+        var endPos = {};
+        var basePos = $(".place-holder").offset();
+
+        $('.draggable').draggable({
+            zIndex: 99999,
+            revert: 'invalid',
+            start: function (event, ui) {
+                startPos = $(this).offset();
+            }
+        });
+
+        $('.droppable').droppable({
+            hoverClass: 'hoverHolder',
+            drop: function (event, ui) {
+                var $from = $(ui.draggable),
+                    $fromParent = $from.parent(),
+                    $to = $(this).children(),
+                    $toParent = $(this);
+
+                var idFrom = $from.attr("data-bai-viet-id");
+                var idTo = $to.attr("data-bai-viet-id");
+                if (idFrom != idTo) {
+                    $fromParent.AjaxPost({
+                        url: "/QuanLy/SwapBaiViet",
+                        data: {
+                            idFrom: idFrom,
+                            idTo: idTo
+                        },
+                        onError: function (error) {
+                            alert(error);
+                            $('.place-holder').AjaxHtml('/QuanLy/_BaiViet', null);
+                        }
+                    });
+                }
+                endPos = $to.offset();
+                swap($from, fixPos($from.offset()), fixPos(endPos), 200);
+                swap($to, endPos, fixPos(startPos), 200, function () {
+                    $from.css({ position: 'relative', left: '', top: '', 'z-index': '' }).appendTo($toParent);
+                    $to.css({ position: 'relative', left: '', top: '', 'z-index': '' }).appendTo($fromParent);
+                    $('.draggable').draggable({
+                        zIndex: 999999,
+                        revert: 'invalid',
+                        start: function (event, ui) {
+                            startPos = $(this).offset();
+                        }
+                    });
+                });
+            }
+        });
+
+        function fixPos(pos) {
+            pos.top -= basePos.top;
+            pos.left -= basePos.left;
+            return pos;
+        }
+
+        function swap($el, fromPos, toPos, duration, callback) {
+            $el.css('position', 'absolute')
+                .css(fromPos)
+                .animate(toPos, duration, function () {
+                    if (callback) callback();
+                });
+        }
+        /*Swap vi tri bai viet - END*/
+    });
+</script>

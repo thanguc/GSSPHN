@@ -33,6 +33,9 @@
     $('a.btn-load-muc').on('click', function () {
         placeHolder.AjaxHtml('/QuanLy/Muc', null);
     });
+    $('a.btn-load-bai-viet').on('click', function () {
+        placeHolder.AjaxHtml('/QuanLy/_BaiViet', null);
+    });
     //Site modules END
 
     //Accounts BEGIN
