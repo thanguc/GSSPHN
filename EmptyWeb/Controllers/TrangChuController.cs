@@ -2,6 +2,7 @@
 using EmptyWeb.Models;
 using EmptyWeb.Shared;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -13,7 +14,16 @@ namespace EmptyWeb.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.danhSachBaiViet12 = EntityContext.BaiViet.Where(b => b.IsPinned && b.SortNumber < 3).OrderBy(b => b.SortNumber).ToList();
+            ViewBag.danhSachBaiViet345 = EntityContext.BaiViet.Where(b => b.IsPinned && b.SortNumber < 6 && b.SortNumber > 2).OrderBy(b => b.SortNumber).ToList();
+            ViewBag.danhSachBaiVietRecent = EntityContext.BaiViet.Where(b => !b.IsPinned && !b.IsHidden).OrderByDescending(b => b.NgayDang).ToList();
             return View();
+        }
+
+        public ActionResult GioiThieu()
+        {
+            object template = EntityContext.HtmlTemplate.FirstOrDefault(t => t.TemplateCode == PageEnums.Template.GioiThieu).Content;
+            return View(template);
         }
 
         #region DangKyGiaSu
@@ -68,5 +78,32 @@ namespace EmptyWeb.Controllers
             return View(model);
         }
         #endregion
+
+        #region ChuyenMuc
+        public ActionResult ChuyenMuc(string id)
+        {
+            var cm = EntityContext.ChuyenMuc.FirstOrDefault(r => r.Url == id && !r.IsHidden);
+            if (cm != null)
+            {
+                return View("ChiTietChuyenMuc", cm);
+            }
+            return HttpNotFound();
+        }
+        #endregion
+
+        #region BaiViet
+        public ActionResult BaiViet(string id)
+        {
+            var bv = EntityContext.BaiViet.FirstOrDefault(r => r.UrlBaiViet == id && !r.IsHidden);
+            if (bv != null)
+            {
+                bv.ReadCount++;
+                EntityContext.SaveObject(bv);
+                return View("ChiTietBaiViet", bv);
+            }
+            return HttpNotFound();
+        }
+        #endregion
+
     }
 }

@@ -36,6 +36,9 @@
     $('a.btn-load-bai-viet').on('click', function () {
         placeHolder.AjaxHtml('/QuanLy/_BaiViet', null);
     });
+    $('a.btn-load-gioi-thieu').on('click', function () {
+        placeHolder.AjaxHtml('/QuanLy/_GioiThieu', null);
+    });
     //Site modules END
 
     //Accounts BEGIN

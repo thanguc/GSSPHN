@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity;
 using EmptyWeb.Contexts;
 using Microsoft.AspNet.Identity.EntityFramework;
 using EmptyWeb.Shared;
+using System.Linq;
 
 [assembly: OwinStartup(typeof(EmptyWeb.Startup))]
 
@@ -23,6 +24,7 @@ namespace EmptyWeb
                 LoginPath = new PathString("/TaiKhoan/Login")
             });
             CreateRolesAndAccounts();
+            CreateDefaultTemplates();
         }
 
         private void CreateRolesAndAccounts()
@@ -61,6 +63,26 @@ namespace EmptyWeb
                 {
                     identityContext.RoleManager.Create(new IdentityRole(PageEnums.UserRole.USER));
                 }
+            }
+        }
+
+        private void CreateDefaultTemplates()
+        {
+            using (var db = new EntityContext())
+            {
+                if (!db.HtmlTemplate.Any(t => t.TemplateCode == PageEnums.Template.GioiThieu))
+                {
+                    db.HtmlTemplate.Add(new Models.HtmlTemplate { TemplateCode = PageEnums.Template.GioiThieu });
+                }
+                if (!db.HtmlTemplate.Any(t => t.TemplateCode == PageEnums.Template.DieuKhoanGiaSu))
+                {
+                    db.HtmlTemplate.Add(new Models.HtmlTemplate { TemplateCode = PageEnums.Template.DieuKhoanGiaSu });
+                }
+                if (!db.HtmlTemplate.Any(t => t.TemplateCode == PageEnums.Template.DieuKhoanPhuHuynh))
+                {
+                    db.HtmlTemplate.Add(new Models.HtmlTemplate { TemplateCode = PageEnums.Template.DieuKhoanPhuHuynh });
+                }
+                db.SaveChanges();
             }
         }
     }

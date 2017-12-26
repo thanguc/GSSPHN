@@ -13,8 +13,8 @@
 }
 else
 {
-    <a class="btn btn-xs btn-warning pull-right btn-edit" data-toggle="modal" data-target="#modal-bai-viet--@Model.BaiVietId" title="Sửa bài viết">
-        <i class="fa fa-edit"></i>
+    <a class="pull-right btn-edit" data-toggle="modal" data-target="#modal-bai-viet--@Model.BaiVietId" title="Sửa bài viết" style="padding-top: 1px">
+        <i class="fa fa-edit fa-fw"></i>
     </a>
 }
 <div id="modal-bai-viet--@(isNew ? "new" : Model.BaiVietId.ToString())" class="modal fade modal-lg @(isNew ? "create" : "update")" role="dialog">
@@ -54,7 +54,7 @@ else
                         <div class="form-group">
                             <label class="control-label col-md-2">Nội dung</label>
                         </div>
-                        <textarea class="form-control" name="NoiDung" id="NoiDungBaiViet-@(isNew ? "new" : Model.BaiVietId.ToString())" @*style="max-width:350px; width:350px;"*@>
+                        <textarea class="form-control" name="NoiDung" id="NoiDungBaiViet-@(isNew ? "new" : Model.BaiVietId.ToString())">
                             @Model.NoiDung
                         </textarea>
                     </div>

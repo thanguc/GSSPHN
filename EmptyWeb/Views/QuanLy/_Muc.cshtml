@@ -287,21 +287,19 @@
 
         $('#themmuc .btn-action-add').on('click', function () {
             var form = $('#themmuc form').formize();
-            if (form.isValid()) {
-                var data = {
-                    TieuDe: form.get('TieuDe'),
-                    IsHidden: form.field('IsHidden').is(":checked")
-                };
-                $('#themuc').AjaxPost({
-                    url: '/QuanLy/ThemMuc',
-                    data: data,
-                    onSuccess: function () {
-                        SITE.closeOpeningModal(function () {
-                            $('.place-holder').AjaxHtml('/QuanLy/Muc', null);
-                        });
-                    }
-                });
-            }
+            var data = {
+                TieuDe: form.get('TieuDe'),
+                IsHidden: form.field('IsHidden').is(":checked")
+            };
+            $('#themuc').AjaxPost({
+                url: '/QuanLy/ThemMuc',
+                data: data,
+                onSuccess: function () {
+                    SITE.closeOpeningModal(function () {
+                        $('.place-holder').AjaxHtml('/QuanLy/Muc', null);
+                    });
+                }
+            });
         });
 
         $('.record-muc').click(function (e) {

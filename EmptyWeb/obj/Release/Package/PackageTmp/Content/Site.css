@@ -1,10 +1,12 @@
 ﻿html {
     overflow-y: scroll;
+    height: 100%;
 }
 
 body {
     /*padding-top: 50px;*/
     padding-bottom: 20px;
+    height: 100%;
 }
 
     body.hide-scrollbar {
@@ -27,6 +29,11 @@ body {
 
 ::-webkit-scrollbar-thumb {
     background-color: #CCCDCF;
+}
+
+.entire-wrapper {
+    min-height: 100%;
+    position: relative;
 }
 
 /* Set padding to keep content from hitting the edges */

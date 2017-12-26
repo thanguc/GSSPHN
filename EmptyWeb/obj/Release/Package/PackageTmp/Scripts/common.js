@@ -155,6 +155,7 @@ var SITE = new function () {
         str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y");
         str = str.replace(/đ/g, "d");
         str = str.replace(/ /g, "-");
+        str = str.replace(/[^a-zA-Z0-9-]/g, '');
         return str;
     };
 

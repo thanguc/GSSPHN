@@ -19,6 +19,7 @@ namespace EmptyWeb.Models
         public int SortNumber { get; set; }
         public bool IsPinned { get; set; } = false;
         public bool IsHidden { get; set; } = false;
+        public int ReadCount { get; set; } = 0;
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {

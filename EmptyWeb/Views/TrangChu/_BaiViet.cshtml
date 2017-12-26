@@ -1,0 +1,23 @@
+﻿@using EmptyWeb.Shared
+@model EmptyWeb.Models.BaiViet
+
+@{
+    var summary = "";
+    if (!string.IsNullOrEmpty(Model.NoiDung))
+    {
+        summary = Model.NoiDung.Replace("<img", "<br").Replace("\n", "").Replace("\t", " ").Replace("</p><p>", " ").Replace("</li> <li>", " ");
+    }
+}
+<div class="row-bv" onclick="location.href = '/TrangChu/BaiViet/@Model.UrlBaiViet'">
+    <div class="row-bv--anh-bia">
+        <img src="@Model.UrlAnhBia" />
+    </div>
+    <div class="row-bv--intro">
+        <div class="row-bv--tieu-de">
+            <span>@Model.TieuDe</span>
+        </div>
+        <div class="row-bv--tom-tat">
+            @Html.Raw(PageHelper.Limit(summary, 100))
+        </div>
+    </div>
+</div>

@@ -30,7 +30,16 @@ namespace EmptyWeb.Shared
 
         public static string Limit(string src, int limit)
         {
+            if (string.IsNullOrEmpty(src))
+            {
+                return string.Empty;
+            }
             return src.Length > limit ? src.Substring(0, limit) + "..." : src;
+        }
+
+        public static string Limit(int src, int limit)
+        {
+            return src > limit ? limit + "<sup>+</sup>" : src.ToString();
         }
     }
 }

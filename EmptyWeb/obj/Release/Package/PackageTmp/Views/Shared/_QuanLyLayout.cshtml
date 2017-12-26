@@ -148,6 +148,11 @@
                                         <i class="fa fa-pencil fa-fw"></i> <a class="btn-load-bai-viet">Bài viết</a>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-sticky-note fa-fw"></i> <a class="btn-load-gioi-thieu">Giới thiệu</a>
+                                    </td>
+                                </tr>
                             </table>
                         </div>
                     </div>
@@ -226,6 +231,22 @@
     <script src="/Scripts/respond.js"></script>
     <script src="~/Scripts/site.js"></script>
     <script src="~/Scripts/common.js"></script>
+    <script>
+        CKEDITOR.on('instanceReady', function (ev) {
+            var blockTags = ['div', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'pre', 'li', 'blockquote', 'ul', 'ol',
+                'table', 'thead', 'tbody', 'tfoot', 'td', 'th',];
+
+            for (var i = 0; i < blockTags.length; i++) {
+                ev.editor.dataProcessor.writer.setRules(blockTags[i], {
+                    indent: false,
+                    breakBeforeOpen: false,
+                    breakAfterOpen: false,
+                    breakBeforeClose: false,
+                    breakAfterClose: false
+                });
+            }
+        });
+    </script>
     @RenderSection("scripts", required: false)
     <div class="end"></div>
 </body>

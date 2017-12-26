@@ -155,7 +155,9 @@
     <Compile Include="Contexts\IdentityContext.cs" />
     <Compile Include="Contexts\LogContext.cs" />
     <Compile Include="Controllers\APIController.cs" />
+    <Compile Include="Controllers\BaiVietController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ChuyenMucController.cs" />
     <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="Controllers\TaiKhoanController.cs" />
     <Compile Include="Controllers\TrangChuController.cs" />
@@ -166,14 +168,13 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaiViet.cs" />
     <Compile Include="Models\ChuyenMuc.cs" />
+    <Compile Include="Models\HtmlTemplate.cs" />
     <Compile Include="Models\Log.cs" />
     <Compile Include="Models\Muc.cs" />
     <Compile Include="Models\TimGiaSu.cs" />
     <Compile Include="Models\DangKyGiaSu.cs" />
     <Compile Include="Models\QueQuan.cs" />
     <Compile Include="Models\TrinhDo.cs" />
-    <Compile Include="Models\User.cs" />
-    <Compile Include="Models\Userrole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ImgurService.cs" />
     <Compile Include="Shared\PageEnums.cs" />
@@ -488,9 +489,16 @@
     <Content Include="Views\TaiKhoan\Login.cshtml" />
     <Content Include="Views\QuanLy\_BaiViet\_BaiViet.cshtml" />
     <Content Include="Views\QuanLy\_BaiViet\_ModalBaiViet.cshtml" />
+    <Content Include="Views\TrangChu\_BaiViet.cshtml" />
+    <Content Include="Views\TrangChu\ChiTietBaiViet.cshtml" />
+    <Content Include="Views\TrangChu\ChiTietChuyenMuc.cshtml" />
+    <Content Include="Views\QuanLy\_GioiThieu.cshtml" />
+    <Content Include="Views\TrangChu\GioiThieu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\BaiViet\" />
+    <Folder Include="Views\ChuyenMuc\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

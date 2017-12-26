@@ -1,18 +1,21 @@
 ﻿@using EmptyWeb.Shared
+@using EmptyWeb.Models
 @{
-    ViewBag.Title = "GIA SƯ SƯ PHẠM HÀ NỘI";
+    ViewBag.Title = "Gia sư 24h";
+    var top12 = ViewBag.danhSachBaiViet12 as List<BaiViet>;
+    var top345 = ViewBag.danhSachBaiViet345 as List<BaiViet>;
+    var recent = ViewBag.danhSachBaiVietRecent as List<BaiViet>;
 }
 <!-- Custom CSS -->
 <link href="~/Content/css/landing-page.css" rel="stylesheet">
 
 <!-- Header -->
-<a name="about"></a>
 <div class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
                 <div class="intro-message">
-                    <h1>Gia Sư Sư Phạm Hà Nội</h1>
+                    <h1 style="text-align:center;">Hệ Thống Gia Sư 24H</h1>
                     <h3 style="text-align:center;">Uy Tín - Chất Lượng - Thành Công</h3>
                     <hr class="intro-divider">
                     <ul class="list-inline intro-social-buttons" style="text-align:center;">
@@ -39,61 +42,43 @@
     <!-- /.container -->
 </div>
 <!-- /.intro-header -->
+<div class="clear-header"></div>
 <!-- Page Content -->
-<a name="services"></a>
-<div class="content-section-a">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-5 col-sm-6">
-                <hr class="section-heading-spacer">
-                <div class="clearfix"></div>
-                <h2 class="section-heading">Death to the Stock Photo:<br>Special Thanks</h2>
-                <p class="lead">A special thanks to <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a> for providing the photographs that you see in this template. Visit their website to become a member.</p>
-                <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FHN.GiaSuSuPham%2F&width=0&layout=standard&action=like&show_faces=true&share=false&height=80&appId" width="0" height="80" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
-            </div>
-            <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                <img class="img-responsive" src="https://uphinhnhanh.com/images/2017/03/28/ipad.png" alt="">
-            </div>
+<div class="container">
+    @if (top12.Count > 0)
+    {
+        <div class="row top12">
+            @foreach (var bv in top12)
+            {
+                @Html.Partial("_BaiViet", bv)
+            }
         </div>
-    </div>
-    <!-- /.container -->
+        <div class="clearfix"></div>
+    }
+    @if (top345.Count > 0)
+    {
+        <div class="row top345">
+            @foreach (var bv in top345)
+            {
+                @Html.Partial("_BaiViet", bv)
+            }
+        </div>
+        <div class="clearfix"></div>
+    }
+    <div class="row" style="height:4px; background-color: #ed2e2e; margin-bottom: 20px;"></div>
+    @if (recent.Count > 0)
+    {
+        <div class="row recent">
+            @foreach (var bv in recent)
+            {
+                @Html.Partial("_BaiViet", bv)
+                <div class="clearfix"></div>
+                <hr />
+            }
+        </div>
+    }
 </div>
 <!-- /.content-section-a -->
-<div class="content-section-b">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
-                <hr class="section-heading-spacer">
-                <div class="clearfix"></div>
-                <h2 class="section-heading">3D Device Mockups<br>by PSDCovers</h2>
-                <p class="lead">Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by <a target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of their awesome, free photoshop actions!</p>
-            </div>
-            <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                <img class="img-responsive" src="https://uphinhnhanh.com/images/2017/03/28/dog.png" alt="">
-            </div>
-        </div>
-    </div>
-    <!-- /.container -->
-</div>
-<!-- /.content-section-b -->
-<div class="content-section-a">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-5 col-sm-6">
-                <hr class="section-heading-spacer">
-                <div class="clearfix"></div>
-                <h2 class="section-heading">Google Web Fonts and<br>Font Awesome Icons</h2>
-                <p class="lead">This template features the 'Lato' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
-            </div>
-            <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                <img class="img-responsive" src="https://uphinhnhanh.com/images/2017/03/28/phones.png" alt="">
-            </div>
-        </div>
-    </div>
-    <!-- /.container -->
-</div>
-<!-- /.content-section-a -->
-<a name="contact"></a>
 <div class="banner">
     <div class="container">
         <div class="row">
@@ -103,7 +88,7 @@
             <div class="col-lg-4">
                 <ul class="list-inline banner-social-buttons">
                     <li>
-                        <a href="https://www.fb.com/HN.GiaSuSuPham/" class="btn btn-default btn-lg"><i class="fa fa-facebook-square fa-fw"></i> <span class="network-name">Gia Sư Sư Phạm Hà Nội</span></a>
+                        <a href="https://www.fb.com/HN.GiaSuSuPham/" class="btn btn-default btn-lg"><i class="fa fa-facebook-square fa-fw"></i> <span class="network-name">Trung Tâm Gia Sư 24H</span></a>
                     </li>
                 </ul>
             </div>

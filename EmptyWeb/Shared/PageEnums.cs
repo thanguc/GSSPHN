@@ -36,6 +36,13 @@
             public const string USER = "User";
         }
 
+        public class Template
+        {
+            public const string GioiThieu = "GIOITHIEU";
+            public const string DieuKhoanGiaSu = "DKGS";
+            public const string DieuKhoanPhuHuynh = "DKPH";
+        }
+
         public static class Parser
         {
             public static string TrangThaiDangKy(TrangThaiDangKy status)

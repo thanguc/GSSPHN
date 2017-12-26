@@ -4,6 +4,7 @@ using EmptyWeb.Shared;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -417,12 +418,27 @@ namespace EmptyWeb.Controllers
             return Error(EntityContext);
         }
 
+        public ActionResult _GioiThieu()
+        {
+            var template = EntityContext.HtmlTemplate.FirstOrDefault(t => t.TemplateCode == PageEnums.Template.GioiThieu);
+            return PartialView("_GioiThieu", template.Content);
+        }
+
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult SaveGioiThieu(string content)
+        {
+            var template = EntityContext.HtmlTemplate.FirstOrDefault(t => t.TemplateCode == PageEnums.Template.GioiThieu);
+            template.Content = content;
+            EntityContext.SaveObject(template);
+            return OK();
+        }
         #endregion
 
         #region Account
         public ActionResult _TaiKhoan()
         {
-            var accounts = EntityContext.User;
+            var accounts = IdentityContext.Users;
             return PartialView("_TaiKhoan/_TaiKhoan", accounts.ToList());
         }
         #endregion

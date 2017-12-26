@@ -17,12 +17,11 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 }
 
 .topnav {
-    font-size: 14px; 
+    font-size: 14px;
 }
 
 .lead {
@@ -31,8 +30,7 @@ h6 {
 }
 
 .intro-header {
-    padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
-    padding-bottom: 50px;
+    margin-top: 50px;
     text-align: left;
     color: #f8f8f8;
     background: url(https://uphinhnhanh.com/images/2017/03/28/intro-bg1.jpg) no-repeat center center;
@@ -45,11 +43,11 @@ h6 {
     padding-bottom: 5%;
 }
 
-.intro-message > h1 {
-    margin: 0;
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
-    font-size: 4.7em;
-}
+    .intro-message > h1 {
+        margin: 0;
+        text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+        font-size: 4.7em;
+    }
 
 .intro-divider {
     width: 400px;
@@ -67,9 +65,9 @@ h6 {
         padding-bottom: 15%;
     }
 
-    .intro-message > h1 {
-        font-size: 3em;
-    }
+        .intro-message > h1 {
+            font-size: 3em;
+        }
 
     ul.intro-social-buttons > li {
         display: block;
@@ -77,9 +75,9 @@ h6 {
         padding: 0;
     }
 
-    ul.intro-social-buttons > li:last-child {
-        margin-bottom: 0;
-    }
+        ul.intro-social-buttons > li:last-child {
+            margin-bottom: 0;
+        }
 
     .intro-divider {
         width: 100%;
@@ -121,15 +119,15 @@ h6 {
     background-size: cover;
 }
 
-.banner h2 {
-    margin: 0;
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
-    font-size: 3em;
-}
+    .banner h2 {
+        margin: 0;
+        text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+        font-size: 3em;
+    }
 
-.banner ul {
-    margin-bottom: 0;
-}
+    .banner ul {
+        margin-bottom: 0;
+    }
 
 .banner-social-buttons {
     float: right;
@@ -156,9 +154,9 @@ h6 {
         padding: 0;
     }
 
-    ul.banner-social-buttons > li:last-child {
-        margin-bottom: 0;
-    }
+        ul.banner-social-buttons > li:last-child {
+            margin-bottom: 0;
+        }
 }
 
 footer {
@@ -170,10 +168,112 @@ p.copyright {
     margin: 15px 0 0;
 }
 
-.intro-message>h1{
-  color:#d9e62c;
+.intro-message > h1 {
+    color: #d9e62c;
 }
 
-.intro-message>h3{
-    color:#4cff00;
+.intro-message > h3 {
+    /*color: #4cff00;*/
+}
+
+.clear-header {
+    height: 50px;
+    background-color: #f1f1f1;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+/* top12 */
+.top12 > .row-bv {
+    width: 50%;
+    float: left;
+}
+
+    .top12 > .row-bv > .row-bv--anh-bia {
+        width: 480px;
+        height: 270px;
+    }
+
+    .top12 > .row-bv > .row-bv--intro {
+        width: 480px;
+    }
+
+        .top12 > .row-bv > .row-bv--intro > .row-bv--tieu-de > span {
+            color: #444;
+            font-size: 24px;
+        }
+
+/* top345 */
+.top345 > .row-bv {
+    width: 33%;
+    float: left;
+}
+
+    .top345 > .row-bv > .row-bv--anh-bia {
+        width: 320px;
+        height: 180px;
+    }
+
+    .top345 > .row-bv > .row-bv--intro {
+        width: 320px;
+    }
+
+        .top345 > .row-bv > .row-bv--intro > .row-bv--tieu-de > span {
+            color: #444;
+            font-size: 16px;
+        }
+
+/* recent */
+.recent > .row-bv {
+    width: 100%;
+    float: left;
+}
+
+    .recent > .row-bv > .row-bv--anh-bia {
+        width: 160px;
+        height: 90px;
+        float: left;
+    }
+
+    .recent > .row-bv > .row-bv--intro {
+        float: left;
+        height: 90px;
+        width: calc(100% - 160px);
+    }
+
+        .recent > .row-bv > .row-bv--intro > .row-bv--tieu-de > span {
+            color: #444;
+            font-size: 21px;
+        }
+
+.row-bv > .row-bv--anh-bia > img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.row-bv .row-bv--intro {
+    padding: 0 10px;
+    overflow: hidden;
+}
+
+.row-bv .row-bv--tom-tat {
+    font-weight: normal;
+    color: #848484;
+}
+
+.row-bv:hover {
+    cursor: pointer;
+}
+
+    .row-bv:hover > .row-bv--intro > .row-bv--tieu-de {
+        text-decoration: underline;
+    }
+
+    .row-bv:hover > .row-bv--intro {
+        background: linear-gradient(rgba(127,127,127,0.4), rgba(127,127,127,0));
+    }
+
+.recent > .row-bv:hover > .row-bv--intro {
+    background: linear-gradient(to right, rgba(127,127,127,0.2), rgba(127,127,127,0));
 }

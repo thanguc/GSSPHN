@@ -44,153 +44,155 @@
     </script>
 </head>
 <body>
-    <header id="header" class="navbar navbar-default topnav">
-        <div class="container topnav">
-            <a class="navbar-brand topnav" href="/" style="padding:0px;margin-top:8px;"><img src="https://uphinhnhanh.com/images/2017/03/28/logo.jpg" width="128" height="128" /></a>
-            <div class="pull-right phone-call">
-                <a href="tel:+84981494418">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle-thin fa-stack-2x faa-burst animated"></i>
-                        <i class="fa fa-phone fa-stack-1x faa-ring animated fa-2x"></i>
-                    </span>
-                    0981 494 418
-                </a>
-            </div>
+    <div class="entire-wrapper">
+        <header id="header" class="navbar navbar-default topnav">
+            <div class="container topnav">
+                <a class="navbar-brand topnav" href="/" style="padding:0px;margin-top:8px;"><img src="https://uphinhnhanh.com/images/2017/03/28/logo.jpg" width="128" height="128" /></a>
+                <div class="pull-right phone-call">
+                    <a href="tel:+84981494418">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle-thin fa-stack-2x faa-burst animated"></i>
+                            <i class="fa fa-phone fa-stack-1x faa-ring animated fa-2x"></i>
+                        </span>
+                        0981 494 418
+                    </a>
+                </div>
 
-        </div>
-    </header>
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-static-top affix-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-left">
-                    <li>@Html.ActionLink("GIỚI THIỆU", "About", "Home")</li>
-                    @{
-                        var mucs = PageHelper.GetAllMuc().Where(m => !m.IsHidden);
-                        foreach (var muc in mucs)
-                        {
-                            var cms = muc.ChuyenMucs.Where(c => !c.IsHidden).ToList();
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@muc.TieuDe.ToUpper() <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
+        </header>
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top affix-top" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li>@Html.ActionLink("GIỚI THIỆU", "GioiThieu", "TrangChu")</li>
+                        @{
+                            var mucs = PageHelper.GetAllMuc().Where(m => !m.IsHidden).OrderBy(m => m.SortNumber);
+                            foreach (var muc in mucs)
+                            {
+                                var cms = muc.ChuyenMucs.Where(c => !c.IsHidden).OrderBy(c => c.SortNumber).ToList();
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@muc.TieuDe.ToUpper() <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
 
-                                    @foreach (var cm in cms)
-                                    {
-                                        <li><a href="http://giasu24h.hanoi.vn/ChuyenMuc/@cm.Url">@cm.TieuDe.ToUpper()</a></li>
-                                        if (cms.IndexOf(cm) != cms.Count - 1)
+                                        @foreach (var cm in cms)
                                         {
-                                            <li role="separator" class="divider"></li>
+                                            <li><a href="/TrangChu/ChuyenMuc/@cm.Url">@cm.TieuDe.ToUpper()</a></li>
+                                            if (cms.IndexOf(cm) != cms.Count - 1)
+                                            {
+                                                <li role="separator" class="divider"></li>
+                                            }
                                         }
-                                    }
+                                    </ul>
+                                </li>
+                            }
+                        }
+                        @if (PageHelper.IsAuthenticated())
+                        {
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@PageHelper.CurrentUserName() <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/QuanLy/"><i class="fa fa-user-circle fa-fw"></i> Quản lý</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li>
+                                        <a href="javascript:{}" onclick="$('.form-logout').submit();"><i class="fa fa-sign-out fa-fw"></i> Đăng xuất</a>
+                                        <form action="/TaiKhoan/Logout" method="post" class="form-logout"></form>
+                                    </li>
                                 </ul>
                             </li>
                         }
-                    }
-                    @if (PageHelper.IsAuthenticated())
-                    {
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@PageHelper.CurrentUserName() <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/QuanLy/"><i class="fa fa-user-circle fa-fw"></i> Quản lý</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li>
-                                    <a href="javascript:{}" onclick="$('.form-logout').submit();"><i class="fa fa-sign-out fa-fw"></i> Đăng xuất</a>
-                                    <form action="/TaiKhoan/Logout" method="post" class="form-logout"></form>
-                                </li>
-                            </ul>
-                        </li>
-                    }
-                    else
-                    {
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Thành viên <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/TrangChu/DangKyLamGiaSu"><i class="fa fa-user-plus fa-fw"></i> Đăng ký</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="/TaiKhoan/Login"><i class="fa fa-sign-in fa-fw"></i> Đăng nhập</a></li>
-                            </ul>
-                        </li>
-                    }
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-    @*<div class="container body-content">*@
-    @RenderBody()
-    @*</div>*@
-
-    <!-- Footer -->
-    <footer style="position:relative;top:50px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="list-inline">
-                        <li>
-                            <a href="#">Home</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a href="#about">About</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a href="#services">Services</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a href="#contact">Contact</a>
-                        </li>
+                        else
+                        {
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Thành viên <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/TrangChu/DangKyLamGiaSu"><i class="fa fa-user-plus fa-fw"></i> Đăng ký</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="/TaiKhoan/Login"><i class="fa fa-sign-in fa-fw"></i> Đăng nhập</a></li>
+                                </ul>
+                            </li>
+                        }
                     </ul>
-                    <p class="copyright text-muted small">Copyright &copy; Your Company 2014. All Rights Reserved</p>
-                    <script src="https://www.w3counter.com/tracker.js?id=109384"></script>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        </nav>
+
+        @*<div class="container body-content">*@
+        @RenderBody()
+        @*</div>*@
+        <div class="clear-bottom" style="height: 186px"></div>
+        <!-- Footer -->
+        <footer style="position:absolute;bottom:0; left: 0; right: 0;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul class="list-inline">
+                            <li>
+                                <a href="#">Home</a>
+                            </li>
+                            <li class="footer-menu-divider">&sdot;</li>
+                            <li>
+                                <a href="#about">About</a>
+                            </li>
+                            <li class="footer-menu-divider">&sdot;</li>
+                            <li>
+                                <a href="#services">Services</a>
+                            </li>
+                            <li class="footer-menu-divider">&sdot;</li>
+                            <li>
+                                <a href="#contact">Contact</a>
+                            </li>
+                        </ul>
+                        <p class="copyright text-muted small">Copyright &copy; Your Company 2014. All Rights Reserved</p>
+                        <script src="https://www.w3counter.com/tracker.js?id=109384"></script>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
-    @if (msg.HasValue)
-    {
-        @Html.Partial("_ThongBao", msg.Value)
-    }
+        @if (msg.HasValue)
+        {
+            @Html.Partial("_ThongBao", msg.Value)
+        }
 
-    <a class="back-to-top" style="display:none">
-        <i class="fa fa-chevron-circle-up fa-4x"></i>
-    </a>
+        <a class="back-to-top" style="display:none">
+            <i class="fa fa-chevron-circle-up fa-4x"></i>
+        </a>
 
-    @*</div>*@
+        @*</div>*@
 
-    <!-- jQuery -->
-    <script src="~/Content/js/jquery.js"></script>
+        <!-- jQuery -->
+        <script src="~/Content/js/jquery.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    @*<script src="~/Content/kartik-v-bootstrap-fileinput-db72623/js/plugins/canvas-to-blob.min.js"></script>
-        <script src="~/Content/kartik-v-bootstrap-fileinput-db72623/js/fileinput.min.js"></script>*@
-    <script src="~/Scripts/moment.js"></script>
-    <script src="~/Content/js/bootstrap.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/i18n/vi.js"></script>
-    <script src="~/Scripts/bootstrap-datetimepicker.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        @*<script src="~/Content/kartik-v-bootstrap-fileinput-db72623/js/plugins/canvas-to-blob.min.js"></script>
+            <script src="~/Content/kartik-v-bootstrap-fileinput-db72623/js/fileinput.min.js"></script>*@
+        <script src="~/Scripts/moment.js"></script>
+        <script src="~/Content/js/bootstrap.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/i18n/vi.js"></script>
+        <script src="~/Scripts/bootstrap-datetimepicker.js"></script>
 
-    <!-- Responsive -->
-    <script src="/Scripts/respond.js"></script>
+        <!-- Responsive -->
+        <script src="/Scripts/respond.js"></script>
 
-    <script src="~/Scripts/site.js"></script>
-    <script src="~/Scripts/common.js"></script>
+        <script src="~/Scripts/site.js"></script>
+        <script src="~/Scripts/common.js"></script>
 
-    @RenderSection("scripts", required: false)
+        @RenderSection("scripts", required: false)
+    </div>
     <div class="end"></div>
 </body>
 </html>

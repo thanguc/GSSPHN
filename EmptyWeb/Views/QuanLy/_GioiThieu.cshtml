@@ -1,0 +1,39 @@
+﻿@model string
+
+<style>
+    .cke_inner:not(.cke_maximized) > .cke_contents {
+        height: calc(100vh - 356px) !important;
+    }
+</style>
+<div class="col-md-12">
+    <div class="panel panel-primary panel-table">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col col-xs-6 no-padding">
+                    <h3 class="panel-title text-effect-blur"><i class="fa fa-sticky-note fa-fw"></i> Chỉnh sửa trang giới thiệu</h3>
+                </div>
+                <div class="col col-xs-6 text-right">
+                    <a class="btn btn-sm btn-info" href="/TrangChu/GioiThieu" target="_blank"><i class="fa fa-external-link fa-fw"></i> Xem thử</a>
+                    <a class="btn btn-sm btn-success btn-save-gioi-thieu"><i class="fa fa-save fa-fw"></i> Lưu</a>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body" style="height: calc(100vh - 252px);overflow: auto;">
+            <textarea class="form-control" name="GioiThieu" id="GioiThieu">@Model</textarea>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        CKEDITOR.replace("GioiThieu");
+        
+        $('.panel').on('click', '.btn-save-gioi-thieu', function () {
+            $(this).AjaxPost({
+                url: "/QuanLy/SaveGioiThieu",
+                data: {
+                    content: CKEDITOR.instances["GioiThieu"].getData()
+                }
+            });
+        });
+    });
+</script>
