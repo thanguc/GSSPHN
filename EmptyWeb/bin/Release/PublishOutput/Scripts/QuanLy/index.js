@@ -39,6 +39,9 @@
     $('a.btn-load-gioi-thieu').on('click', function () {
         placeHolder.AjaxHtml('/QuanLy/_GioiThieu', null);
     });
+    $('a.btn-load-template').on('click', function () {
+        placeHolder.AjaxHtml('/QuanLy/_DieuKhoan', null);
+    });
     //Site modules END
 
     //Accounts BEGIN

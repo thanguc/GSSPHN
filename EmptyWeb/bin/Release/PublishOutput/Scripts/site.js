@@ -1,4 +1,8 @@
 ﻿$(function () {
+    if ($(".intro-header").length == 0) {
+        $('.page-overlay-dangky').removeClass("hide");
+    }
+
     $('#datetimepicker').datetimepicker({
         format: "DD/MM/YYYY"
     });
@@ -23,11 +27,6 @@
         $('html, body').animate({ scrollTop: offsetTop }, 500, 'linear');
     });
 
-    $('#homeMessage').modal('show');
-    $('#homeMessage').on('hidden.bs.modal', function () {
-        window.location.replace("http://giasu24h.hanoi.vn");
-    });
-
     $('#accordion td a').on('click', function () {
         $('#accordion td a').parent('td').removeClass('active');
         $(this).parent('td').addClass('active');
@@ -39,5 +38,31 @@
 
     $(document).on('hide.bs.modal', '.modal', function () {
         $('body').removeClass('hide-scrollbar');
+    });
+
+    toastr.options = {
+        "closeButton": false,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": false,
+        "positionClass": "toast-bottom-left",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    }
+
+    $.getJSON('http://ipinfo.io', function (data) {
+        if (data) {
+            $(".ip").html("IP: " + data.ip);
+        } else {
+            $(".ip").html("IP: unknown");
+        }
     });
 });

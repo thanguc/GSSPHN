@@ -2,6 +2,7 @@
 using EmptyWeb.Models;
 using EmptyWeb.Shared;
 using System;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
@@ -26,6 +27,11 @@ namespace EmptyWeb.Controllers
             return View(template);
         }
 
+        public ActionResult TestSite()
+        {
+            return View();
+        }
+
         #region DangKyGiaSu
         public ActionResult DangKyLamGiaSu(string message)
         {
@@ -35,26 +41,36 @@ namespace EmptyWeb.Controllers
         [HttpPost]
         public async Task<ActionResult> DangKyLamGiaSu(DangKyGiaSu model, HttpPostedFileBase fileAnhThe)
         {
-            try
+            if (ModelState.IsValid)
             {
-                //var imgurResult = await Imgur.UploadImage(fileAnhThe.InputStream);
-                //if (imgurResult != null)
-                //{
-                //model.AnhThe = imgurResult.Link;
-                model.ID = Guid.NewGuid().ToString();
-                model.TrangThai = PageEnums.TrangThaiDangKy.Submitted;
-                model.NgayTao = DateTime.Now;
-                EntityContext.DangKyGiaSu.Add(model);
-                await EntityContext.SaveChangesAsync();
-                //}
-                Alert(PageEnums.AlertMessage.DangKyLamGiaSuThanhCong);
+                try
+                {
+                    if (fileAnhThe != null)
+                    {
+                        using (var fileStream = new FileStream(Path.Combine(Server.MapPath("~/Content/img"), "anh-the.jpeg"), FileMode.Create))
+                        {
+                            fileAnhThe.InputStream.CopyTo(fileStream);
+                        }
+                        var imgurResult = await ImgurService.UploadImage(System.IO.File.ReadAllBytes(Path.Combine(Server.MapPath("~/Content/img"), "anh-the.jpeg")));
+                        if (imgurResult != null)
+                        {
+                            model.AnhThe = imgurResult.Link;
+                        }
+                    }
+                    EntityContext.DangKyGiaSu.Add(model);
+                    EntityContext.SaveChanges();
+                    return OK();
+                }
+                catch (Exception e)
+                {
+                    LogContext.Record(e.Message);
+                }
+                return Error();
             }
-            catch (Exception e)
+            else
             {
-                LogContext.Record(e.Message);
-                Alert(PageEnums.AlertMessage.DangKyLamGiaSuThatBai);
+                return Error(ModelState);
             }
-            return View(model);
         }
         #endregion
 
@@ -69,13 +85,11 @@ namespace EmptyWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                model.TrangThai = PageEnums.TrangThaiYeuCau.Submitted;
-                model.NgayTao = DateTime.Now;
                 EntityContext.TimGiaSu.Add(model);
-                await EntityContext.SaveChangesAsync();
-                Alert(PageEnums.AlertMessage.DangKyTimGiaSuThanhCong);
+                EntityContext.SaveChanges();
+                return OK();
             }
-            return View(model);
+            return Error(ModelState);
         }
         #endregion
 

@@ -1,14 +1,13 @@
 ﻿@using EmptyWeb.Shared
 @using EmptyWeb.Models
 @{
-    ViewBag.Title = "Gia sư 24h";
+    ViewBag.Title = "Gia Sư 24H Hà Nội";
     var top12 = ViewBag.danhSachBaiViet12 as List<BaiViet>;
     var top345 = ViewBag.danhSachBaiViet345 as List<BaiViet>;
     var recent = ViewBag.danhSachBaiVietRecent as List<BaiViet>;
 }
 <!-- Custom CSS -->
 <link href="~/Content/css/landing-page.css" rel="stylesheet">
-
 <!-- Header -->
 <div class="intro-header">
     <div class="container">
@@ -45,6 +44,8 @@
 <div class="clear-header"></div>
 <!-- Page Content -->
 <div class="container">
+    <h3 class="">BẢNG TIN</h3>
+    <div class="row" style="height:4px; background-color: #ed2e2e; margin-bottom: 20px;"></div>
     @if (top12.Count > 0)
     {
         <div class="row top12">
@@ -78,22 +79,3 @@
         </div>
     }
 </div>
-<!-- /.content-section-a -->
-<div class="banner">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8">
-                <h2>Liên hệ chúng tôi trên Facebook:</h2>
-            </div>
-            <div class="col-lg-4">
-                <ul class="list-inline banner-social-buttons">
-                    <li>
-                        <a href="https://www.fb.com/HN.GiaSuSuPham/" class="btn btn-default btn-lg"><i class="fa fa-facebook-square fa-fw"></i> <span class="network-name">Trung Tâm Gia Sư 24H</span></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- /.container -->
-</div>
-<!-- /.banner -->

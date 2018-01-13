@@ -10,6 +10,8 @@
     <meta name="viewport" content="width=device-width" />
     <title>Login</title>
     <link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/toastr.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/p-loading-master/dist/css/p-loading.min.css" rel="stylesheet" type="text/css" />
     <style>
         body {
             background: #e9e9e9;
@@ -20,6 +22,12 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+            transition: background-color 5000s ease-in-out 0s;
+        }
         /* Pen Title */
         .pen-title {
             padding: 20px 0;
@@ -528,7 +536,7 @@
                 <div class="card">
                     <h1 class="title">Đăng nhập</h1>
                     <form action="/TaiKhoan/Login" method="post" class="login-form">
-                        <input type="hidden" value="@Model.ReturnUrl" id="ReturnUrl" name="ReturnUrl"/>
+                        <input type="hidden" value="@Model.ReturnUrl" id="ReturnUrl" name="ReturnUrl" />
                         <div class="input-container">
                             <input type="text" id="Username" name="Username" required="required" />
                             <label for="Username">Tài khoản/Email/SĐT</label>
@@ -556,9 +564,28 @@
         </div>
     </div>
     <script src="~/Content/js/jquery.js"></script>
+    <script src="~/Scripts/toastr.min.js"></script>
+    <script src="~/Content/p-loading-master/dist/js/p-loading.min.js"></script>
     <script src="~/Scripts/common.js"></script>
     <script>
         $(document).ready(function () {
+            toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": false,
+                "positionClass": "toast-top-center",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
             //$('.toggle').on('click', function () {
             //    $('.container').stop().addClass('active');
             //});
@@ -575,7 +602,7 @@
                     url: $this.attr("action"),
                     data: data,
                     onSuccess: function (r) {
-                        alert("Đăng nhập thành công!");
+                        toastr.success("Đăng nhập thành công!");
                         location.href = r.returnUrl;
                     }
                 });

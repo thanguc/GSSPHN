@@ -288,9 +288,11 @@
                 },
                 onSuccess: function () {
                     if (isHidden == "true") {
+                        toastr.info("Đã hiện bài viết " + $(".card-bv--tieu-de > a > span", $this.closest(".card-bv")).text());
                         $this.attr("data-is-hidden", "false");
                         $this.find(".fa").removeClass("fa-eye-slash").addClass("fa-eye");
                     } else {
+                        toastr.info("Đã ẩn bài viết " + $(".card-bv--tieu-de > a > span", $this.closest(".card-bv")).text());
                         $this.attr("data-is-hidden", "true");
                         $this.find(".fa").removeClass("fa-eye").addClass("fa-eye-slash");
                     }
@@ -315,6 +317,7 @@
                 url: form.action,
                 data: data,
                 onSuccess: function () {
+                    toastr.success("Đã lưu bài viết " + data.TieuDe);
                     SITE.closeOpeningModal(function () {
                         for (name in CKEDITOR.instances) {
                             if (name != "NoiDungBaiViet-new") {
@@ -334,6 +337,11 @@
                 url: $this.is(".pinned") ? "/QuanLy/BoGhimBaiViet" : "/QuanLy/GhimBaiViet",
                 data: { id: id },
                 onSuccess: function () {
+                    if ($this.is(".pinned")) {
+                        toastr.info("Đã bỏ ghim bài viết " + $(".card-bv--tieu-de > a > span", $this.closest(".card-bv")).text());
+                    } else {
+                        toastr.info("Đã ghim bài viết " + $(".card-bv--tieu-de > a > span", $this.closest(".card-bv")).text());
+                    }
                     $('.place-holder').AjaxHtml('/QuanLy/_BaiViet', null);
                 }
             });
@@ -345,7 +353,8 @@
             $modal.AjaxPost({
                 url: '/QuanLy/XoaBaiViet',
                 data: { id: id },
-                onSuccess: function () {
+                onSuccess: function (r) {
+                    toastr.warning("Đã xóa bài viết " + r);
                     SITE.closeOpeningModal(function () {
                         $('.place-holder').AjaxHtml('/QuanLy/_BaiViet', null);
                     });
@@ -358,6 +367,7 @@
             $this.AjaxPost({
                 url: "/QuanLy/ResetThuTuBaiViet",
                 onSuccess: function () {
+                    toastr.warning("Đã reset thứ tự toàn bộ bài viết theo ngày đăng");
                     $('.place-holder').AjaxHtml('/QuanLy/_BaiViet', null);
                 }
             });
@@ -393,8 +403,13 @@
                             idFrom: idFrom,
                             idTo: idTo
                         },
+                        onSuccess: function () {
+                            var fromTieude = $(".card-bv--tieu-de > a > span", $(".card-bv[data-bai-viet-id='" + idFrom + "']")).text();
+                            var toTieude = $(".card-bv--tieu-de > a > span", $(".card-bv[data-bai-viet-id='" + idTo + "']")).text();
+                            toastr.info("Đã đổi vị trí 2 bài viết " + fromTieude + " và " + toTieude);
+                        },
                         onError: function (error) {
-                            alert(error);
+                            toastr.error(error);
                             $('.place-holder').AjaxHtml('/QuanLy/_BaiViet', null);
                         }
                     });

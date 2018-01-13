@@ -61,6 +61,7 @@
             }
 
         [id^=modal-chuyen-muc--].create .fixed-placeholder::after {
+            color: gray;
             top: 7px;
         }
 
@@ -137,6 +138,7 @@
                         value: -1
                     },
                     onSuccess: function () {
+                        toastr.info("Đã đổi vị trí 2 chuyên mục " + $("strong.tieude", row).text() + " và " + $("strong.tieude", row.prev()).text());
                         row.insertBefore(row.prev());
                     }
                 });
@@ -148,6 +150,7 @@
                         value: 1
                     },
                     onSuccess: function () {
+                        toastr.info("Đã đổi vị trí 2 chuyên mục " + $("strong.tieude", row).text() + " và " + $("strong.tieude", row.next()).text());
                         row.insertAfter(row.next());
                     }
                 });
@@ -155,11 +158,20 @@
         });
 
         $('input[type="checkbox"][data-toggle="toggle"]').bootstrapToggle().change(function () {
-            $(this).AjaxPost({
+            var $this = $(this);
+            var id = $this.closest('tr').attr('data-chuyen-muc-id');
+            $this.AjaxPost({
                 url: '/QuanLy/SwitchChuyenMucAnHien',
                 data: {
-                    id: $(this).closest('tr').attr('data-chuyen-muc-id'),
-                    status: $(this).prop('checked')
+                    id: id,
+                    status: $this.prop('checked')
+                },
+                onSuccess: function () {
+                    if ($this.prop('checked') == false) {
+                        toastr.info("Đã ẩn chuyên mục " + $("strong.tieude", $this.closest('tr')).text());
+                    } else {
+                        toastr.info("Đã hiện chuyên mục " + $("strong.tieude", $this.closest('tr')).text());
+                    }
                 }
             });
         });

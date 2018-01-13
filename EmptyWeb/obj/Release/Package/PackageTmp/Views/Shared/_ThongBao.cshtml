@@ -2,9 +2,8 @@
 
 @model PageEnums.AlertMessage
 
-<div id="homeMessage" class="modal fade" role="dialog">
+<div class="modal fade dialog-message" role="dialog">
     <div class="modal-dialog">
-        <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -15,20 +14,20 @@
                 @switch (Model)
                 {
                     case PageEnums.AlertMessage.DangKyLamGiaSuThanhCong:
-                        <h4>ĐĂNG KÝ THÀNH CÔNG</h4>
+                        <h4 class="alert-DangKyLamGiaSuThanhCong">ĐĂNG KÝ THÀNH CÔNG</h4>
                         <p>Bạn đã đăng ký thành công hồ sơ Gia Sư tại giasu24h.hanoi.vn</p>
-                        <p>Chúng tôi sẽ xét duyệt hồ sơ và liên hệ với bạn sớm nhất qua email hoặc số điện thoại</p>
+                        <p>Chúng tôi sẽ xét duyệt hồ sơ và liên hệ với bạn sớm nhất qua email hoặc số điện thoại.</p>
                         break;
                     case PageEnums.AlertMessage.DangKyTimGiaSuThanhCong:
-                        <h4>GỬI YÊU CẦU THÀNH CÔNG</h4>
-                        <p>Chúng tôi sẽ xét duyệt yêu cầu và liên hệ với bạn sớm nhất qua email hoặc số điện thoại</p>
+                        <h4 class="alert-DangKyTimGiaSuThanhCong">GỬI YÊU CẦU THÀNH CÔNG</h4>
+                        <p>Chúng tôi sẽ xét duyệt yêu cầu và liên hệ với bạn sớm nhất qua email hoặc số điện thoại.</p>
                         break;
                     case PageEnums.AlertMessage.DangKyLamGiaSuThatBai:
-                        <h4>ĐĂNG KÝ THẤT BẠI</h4>
+                        <h4 class="alert-DangKyLamGiaSuThatBai">ĐĂNG KÝ THẤT BẠI</h4>
                         <p>Có lỗi xảy ra! Vui lòng thử lại sau hoặc liên hệ với chúng tôi để được xử lý nhanh nhất.</p>
                         break;
                     case PageEnums.AlertMessage.DangKyTimGiaSuThatBai:
-                        <h4>GỬI YÊU CẦU THẤT BẠI</h4>
+                        <h4 class="alert-DangKyTimGiaSuThatBai">GỬI YÊU CẦU THẤT BẠI</h4>
                         <p>Có lỗi xảy ra! Vui lòng thử lại sau hoặc liên hệ với chúng tôi để được xử lý nhanh nhất.</p>
                         break;
                     default: break;

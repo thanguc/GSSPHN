@@ -1,0 +1,72 @@
+﻿@using EmptyWeb.Shared
+@model List<EmptyWeb.Models.HtmlTemplate>
+@{ 
+    var dkgs = Model.FirstOrDefault(t => t.TemplateCode == PageEnums.Template.DieuKhoanGiaSu).Content;
+    var dkph = Model.FirstOrDefault(t => t.TemplateCode == PageEnums.Template.DieuKhoanPhuHuynh).Content;
+}
+<style>
+    .cke_inner:not(.cke_maximized) > .cke_contents {
+        height: calc(100vh - 426px) !important;
+    }
+    @@media(min-width:1920){
+        .cke_inner:not(.cke_maximized) > .cke_contents {
+            height: calc(100vh - 396px) !important;
+        }
+    }
+</style>
+<div class="col-md-12">
+    <div class="panel panel-primary panel-table">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col col-xs-6" style="border-right: 1px solid #ddd; padding-left: 0">
+                    <h3 class="panel-title text-effect-blur pull-left"><i class="fa fa-graduation-cap fa-fw"></i> Điều khoản làm gia sư</h3>
+                    <a class="btn btn-sm btn-success btn-save-dkgs pull-right"><i class="fa fa-save fa-fw"></i> Lưu</a>
+                </div>
+                <div class="col col-xs-6" style="border-left: 1px solid #ddd">
+                    <h3 class="panel-title text-effect-blur pull-left"><i class="fa fa-users fa-fw"></i> Điều khoản tìm gia sư</h3>
+                    <a class="btn btn-sm btn-success btn-save-dkph pull-right"><i class="fa fa-save fa-fw"></i> Lưu</a>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body" style="height: calc(100vh - 252px); overflow: auto; padding: 10px 0;">
+            <div class="row">
+                <div class="col col-md-6" style="border-right: 1px solid #ddd">
+                    <textarea class="form-control" name="DieuKhoanGiaSu" id="DieuKhoanGiaSu">@dkgs</textarea>
+                </div>
+                <div class="col col-md-6" style="border-left: 1px solid #ddd">
+                    <textarea class="form-control" name="DieuKhoanPhuHuynh" id="DieuKhoanPhuHuynh">@dkph</textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        CKEDITOR.replace("DieuKhoanGiaSu");
+        CKEDITOR.replace("DieuKhoanPhuHuynh");
+        
+        $('.panel').on('click', '.btn-save-dkgs', function () {
+            $(this).AjaxPost({
+                url: "/QuanLy/SaveDieuKhoanGiaSu",
+                data: {
+                    content: CKEDITOR.instances["DieuKhoanGiaSu"].getData()
+                },
+                onSuccess: function () {
+                    toastr.success("Đã lưu nội dung Điều khoản đăng ký làm gia sư");
+                }
+            });
+        });
+
+        $('.panel').on('click', '.btn-save-dkph', function () {
+            $(this).AjaxPost({
+                url: "/QuanLy/SaveDieuKhoanPhuHuynh",
+                data: {
+                    content: CKEDITOR.instances["DieuKhoanPhuHuynh"].getData()
+                },
+                onSuccess: function () {
+                    toastr.success("Đã lưu nội dung điều khoản đăng ký tìm gia sư");
+                }
+            });
+        });
+    });
+</script>

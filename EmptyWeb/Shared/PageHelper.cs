@@ -41,5 +41,13 @@ namespace EmptyWeb.Shared
         {
             return src > limit ? limit + "<sup>+</sup>" : src.ToString();
         }
+
+        public static string GetDieuKhoan(string code)
+        {
+            using (var db = new EntityContext())
+            {
+                return db.HtmlTemplate.FirstOrDefault(t => t.TemplateCode == code).Content;
+            }
+        }
     }
 }

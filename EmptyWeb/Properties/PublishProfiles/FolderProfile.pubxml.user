@@ -20,10 +20,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/01/2017 20:15:13</publishTime>
     </File>
     <File Include="bin/EmptyWeb.dll">
-      <publishTime>12/27/2017 00:51:52</publishTime>
+      <publishTime>01/13/2018 12:46:31</publishTime>
     </File>
     <File Include="bin/EmptyWeb.pdb">
-      <publishTime>12/27/2017 00:51:52</publishTime>
+      <publishTime>01/13/2018 12:46:31</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>12/01/2017 20:15:13</publishTime>
@@ -142,6 +142,912 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/bootstrap3-editable/img/loading.gif">
       <publishTime>12/01/2017 20:26:08</publishTime>
     </File>
+    <File Include="Content/ckeditor/adapters/jquery.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/build-config.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/CHANGES.md">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/ckeditor.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/config.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/contents.css">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/en.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/LICENSE.md">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/a11yhelp.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/af.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/ar.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/az.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/bg.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/ca.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/cs.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/cy.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/da.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/de-ch.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/de.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/el.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/en-au.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/en-gb.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/en.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/eo.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/es-mx.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/es.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/et.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/eu.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/fa.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/fi.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/fo.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/fr-ca.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/fr.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/gl.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/gu.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/he.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/hi.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/hr.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/hu.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/id.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/it.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/ja.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/km.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/ko.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/ku.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/lt.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/lv.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/mk.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/mn.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/nb.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/nl.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/no.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/oc.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/pl.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/pt-br.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/pt.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/ro.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/ru.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/si.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/sk.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/sl.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/sq.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/sr-latn.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/sr.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/sv.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/th.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/tr.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/tt.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/ug.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/uk.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/vi.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/zh-cn.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/zh.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/_translationstatus.txt">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/about/dialogs/about.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/about/dialogs/hidpi/logo_ckeditor.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/about/dialogs/logo_ckeditor.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/colordialog/dialogs/colordialog.css">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/colordialog/dialogs/colordialog.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/copyformatting/cursors/cursor-disabled.svg">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/copyformatting/cursors/cursor.svg">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/copyformatting/styles/copyformatting.css">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/dialog/dialogDefinition.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/icons.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/icons_hidpi.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/iframe/dialogs/iframe.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/iframe/images/placeholder.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/image/dialogs/image.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/image/images/noimage.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/link/dialogs/anchor.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/link/dialogs/link.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/link/images/anchor.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/link/images/hidpi/anchor.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/liststyle/dialogs/liststyle.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/magicline/images/hidpi/icon-rtl.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/magicline/images/hidpi/icon.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/magicline/images/icon-rtl.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/magicline/images/icon.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/pastefromword/filter/default.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/preview/preview.html">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/dialogs/smiley.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/angel_smile.gif">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/angel_smile.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/angry_smile.gif">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/angry_smile.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/broken_heart.gif">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/broken_heart.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/confused_smile.gif">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/confused_smile.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/cry_smile.gif">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/cry_smile.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/devil_smile.gif">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/devil_smile.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/embaressed_smile.gif">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/embarrassed_smile.gif">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/embarrassed_smile.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/envelope.gif">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/envelope.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/heart.gif">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/heart.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/kiss.gif">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/kiss.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/lightbulb.gif">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/lightbulb.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/omg_smile.gif">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/omg_smile.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/regular_smile.gif">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/regular_smile.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/sad_smile.gif">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/sad_smile.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/shades_smile.gif">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/shades_smile.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/teeth_smile.gif">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/teeth_smile.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/thumbs_down.gif">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/thumbs_down.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/thumbs_up.gif">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/thumbs_up.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/tongue_smile.gif">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/tongue_smile.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/tounge_smile.gif">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/whatchutalkingabout_smile.gif">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/whatchutalkingabout_smile.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/wink_smile.gif">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/smiley/images/wink_smile.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/af.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/ar.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/az.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/bg.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/ca.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/cs.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/cy.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/da.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/de-ch.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/de.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/el.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/en-au.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/en-ca.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/en-gb.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/en.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/eo.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/es-mx.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/es.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/et.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/eu.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/fa.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/fi.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/fr-ca.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/fr.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/gl.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/he.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/hr.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/hu.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/id.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/it.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/ja.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/km.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/ko.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/ku.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/lt.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/lv.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/nb.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/nl.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/no.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/oc.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/pl.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/pt-br.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/pt.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/ro.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/ru.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/si.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/sk.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/sl.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/sq.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/sv.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/th.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/tr.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/tt.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/ug.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/uk.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/vi.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/zh-cn.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/zh.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/_translationstatus.txt">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/specialchar.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/table/dialogs/table.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/tableselection/styles/tableselection.css">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/tabletools/dialogs/tableCell.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/templates/dialogs/templates.css">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/templates/dialogs/templates.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/templates/templates/default.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/templates/templates/images/template1.gif">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/templates/templates/images/template2.gif">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/templates/templates/images/template3.gif">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/widget/images/handle.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/README.md">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/css/samples.css">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/img/github-top.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/img/header-bg.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/img/header-separator.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/img/logo.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/img/navigation-tip.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/index.html">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/js/sample.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/js/sf.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/old/ajax.html">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/old/api.html">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/old/appendto.html">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/old/assets/inlineall/logo.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/old/assets/outputxhtml/outputxhtml.css">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/old/assets/posteddata.php">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/old/assets/sample.jpg">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/old/assets/uilanguages/languages.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/old/datafiltering.html">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/old/dialog/assets/my_dialog.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/old/dialog/dialog.html">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/old/divreplace.html">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/old/enterkey/enterkey.html">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/old/htmlwriter/assets/outputforflash/outputforflash.fla">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/old/htmlwriter/assets/outputforflash/outputforflash.swf">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/old/htmlwriter/assets/outputforflash/swfobject.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/old/htmlwriter/outputforflash.html">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/old/htmlwriter/outputhtml.html">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/old/index.html">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/old/inlineall.html">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/old/inlinebycode.html">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/old/inlinetextarea.html">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/old/jquery.html">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/old/magicline/magicline.html">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/old/readonly.html">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/old/replacebyclass.html">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/old/replacebycode.html">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/old/sample.css">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/old/sample.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/old/sample_posteddata.php">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/old/tabindex.html">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/old/toolbar/toolbar.html">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/old/uicolor.html">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/old/uilanguages.html">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/old/wysiwygarea/fullpage.html">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/old/xhtmlstyle.html">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/toolbarconfigurator/css/fontello.css">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/toolbarconfigurator/font/config.json">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/toolbarconfigurator/font/fontello.eot">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/toolbarconfigurator/font/fontello.svg">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/toolbarconfigurator/font/fontello.ttf">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/toolbarconfigurator/font/fontello.woff">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/toolbarconfigurator/font/LICENSE.txt">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/toolbarconfigurator/index.html">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/toolbarconfigurator/js/abstracttoolbarmodifier.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/toolbarconfigurator/js/fulltoolbareditor.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/toolbarconfigurator/js/toolbarmodifier.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/toolbarconfigurator/js/toolbartextmodifier.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/toolbarconfigurator/lib/codemirror/codemirror.css">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/toolbarconfigurator/lib/codemirror/codemirror.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/toolbarconfigurator/lib/codemirror/javascript.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/toolbarconfigurator/lib/codemirror/LICENSE">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/toolbarconfigurator/lib/codemirror/show-hint.css">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/toolbarconfigurator/lib/codemirror/show-hint.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/skins/office2013/dialog.css">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/skins/office2013/editor.css">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/skins/office2013/icons.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/skins/office2013/icons_hidpi.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/skins/office2013/images/arrow.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/skins/office2013/images/close.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/skins/office2013/images/hidpi/close.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/skins/office2013/images/hidpi/lock-open.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/skins/office2013/images/hidpi/lock.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/skins/office2013/images/hidpi/refresh.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/skins/office2013/images/lock-open.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/skins/office2013/images/lock.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/skins/office2013/images/refresh.png">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/ckeditor/styles.js">
+      <publishTime>01/11/2018 20:49:24</publishTime>
+    </File>
+    <File Include="Content/Croppie-2.5.1/bower.json">
+      <publishTime>01/09/2018 19:13:29</publishTime>
+    </File>
+    <File Include="Content/Croppie-2.5.1/croppie.css">
+      <publishTime>01/11/2018 20:25:25</publishTime>
+    </File>
+    <File Include="Content/Croppie-2.5.1/croppie.js">
+      <publishTime>01/09/2018 19:13:29</publishTime>
+    </File>
+    <File Include="Content/Croppie-2.5.1/croppie.min.js">
+      <publishTime>01/09/2018 19:13:29</publishTime>
+    </File>
+    <File Include="Content/Croppie-2.5.1/deploy.js">
+      <publishTime>01/09/2018 19:13:29</publishTime>
+    </File>
+    <File Include="Content/Croppie-2.5.1/LICENSE">
+      <publishTime>01/09/2018 19:13:29</publishTime>
+    </File>
+    <File Include="Content/Croppie-2.5.1/package.json">
+      <publishTime>01/09/2018 19:13:29</publishTime>
+    </File>
+    <File Include="Content/Croppie-2.5.1/README.md">
+      <publishTime>01/09/2018 19:13:29</publishTime>
+    </File>
     <File Include="Content/css/bootstrap.css">
       <publishTime>12/01/2017 20:15:13</publishTime>
     </File>
@@ -149,7 +1055,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/01/2017 20:15:13</publishTime>
     </File>
     <File Include="Content/css/landing-page.css">
-      <publishTime>12/26/2017 17:36:14</publishTime>
+      <publishTime>01/12/2018 19:48:30</publishTime>
     </File>
     <File Include="Content/css/select2.css">
       <publishTime>12/01/2017 20:15:13</publishTime>
@@ -292,6 +1198,756 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/fonts/glyphicons-halflings-regular.woff2">
       <publishTime>12/01/2017 20:15:13</publishTime>
     </File>
+    <File Include="Content/Hover-master/.editorconfig">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/.gitignore">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/bower.json">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/CONTRIBUTING.md">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/css/demo-page.css">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/css/hover-min.css">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/css/hover.css">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/css/hover.css.map">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/Gruntfile.js">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/HISTORY.md">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/hover.jpg">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/index.html">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/2d-transitions/_backward.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/2d-transitions/_bob.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/2d-transitions/_bounce-in.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/2d-transitions/_bounce-out.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/2d-transitions/_buzz-out.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/2d-transitions/_buzz.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/2d-transitions/_float.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/2d-transitions/_forward.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/2d-transitions/_grow-rotate.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/2d-transitions/_grow.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/2d-transitions/_hang.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/2d-transitions/_pop.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/2d-transitions/_pulse-grow.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/2d-transitions/_pulse-shrink.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/2d-transitions/_pulse.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/2d-transitions/_push.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/2d-transitions/_rotate.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/2d-transitions/_shrink.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/2d-transitions/_sink.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/2d-transitions/_skew-backward.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/2d-transitions/_skew-forward.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/2d-transitions/_skew.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/2d-transitions/_wobble-bottom.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/2d-transitions/_wobble-horizontal.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/2d-transitions/_wobble-skew.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/2d-transitions/_wobble-to-bottom-right.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/2d-transitions/_wobble-to-top-right.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/2d-transitions/_wobble-top.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/2d-transitions/_wobble-vertical.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/background-transitions/_back-pulse.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/background-transitions/_bounce-to-bottom.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/background-transitions/_bounce-to-left.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/background-transitions/_bounce-to-right.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/background-transitions/_bounce-to-top.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/background-transitions/_fade.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/background-transitions/_radial-in.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/background-transitions/_radial-out.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/background-transitions/_rectangle-in.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/background-transitions/_rectangle-out.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/background-transitions/_shutter-in-horizontal.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/background-transitions/_shutter-in-vertical.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/background-transitions/_shutter-out-horizontal.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/background-transitions/_shutter-out-vertical.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/background-transitions/_sweep-to-bottom.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/background-transitions/_sweep-to-left.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/background-transitions/_sweep-to-right.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/background-transitions/_sweep-to-top.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/border-transitions/_border-fade.less">
+      <publishTime>01/11/2018 22:47:08</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/border-transitions/_hollow.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/border-transitions/_outline-in.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/border-transitions/_outline-out.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/border-transitions/_overline-from-center.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/border-transitions/_overline-from-left.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/border-transitions/_overline-from-right.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/border-transitions/_overline-reveal.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/border-transitions/_reveal.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/border-transitions/_ripple-in.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/border-transitions/_ripple-out.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/border-transitions/_round-corners.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/border-transitions/_trim.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/border-transitions/_underline-from-center.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/border-transitions/_underline-from-left.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/border-transitions/_underline-from-right.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/border-transitions/_underline-reveal.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/curls/_curl-bottom-left.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/curls/_curl-bottom-right.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/curls/_curl-top-left.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/curls/_curl-top-right.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/icons/_icon-back.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/icons/_icon-bob.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/icons/_icon-bounce-out.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/icons/_icon-bounce.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/icons/_icon-buzz-out.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/icons/_icon-buzz.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/icons/_icon-down.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/icons/_icon-drop.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/icons/_icon-fade.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/icons/_icon-float-away.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/icons/_icon-float.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/icons/_icon-forward.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/icons/_icon-grow-rotate.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/icons/_icon-grow.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/icons/_icon-hang.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/icons/_icon-pop.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/icons/_icon-pulse-grow.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/icons/_icon-pulse-shrink.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/icons/_icon-pulse.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/icons/_icon-push.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/icons/_icon-rotate.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/icons/_icon-shrink.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/icons/_icon-sink-away.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/icons/_icon-sink.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/icons/_icon-spin.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/icons/_icon-up.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/icons/_icon-wobble-horizontal.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/icons/_icon-wobble-vertical.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/shadow-and-glow-transitions/_box-shadow-inset.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/shadow-and-glow-transitions/_box-shadow-outset.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/shadow-and-glow-transitions/_float-shadow.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/shadow-and-glow-transitions/_glow.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/shadow-and-glow-transitions/_grow-shadow.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/shadow-and-glow-transitions/_shadow-radial.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/shadow-and-glow-transitions/_shadow.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/speech-bubbles/_bubble-bottom.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/speech-bubbles/_bubble-float-bottom.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/speech-bubbles/_bubble-float-left.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/speech-bubbles/_bubble-float-right.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/speech-bubbles/_bubble-float-top.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/speech-bubbles/_bubble-left.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/speech-bubbles/_bubble-right.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/effects/speech-bubbles/_bubble-top.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/hover.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/_hacks.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/_mixins.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/less/_options.less">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/license.txt">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/logo-transparent.png">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/modern-slide-in.png">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/package.json">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/photo-stack.png">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/README.md">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/2d-transitions/_backward.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/2d-transitions/_bob.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/2d-transitions/_bounce-in.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/2d-transitions/_bounce-out.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/2d-transitions/_buzz-out.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/2d-transitions/_buzz.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/2d-transitions/_float.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/2d-transitions/_forward.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/2d-transitions/_grow-rotate.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/2d-transitions/_grow.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/2d-transitions/_hang.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/2d-transitions/_pop.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/2d-transitions/_pulse-grow.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/2d-transitions/_pulse-shrink.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/2d-transitions/_pulse.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/2d-transitions/_push.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/2d-transitions/_rotate.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/2d-transitions/_shrink.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/2d-transitions/_sink.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/2d-transitions/_skew-backward.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/2d-transitions/_skew-forward.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/2d-transitions/_skew.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/2d-transitions/_wobble-bottom.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/2d-transitions/_wobble-horizontal.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/2d-transitions/_wobble-skew.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/2d-transitions/_wobble-to-bottom-right.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/2d-transitions/_wobble-to-top-right.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/2d-transitions/_wobble-top.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/2d-transitions/_wobble-vertical.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/background-transitions/_back-pulse.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/background-transitions/_bounce-to-bottom.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/background-transitions/_bounce-to-left.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/background-transitions/_bounce-to-right.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/background-transitions/_bounce-to-top.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/background-transitions/_fade.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/background-transitions/_radial-in.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/background-transitions/_radial-out.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/background-transitions/_rectangle-in.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/background-transitions/_rectangle-out.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/background-transitions/_shutter-in-horizontal.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/background-transitions/_shutter-in-vertical.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/background-transitions/_shutter-out-horizontal.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/background-transitions/_shutter-out-vertical.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/background-transitions/_sweep-to-bottom.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/background-transitions/_sweep-to-left.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/background-transitions/_sweep-to-right.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/background-transitions/_sweep-to-top.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/border-transitions/_border-fade.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/border-transitions/_hollow.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/border-transitions/_outline-in.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/border-transitions/_outline-out.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/border-transitions/_overline-from-center.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/border-transitions/_overline-from-left.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/border-transitions/_overline-from-right.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/border-transitions/_overline-reveal.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/border-transitions/_reveal.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/border-transitions/_ripple-in.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/border-transitions/_ripple-out.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/border-transitions/_round-corners.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/border-transitions/_trim.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/border-transitions/_underline-from-center.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/border-transitions/_underline-from-left.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/border-transitions/_underline-from-right.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/border-transitions/_underline-reveal.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/curls/_curl-bottom-left.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/curls/_curl-bottom-right.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/curls/_curl-top-left.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/curls/_curl-top-right.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/icons/_icon-back.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/icons/_icon-bob.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/icons/_icon-bounce-out.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/icons/_icon-bounce.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/icons/_icon-buzz-out.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/icons/_icon-buzz.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/icons/_icon-down.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/icons/_icon-drop.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/icons/_icon-fade.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/icons/_icon-float-away.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/icons/_icon-float.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/icons/_icon-forward.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/icons/_icon-grow-rotate.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/icons/_icon-grow.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/icons/_icon-hang.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/icons/_icon-pop.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/icons/_icon-pulse-grow.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/icons/_icon-pulse-shrink.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/icons/_icon-pulse.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/icons/_icon-push.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/icons/_icon-rotate.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/icons/_icon-shrink.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/icons/_icon-sink-away.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/icons/_icon-sink.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/icons/_icon-spin.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/icons/_icon-up.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/icons/_icon-wobble-horizontal.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/icons/_icon-wobble-vertical.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/shadow-and-glow-transitions/_box-shadow-inset.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/shadow-and-glow-transitions/_box-shadow-outset.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/shadow-and-glow-transitions/_float-shadow.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/shadow-and-glow-transitions/_glow.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/shadow-and-glow-transitions/_grow-shadow.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/shadow-and-glow-transitions/_shadow-radial.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/shadow-and-glow-transitions/_shadow.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/speech-bubbles/_bubble-bottom.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/speech-bubbles/_bubble-float-bottom.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/speech-bubbles/_bubble-float-left.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/speech-bubbles/_bubble-float-right.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/speech-bubbles/_bubble-float-top.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/speech-bubbles/_bubble-left.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/speech-bubbles/_bubble-right.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/effects/speech-bubbles/_bubble-top.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/hover.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/_hacks.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/_mixins.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/scss/_options.scss">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/sequence-logo.png">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
+    <File Include="Content/Hover-master/two-up.png">
+      <publishTime>01/11/2018 22:47:09</publishTime>
+    </File>
     <File Include="Content/img/banner-bg.jpg">
       <publishTime>12/01/2017 20:15:13</publishTime>
     </File>
@@ -306,6 +1962,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Content/img/logo.jpg">
       <publishTime>12/01/2017 20:15:13</publishTime>
+    </File>
+    <File Include="Content/img/no-image.png">
+      <publishTime>01/09/2018 20:17:26</publishTime>
     </File>
     <File Include="Content/img/phones.png">
       <publishTime>12/01/2017 20:15:13</publishTime>
@@ -604,6 +2263,30 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/kartik-v-bootstrap-fileinput-db72623/themes/gly/theme.js">
       <publishTime>12/01/2017 20:26:08</publishTime>
     </File>
+    <File Include="Content/p-loading-master/dist/css/p-loading.css">
+      <publishTime>01/11/2018 20:01:19</publishTime>
+    </File>
+    <File Include="Content/p-loading-master/dist/css/p-loading.min.css">
+      <publishTime>01/11/2018 20:01:19</publishTime>
+    </File>
+    <File Include="Content/p-loading-master/dist/js/p-loading.js">
+      <publishTime>01/11/2018 20:01:19</publishTime>
+    </File>
+    <File Include="Content/p-loading-master/dist/js/p-loading.min.js">
+      <publishTime>01/11/2018 20:01:19</publishTime>
+    </File>
+    <File Include="Content/p-loading-master/LICENSE">
+      <publishTime>01/11/2018 20:01:19</publishTime>
+    </File>
+    <File Include="Content/p-loading-master/package.json">
+      <publishTime>01/11/2018 20:01:19</publishTime>
+    </File>
+    <File Include="Content/p-loading-master/src/css/p-loading.css">
+      <publishTime>01/11/2018 20:01:19</publishTime>
+    </File>
+    <File Include="Content/p-loading-master/src/js/p-loading.js">
+      <publishTime>01/11/2018 20:01:19</publishTime>
+    </File>
     <File Include="Content/select2-bootstrap-build.less">
       <publishTime>12/01/2017 20:15:13</publishTime>
     </File>
@@ -620,7 +2303,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/01/2017 20:15:13</publishTime>
     </File>
     <File Include="Content/Site.css">
-      <publishTime>12/26/2017 17:36:04</publishTime>
+      <publishTime>01/13/2018 12:45:42</publishTime>
+    </File>
+    <File Include="Content/toastr.css">
+      <publishTime>01/11/2018 21:35:01</publishTime>
+    </File>
+    <File Include="Content/toastr.less">
+      <publishTime>01/04/2018 21:28:23</publishTime>
+    </File>
+    <File Include="Content/toastr.min.css">
+      <publishTime>01/04/2018 21:28:23</publishTime>
+    </File>
+    <File Include="Content/toastr.scss">
+      <publishTime>01/04/2018 21:28:23</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>12/01/2017 20:15:13</publishTime>
@@ -644,7 +2339,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/01/2017 20:15:13</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>10/12/2017 17:29:44</publishTime>
+      <publishTime>01/04/2018 21:28:23</publishTime>
     </File>
     <File Include="Scripts/bootstrap-datetimepicker.js">
       <publishTime>12/01/2017 20:15:13</publishTime>
@@ -674,7 +2369,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/01/2017 20:26:08</publishTime>
     </File>
     <File Include="Scripts/common.js">
-      <publishTime>12/26/2017 12:13:30</publishTime>
+      <publishTime>01/11/2018 20:36:05</publishTime>
     </File>
     <File Include="Scripts/DangKyLamGiaSu/index.js">
       <publishTime>08/10/2017 21:56:41</publishTime>
@@ -887,7 +2582,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/01/2017 20:15:13</publishTime>
     </File>
     <File Include="Scripts/QuanLy/index.js">
-      <publishTime>12/26/2017 20:16:07</publishTime>
+      <publishTime>12/27/2017 23:13:21</publishTime>
     </File>
     <File Include="Scripts/respond.js">
       <publishTime>12/01/2017 20:15:13</publishTime>
@@ -902,13 +2597,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/01/2017 20:15:13</publishTime>
     </File>
     <File Include="Scripts/site.js">
-      <publishTime>12/07/2017 23:48:05</publishTime>
+      <publishTime>01/13/2018 12:45:19</publishTime>
+    </File>
+    <File Include="Scripts/toastr.js">
+      <publishTime>01/04/2018 21:28:23</publishTime>
+    </File>
+    <File Include="Scripts/toastr.min.js">
+      <publishTime>01/04/2018 21:28:23</publishTime>
     </File>
     <File Include="Scripts/TrangChu/dangKyLamGiaSu.js">
-      <publishTime>12/03/2017 18:42:32</publishTime>
+      <publishTime>01/13/2018 00:23:25</publishTime>
     </File>
     <File Include="Scripts/TrangChu/dangKyTimGiaSu.js">
-      <publishTime>12/03/2017 18:42:52</publishTime>
+      <publishTime>01/13/2018 00:26:03</publishTime>
     </File>
     <File Include="Scripts/_references.js">
       <publishTime>12/03/2017 18:31:06</publishTime>
@@ -941,19 +2642,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/24/2017 23:03:02</publishTime>
     </File>
     <File Include="Views/QuanLy/_BaiViet/_BaiViet.cshtml">
-      <publishTime>12/26/2017 17:16:55</publishTime>
+      <publishTime>01/04/2018 23:26:31</publishTime>
     </File>
     <File Include="Views/QuanLy/_BaiViet/_ModalBaiViet.cshtml">
       <publishTime>12/26/2017 15:43:26</publishTime>
     </File>
     <File Include="Views/QuanLy/_ChiTietMuc.cshtml">
-      <publishTime>12/26/2017 19:53:12</publishTime>
+      <publishTime>01/04/2018 23:02:30</publishTime>
     </File>
     <File Include="Views/QuanLy/_ChuyenMuc.cshtml">
       <publishTime>12/03/2017 11:04:18</publishTime>
     </File>
+    <File Include="Views/QuanLy/_DieuKhoan.cshtml">
+      <publishTime>01/11/2018 21:05:13</publishTime>
+    </File>
     <File Include="Views/QuanLy/_GioiThieu.cshtml">
-      <publishTime>12/26/2017 22:38:36</publishTime>
+      <publishTime>01/11/2018 20:58:15</publishTime>
     </File>
     <File Include="Views/QuanLy/_LookingForTutor.cshtml">
       <publishTime>12/01/2017 20:26:08</publishTime>
@@ -962,7 +2666,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/24/2017 23:06:30</publishTime>
     </File>
     <File Include="Views/QuanLy/_Muc.cshtml">
-      <publishTime>12/26/2017 23:41:46</publishTime>
+      <publishTime>01/04/2018 22:31:52</publishTime>
     </File>
     <File Include="Views/QuanLy/_SystemLogs.cshtml">
       <publishTime>12/24/2017 23:49:15</publishTime>
@@ -974,49 +2678,52 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2017 20:38:33</publishTime>
     </File>
     <File Include="Views/QuanLy/_WantToBeTutor.cshtml">
-      <publishTime>12/26/2017 20:43:42</publishTime>
+      <publishTime>01/11/2018 20:38:33</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>12/01/2017 20:15:13</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>12/27/2017 00:05:19</publishTime>
+      <publishTime>01/13/2018 12:44:24</publishTime>
     </File>
     <File Include="Views/Shared/_QuanLyLayout.cshtml">
-      <publishTime>12/26/2017 22:32:14</publishTime>
+      <publishTime>01/11/2018 20:50:44</publishTime>
     </File>
     <File Include="Views/Shared/_ThongBao.cshtml">
-      <publishTime>10/12/2017 11:03:40</publishTime>
+      <publishTime>01/10/2018 21:36:53</publishTime>
     </File>
     <File Include="Views/TaiKhoan/Login.cshtml">
-      <publishTime>09/12/2017 22:12:43</publishTime>
+      <publishTime>01/11/2018 20:28:39</publishTime>
     </File>
     <File Include="Views/TrangChu/ChiTietBaiViet.cshtml">
-      <publishTime>12/26/2017 11:53:51</publishTime>
+      <publishTime>01/12/2018 21:59:46</publishTime>
     </File>
     <File Include="Views/TrangChu/ChiTietChuyenMuc.cshtml">
-      <publishTime>12/26/2017 17:26:20</publishTime>
+      <publishTime>01/12/2018 22:00:13</publishTime>
     </File>
     <File Include="Views/TrangChu/DangKyLamGiaSu.cshtml">
-      <publishTime>10/12/2017 11:04:41</publishTime>
+      <publishTime>01/13/2018 00:22:50</publishTime>
     </File>
     <File Include="Views/TrangChu/GioiThieu.cshtml">
       <publishTime>12/26/2017 22:39:53</publishTime>
     </File>
     <File Include="Views/TrangChu/Index.cshtml">
-      <publishTime>12/26/2017 23:40:57</publishTime>
+      <publishTime>01/13/2018 01:25:07</publishTime>
+    </File>
+    <File Include="Views/TrangChu/TestSite.cshtml">
+      <publishTime>01/13/2018 01:21:30</publishTime>
     </File>
     <File Include="Views/TrangChu/YeuCauTimGiaSu.cshtml">
-      <publishTime>10/12/2017 11:04:50</publishTime>
+      <publishTime>01/13/2018 00:23:09</publishTime>
     </File>
     <File Include="Views/TrangChu/_BaiViet.cshtml">
-      <publishTime>12/26/2017 17:16:06</publishTime>
+      <publishTime>01/12/2018 00:28:39</publishTime>
     </File>
     <File Include="Views/TrangChu/_DieuKhoanDangKyGiaSu.cshtml">
-      <publishTime>12/01/2017 20:26:08</publishTime>
+      <publishTime>01/11/2018 00:30:51</publishTime>
     </File>
     <File Include="Views/TrangChu/_DieuKhoanTimGiaSu.cshtml">
-      <publishTime>12/01/2017 20:26:08</publishTime>
+      <publishTime>01/12/2018 23:45:59</publishTime>
     </File>
     <File Include="Views/Users/Create.cshtml">
       <publishTime>12/01/2017 20:15:13</publishTime>
@@ -1040,7 +2747,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/01/2017 20:15:13</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>12/26/2017 22:44:37</publishTime>
+      <publishTime>01/04/2018 23:31:51</publishTime>
     </File>
   </ItemGroup>
 </Project>

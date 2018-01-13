@@ -34,48 +34,69 @@ namespace EmptyWeb.Contexts
         {
             if (!exceptionContext.ExceptionHandled)
             {
-                Exception exception = exceptionContext.Exception;
-                var request = exceptionContext.HttpContext.Request;
-                Log log = new Log
+                try
                 {
-                    Username = request.IsAuthenticated ? exceptionContext.HttpContext.User.Identity.Name : "Anonymous",
-                    IPAddress = request.ServerVariables["HTTP_X_FORWARDED_FOR"] ?? request.UserHostAddress,
-                    Browser = request.Browser.Type,
-                    UrlAccessed = request.RawUrl,
-                    Message = SerializeData(request.Form) + string.Format("\nException: {0}\nSource: {1}\nStackTrace: {2}", exception.Message, exception.Source, exception.StackTrace)
-                };
-                using (LogContext logContext = new LogContext())
-                {
-                    logContext.Record(log);
+                    Exception exception = exceptionContext.Exception;
+                    var request = exceptionContext.HttpContext.Request;
+                    Log log = new Log
+                    {
+                        Username = request.IsAuthenticated ? exceptionContext.HttpContext.User.Identity.Name : "Anonymous",
+                        IPAddress = request.ServerVariables["HTTP_X_FORWARDED_FOR"] ?? request.UserHostAddress,
+                        Browser = request.Browser.Type,
+                        UrlAccessed = request.RawUrl,
+                        Message = SerializeData(request.Form) + string.Format("\nException: {0}\nSource: {1}\nStackTrace: {2}", exception.Message, exception.Source, exception.StackTrace)
+                    };
+                    using (LogContext logContext = new LogContext())
+                    {
+                        logContext.Logs.Add(log);
+                        logContext.SaveChangesAsync();
+                    }
+                    if (exceptionContext.HttpContext.Request.IsAjaxRequest())
+                    {
+                        exceptionContext.HttpContext.Response.StatusCode = 500;
+                        exceptionContext.Result = new EmptyResult();
+                    }
                 }
-                if (exceptionContext.HttpContext.Request.IsAjaxRequest())
+                catch (Exception)
                 {
-                    exceptionContext.HttpContext.Response.StatusCode = 500;
-                    exceptionContext.Result = new EmptyResult();
+                    throw;
                 }
-                exceptionContext.Result = new RedirectResult("/Shared/Error");
-                exceptionContext.ExceptionHandled = true;
+                finally
+                {
+                    exceptionContext.Result = new RedirectResult("/Shared/Error");
+                    exceptionContext.ExceptionHandled = true;
+                }
             }
         }
 
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            var request = filterContext.HttpContext.Request;
-            Log log = new Log
+            try
             {
-                Username = request.IsAuthenticated ? filterContext.HttpContext.User.Identity.Name : "Anonymous",
-                IPAddress = request.ServerVariables["HTTP_X_FORWARDED_FOR"] ?? request.UserHostAddress,
-                Browser = request.Browser.Type,
-                UrlAccessed = request.RawUrl,
-                Message = SerializeData(request.Form)
-            };
+                var request = filterContext.HttpContext.Request;
+                Log log = new Log
+                {
+                    Username = request.IsAuthenticated ? filterContext.HttpContext.User.Identity.Name : "Anonymous",
+                    IPAddress = request.ServerVariables["HTTP_X_FORWARDED_FOR"] ?? request.UserHostAddress,
+                    Browser = request.Browser.Type,
+                    UrlAccessed = request.RawUrl,
+                    Message = SerializeData(request.Form)
+                };
 
-            using (LogContext logContext = new LogContext())
-            {
-                logContext.Record(log);
+                using (LogContext logContext = new LogContext())
+                {
+                    logContext.Logs.Add(log);
+                    logContext.SaveChangesAsync();
+                }
             }
-
-            base.OnActionExecuting(filterContext);
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                base.OnActionExecuting(filterContext);
+            }
         }
 
         private string SerializeData(NameValueCollection form)

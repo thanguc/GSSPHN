@@ -19,14 +19,14 @@ namespace EmptyWeb.Services
             logContext = _logContext;
         }
 
-        public async Task<IImage> UploadImage(Stream stream)
+        public async Task<IImage> UploadImage(byte[] file)
         {
             try
             {
                 var client = new ImgurClient(CLIENT_ID, CLIENT_SECRET);
                 var endpoint = new ImageEndpoint(client);
-                IImage image = await endpoint.UploadImageStreamAsync(stream);
-                logContext.Record(string.Format("IMGUR: {0} (ID: {1}, SIZE: {2}, BW: {3}) was uploaded on {4}", image.Name, image.Id, image.Size, image.Bandwidth, image.DateTime));
+                IImage image = await endpoint.UploadImageBinaryAsync(file);
+                logContext.Record(string.Format("IMGUR: {0} (NAME: {1}, SIZE: {2}) was uploaded at {3} on {4}", image.Id, image.Name, image.Size, image.Link, image.DateTime));
                 return image;
             }
             catch (ImgurException imgurEx)

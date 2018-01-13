@@ -25,6 +25,8 @@
     <link href="~/Content/font-awesome/css/font-awesome-animation.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
+    <link href="~/Content/toastr.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/p-loading-master/dist/css/p-loading.min.css" rel="stylesheet" type="text/css" />
     <style>
         .glyphicon {
             margin-right: 10px;
@@ -46,8 +48,8 @@
             margin: 0;
         }
 
-        a:hover{
-            cursor:pointer;
+        a:hover {
+            cursor: pointer;
         }
     </style>
 
@@ -60,7 +62,8 @@
     <!-- Default Modernizr JS -->
     <script src="/Scripts/modernizr-2.6.2.js"></script>
 
-    <script src="//cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
+    @*<script src="//cdn.ckeditor.com/4.8.0/full/ckeditor.js"></script>*@
+    <script src="~/Content/ckeditor/ckeditor.js"></script>
 
     <script type="text/javascript">
         //<![CDATA[
@@ -153,6 +156,11 @@
                                         <i class="fa fa-sticky-note fa-fw"></i> <a class="btn-load-gioi-thieu">Giới thiệu</a>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-files-o fa-fw"></i> <a class="btn-load-template">Điều khoản</a>
+                                    </td>
+                                </tr>
                             </table>
                         </div>
                     </div>
@@ -226,7 +234,8 @@
     <script src="~/Scripts/bootstrap-datetimepicker.js"></script>
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     <script src="~/Scripts/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
-
+    <script src="~/Scripts/toastr.min.js"></script>
+    <script src="~/Content/p-loading-master/dist/js/p-loading.min.js"></script>
     <!-- Responsive -->
     <script src="/Scripts/respond.js"></script>
     <script src="~/Scripts/site.js"></script>

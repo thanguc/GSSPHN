@@ -86,7 +86,7 @@ namespace EmptyWeb.Controllers
             if (EntityContext.IsValid)
             {
                 EntityContext.SaveObject(muc);
-                return OK();
+                return OK(value);
             }
             else
             {
@@ -162,6 +162,7 @@ namespace EmptyWeb.Controllers
         public ActionResult XoaMuc(Guid id)
         {
             var muc = EntityContext.Muc.Find(id);
+            var tieude = muc.TieuDe;
             var nextMucs = EntityContext.Muc.Where(m => m.SortNumber > muc.SortNumber);
             foreach (var m in nextMucs)
             {
@@ -169,13 +170,14 @@ namespace EmptyWeb.Controllers
             }
             EntityContext.ChuyenMuc.RemoveRange(muc.ChuyenMucs);
             EntityContext.DeleteObject(muc);
-            return OK();
+            return OK(tieude);
         }
 
         [TraceLog]
         public ActionResult XoaChuyenMuc(Guid id)
         {
             var chuyenMuc = EntityContext.ChuyenMuc.Find(id);
+            var tieude = chuyenMuc.TieuDe;
             var nextChuyenMucs = EntityContext.ChuyenMuc.Where(m => m.SortNumber > chuyenMuc.SortNumber);
             foreach (var m in nextChuyenMucs)
             {
@@ -189,7 +191,7 @@ namespace EmptyWeb.Controllers
             {
                 return Error(EntityContext);
             }
-            return OK();
+            return OK(tieude);
         }
 
         [TraceLog]
@@ -383,6 +385,7 @@ namespace EmptyWeb.Controllers
             }
             if (bv != null)
             {
+                var tieude = bv.TieuDe;
                 var nextBaiViets = EntityContext.BaiViet.Where(m => m.SortNumber > bv.SortNumber);
                 foreach (var m in nextBaiViets)
                 {
@@ -391,7 +394,7 @@ namespace EmptyWeb.Controllers
                 if (EntityContext.IsValid)
                 {
                     EntityContext.DeleteObject(bv);
-                    return OK();
+                    return OK(tieude);
                 }
                 return Error(EntityContext);
             }
@@ -429,6 +432,32 @@ namespace EmptyWeb.Controllers
         public ActionResult SaveGioiThieu(string content)
         {
             var template = EntityContext.HtmlTemplate.FirstOrDefault(t => t.TemplateCode == PageEnums.Template.GioiThieu);
+            template.Content = content;
+            EntityContext.SaveObject(template);
+            return OK();
+        }
+
+        public ActionResult _DieuKhoan()
+        {
+            var template = EntityContext.HtmlTemplate.Where(t => t.TemplateCode == PageEnums.Template.DieuKhoanGiaSu || t.TemplateCode == PageEnums.Template.DieuKhoanPhuHuynh);
+            return PartialView("_DieuKhoan", template.ToList());
+        }
+
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult SaveDieuKhoanGiaSu(string content)
+        {
+            var template = EntityContext.HtmlTemplate.FirstOrDefault(t => t.TemplateCode == PageEnums.Template.DieuKhoanGiaSu);
+            template.Content = content;
+            EntityContext.SaveObject(template);
+            return OK();
+        }
+
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult SaveDieuKhoanPhuHuynh(string content)
+        {
+            var template = EntityContext.HtmlTemplate.FirstOrDefault(t => t.TemplateCode == PageEnums.Template.DieuKhoanPhuHuynh);
             template.Content = content;
             EntityContext.SaveObject(template);
             return OK();

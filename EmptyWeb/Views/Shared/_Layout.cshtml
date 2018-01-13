@@ -1,8 +1,4 @@
 ﻿@using EmptyWeb.Shared
-@{
-    PageEnums.AlertMessage? msg = (PageEnums.AlertMessage?)ViewBag.AlertMessage;
-}
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +12,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="~/Content/css/bootstrap.css">
     @*<link rel="stylesheet" href="~/Content/bootstrap.yeti.css" />*@
+    <link href="~/Content/Hover-master/css/hover-min.css" rel="stylesheet" media="all">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" />
     <link rel="stylesheet" href="~/Content/select2-bootstrap.css" />
     <link rel="stylesheet" href="~/Content/bootstrap-datetimepicker.css" />
@@ -28,6 +25,9 @@
     <link href="~/Content/font-awesome/css/font-awesome-animation.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
+    <link href="~/Content/toastr.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Croppie-2.5.1/croppie.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/p-loading-master/dist/css/p-loading.min.css" rel="stylesheet" type="text/css" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -44,6 +44,15 @@
     </script>
 </head>
 <body>
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.11&appId=2002762046677863';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
     <div class="entire-wrapper">
         <header id="header" class="navbar navbar-default topnav">
             <div class="container topnav">
@@ -132,46 +141,96 @@
         @*<div class="container body-content">*@
         @RenderBody()
         @*</div>*@
-        <div class="clear-bottom" style="height: 186px"></div>
+        <div class="banner">
+            <div class="container">
+                <div class="row" style="display:flex">
+                    <div class="col-lg-4">
+                        <h3>HỆ THỐNG GIA SƯ 24H</h3>
+                        <p id="about" class="text-justify" style="line-height: 24px;">
+                            Hội tụ tất cả các gia sư có Chuyên môn Sư Phạm cao, cùng với tinh thần trách nhiệm và sự nỗ lực không ngừng, chúng tôi sẽ cùng bạn chấp cánh ước mơ của con em chúng ta. Với những phương pháp dạy học tiên tiến giúp các em có thể nắm vững chắc kiến thức một cách nhanh nhất. Với sự uy tín và chất lượng của Trung tâm là nơi gửi gắm niềm tin của rất nhiều em học sinh và các bậc phụ huynh. Chúng tôi luôn nỗ lực để nhận được sự hài lòng nhất của phụ huynh và các bạn.
+                        </p>
+                    </div>
+                    <div class="col-lg-4" style="border-left: 2px solid; border-right: 2px solid;">
+                        <h3>LIÊN HỆ</h3>
+                        <p>
+                            <i class="fa fa-phone fa-fw"></i> 098.149.4418 (Cô Mai)
+                        </p>
+                        <p>
+                            <i class="fa fa-phone fa-fw"></i> 0167.960.5047 (Cô Lan)
+                        </p>
+                        <p>
+                            <i class="fa fa-envelope fa-fw"></i> hotro@giasu24h.hanoi.vn
+                        </p>
+                        <p class="text-center" style="padding-top: 40px;">
+                            <button class="btn btn-lg btn-default" data-toggle="modal" data-target="#feedback"><i class="fa fa-send fa-fw"></i> Để lại lời nhắn</button>
+                        </p>
+                    </div>
+                    <div class="col-lg-4">
+                        <h3>FACEBOOK</h3>
+                        <div class="fb-page" data-href="https://www.facebook.com/HN.GiaSuSuPham/" data-height="250" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/HN.GiaSuSuPham/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/HN.GiaSuSuPham/">Gia Sư Sư Phạm Hà Nội</a></blockquote></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear-bottom" style="height: 390px"></div>
         <!-- Footer -->
-        <footer style="position:absolute;bottom:0; left: 0; right: 0;">
+        <footer style="position: absolute; bottom: 0; left: 0; right: 0;">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12">
-                        <ul class="list-inline">
-                            <li>
-                                <a href="#">Home</a>
-                            </li>
-                            <li class="footer-menu-divider">&sdot;</li>
-                            <li>
-                                <a href="#about">About</a>
-                            </li>
-                            <li class="footer-menu-divider">&sdot;</li>
-                            <li>
-                                <a href="#services">Services</a>
-                            </li>
-                            <li class="footer-menu-divider">&sdot;</li>
-                            <li>
-                                <a href="#contact">Contact</a>
-                            </li>
-                        </ul>
-                        <p class="copyright text-muted small">Copyright &copy; Your Company 2014. All Rights Reserved</p>
-                        <script src="https://www.w3counter.com/tracker.js?id=109384"></script>
+                    <div class="col-lg-4">
+                        <p class="ip small"></p>
+                    </div>
+                    <div class="col-lg-4">
+                        <p class="copyright text-center small">&copy; Hệ thống Gia Sư 24h</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <p class="credit small pull-right">Liên hệ thiết kế: <a href="mailto:thanguc.94@gmail.com">thanguc.94@gmail.com</a></p>
                     </div>
                 </div>
             </div>
         </footer>
-
-        @if (msg.HasValue)
-        {
-            @Html.Partial("_ThongBao", msg.Value)
-        }
-
-        <a class="back-to-top" style="display:none">
+        <div id="feedback" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Để lại lời nhắn cho chúng tôi</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/TrangChu/Feedback">
+                            <div class="col-lg-5">
+                                <div class="form-group">
+                                    <label for="feedback-ten">Họ tên:</label>
+                                    <input type="text" class="form-control" id="feedback-hoten">
+                                </div>
+                                <div class="form-group">
+                                    <label for="feedback-sdt">Số điện thoại:</label>
+                                    <input type="tel" class="form-control" id="feedback-sdt">
+                                </div>
+                                <div class="form-group">
+                                    <label for="feedback-email">Email:</label>
+                                    <input type="email" class="form-control" id="feedback-email">
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="form-group">
+                                    <label for="feedback-loinhan">Lời nhắn:</label>
+                                    <textarea class="form-control" id="feedback-loinhan" style="height: 182px; resize: none; font-weight: normal" placeholder="Yêu cầu, góp ý..."></textarea>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success"><i class="fa fa-send fa-fw"></i> GỬI</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="back-to-top hvr-bob" style="display:none">
             <i class="fa fa-chevron-circle-up fa-4x"></i>
         </a>
-
-        @*</div>*@
 
         <!-- jQuery -->
         <script src="~/Content/js/jquery.js"></script>
@@ -184,7 +243,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/i18n/vi.js"></script>
         <script src="~/Scripts/bootstrap-datetimepicker.js"></script>
-
+        <script src="~/Scripts/toastr.min.js"></script>
+        <script src="~/Content/Croppie-2.5.1/croppie.min.js"></script>
+        <script src="~/Content/p-loading-master/dist/js/p-loading.min.js"></script>
         <!-- Responsive -->
         <script src="/Scripts/respond.js"></script>
 

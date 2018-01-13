@@ -1,14 +1,18 @@
 ﻿$.fn.AjaxPost = function (options) {
+    var $this = $(this);
     $.ajax({
         url: options.url,
         type: 'post',
         data: options.data,
+        beforeSend: function () {
+            $this.ploading({ action: 'show' });
+        },
         success: function (r) {
             if (r.Error) {
                 if (options.onError) {
                     options.onError(r.Error);
                 } else {
-                    alert(r.Error);
+                    toastr.error(r.Error);
                 }
             } else if (options.onSuccess) {
                 options.onSuccess(r);
@@ -18,25 +22,32 @@
             if (options.onError) {
                 options.onError(r);
             } else {
-                alert('Có lỗi đã xảy ra! Xin vui lòng thử lại sau hoặc liên hệ với admin.');
+                toastr.error('Có lỗi đã xảy ra! Xin vui lòng thử lại sau hoặc liên hệ với admin.');
             }
+        },
+        complete: function () {
+            $this.ploading({ action: 'hide' });
         }
     });
 };
 
 $.fn.AjaxFormData = function (options) {
+    var $this = $(this);
     $.ajax({
         url: options.url,
         type: 'post',
         data: options.data,
         processData: false,
         contentType: false,
+        beforeSend: function () {
+            $this.ploading({ action: 'show' });
+        },
         success: function (r) {
             if (r.Error) {
                 if (options.onError) {
                     options.onError(r.Error);
                 } else {
-                    alert(r.Error);
+                    toastr.error(r.Error);
                 }
             } else if (options.onSuccess) {
                 options.onSuccess(r);
@@ -46,8 +57,11 @@ $.fn.AjaxFormData = function (options) {
             if (options.onError) {
                 options.onError(r);
             } else {
-                alert('Có lỗi đã xảy ra! Xin vui lòng thử lại sau hoặc liên hệ với admin.');
+                toastr.error('Có lỗi đã xảy ra! Xin vui lòng thử lại sau hoặc liên hệ với admin.');
             }
+        },
+        complete: function () {
+            $this.ploading({ action: 'hide' });
         }
     });
 };
@@ -59,8 +73,14 @@ $.fn.AjaxHtml = function (url, params) {
         type: 'post',
         data: params,
         dataType: 'html',
+        beforeSend: function () {
+            $this.ploading({ action: 'show' });
+        },
         success: function (html) {
             $this.empty().html(html);
+        },
+        complete: function () {
+            $this.ploading({ action: 'hide' });
         }
     });
 };

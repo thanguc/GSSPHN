@@ -5,7 +5,7 @@
 
 body {
     /*padding-top: 50px;*/
-    padding-bottom: 20px;
+    /*padding-bottom: 20px;*/
     height: 100%;
 }
 
@@ -29,6 +29,13 @@ body {
 
 ::-webkit-scrollbar-thumb {
     background-color: #CCCDCF;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
 }
 
 .entire-wrapper {
@@ -123,6 +130,45 @@ nav {
     width: 100%;
 }
 
+.banner {
+    position: absolute;
+    bottom: 56px;
+    left: 0;
+    right: 0;
+    padding: 40px 0;
+    color: #f8f8f8;
+    background: url(https://uphinhnhanh.com/images/2017/03/28/banner-bg.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+    .banner h3 {
+        margin-top: 0;
+        text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+        font-size: 2em;
+    }
+
+    .banner p {
+        font-weight: 400;
+        text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    }
+
+footer {
+    padding: 20px 0;
+    background-color: #3D4754;
+    color: #ddd;
+}
+
+    footer p {
+        margin: unset;
+    }
+
+    footer .credit a:hover,
+    footer .credit a:active,
+    footer .credit a:focus {
+        color: #ccc;
+    }
+
+
 #bs-example-navbar-collapse-1 > ul {
     margin: auto;
 }
@@ -164,11 +210,22 @@ tr.active, tr.active:hover {
     justify-content: center;
 }
 
-.valign-middle{
-    vertical-align:middle !important;
+.valign-middle {
+    vertical-align: middle !important;
 }
 
 .text-effect-blur,
-.modal-header{
-    text-shadow:0 0 1px;
+.modal-header {
+    text-shadow: 0 0 1px;
 }
+
+#feedback input,
+#feedback textarea {
+    max-width: unset;
+    border: 1px solid #ccc;
+}
+
+    #feedback input:focus,
+    #feedback textarea:focus {
+        border-color: #66afe9;
+    }

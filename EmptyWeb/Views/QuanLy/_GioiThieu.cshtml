@@ -2,7 +2,7 @@
 
 <style>
     .cke_inner:not(.cke_maximized) > .cke_contents {
-        height: calc(100vh - 356px) !important;
+        height: calc(100vh - 376px) !important;
     }
 </style>
 <div class="col-md-12">
@@ -32,6 +32,9 @@
                 url: "/QuanLy/SaveGioiThieu",
                 data: {
                     content: CKEDITOR.instances["GioiThieu"].getData()
+                },
+                onSuccess: function () {
+                    toastr.success("Đã lưu nội dung bài giới thiệu");
                 }
             });
         });

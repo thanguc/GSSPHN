@@ -22,7 +22,7 @@
         max-width: 100px;
     }
 
-    #selectGioiTinh, input[name=SDT], #selectTrinhDo {
+    #selectGioiTinh, #selectTrinhDo {
         width: 137px !important;
     }
 
@@ -30,13 +30,13 @@
         max-width: 175px;
     }
 
-    input[name=DiaChi] {
+    input[type=text], input[type=tel], input[type=email] {
         max-width: 350px;
     }
 
-    input[name=Email], input[name=ChuyenNganh], input[name=DonVi], input[name=TrinhDoKhac] {
+    /*input[name=Email], input[name=ChuyenNganh], input[name=DonVi], input[name=TrinhDoKhac] {
         max-width: 250px;
-    }
+    }*/
 
     textarea {
         background-image: -webkit-linear-gradient(left, white 0px, transparent 0px), -webkit-linear-gradient(right, transparent 10px, transparent 10px), -webkit-linear-gradient(transparent 30px, #ccc 30px, #ccc 31px, white 31px);
@@ -57,82 +57,120 @@
             outline: none;
         }
 
-    .dk {
-        border: 2px solid #ccc;
-        padding: 10px;
-    }
-
     .dk-content {
-        height: 550px;
+        height: 529px;
         overflow-y: auto;
-        padding: 10px;
+        padding: 0 10px;
+        text-align: justify;
     }
 
-    .row {
-        background-color: #f8f8f8;
+    .panel-heading {
+        padding: 0;
+        border: 0;
+    }
+
+    .panel-title > a, .panel-title > a:active {
+        display: block;
+        padding: 15px;
+        color: #555;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+
+    .panel-heading a .glyphicon {
+        transition: all 0.5s;
+    }
+
+    .panel-heading.active a .glyphicon {
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+
+    .panel-body {
+        background-color: #fdfdfd;
     }
 </style>
 
-<div class="container" style="position:relative;top:50px;">
+<div class="container" style="padding-top: 50px;">
     <div class="row">
-        <h3 class="text-center" style="text-decoration:underline;">Đăng ký tìm gia sư</h3>
-        <div class="col-lg-12">
-            <form class="form-horizontal" action="/TrangChu/YeuCauTimGiaSu" method="post">
+        <h3 class="text-center text-effect-blur">Đăng ký tìm gia sư</h3>
+        <div class="col-lg-12" style="padding-bottom:20px">
+            <form class="form-horizontal form-dang-ky" action="/TrangChu/YeuCauTimGiaSu" method="post">
                 <div class="col-sm-12">
                     <hr />
                 </div>
                 <div class="col-lg-7">
-                    <div class="form-group">
-                        <label class="control-label col-md-3">Họ tên phụ huynh:</label>
-                        <input type="text" name="HoTen" class="form-control" value="@Model.HoTen" required/>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-md-3">Địa chỉ:</label>
-                        <input type="text" name="DiaChi" class="form-control" value="@Model.DiaChi" required />
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-md-3">Số điện thoại:</label>
-                        <input name="SDT" type="tel" class="form-control" value="@Model.SDT" required />
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-md-3">Email:</label>
-                        <input name="Email" type="email" class="form-control" value="@Model.Email" />
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-md-3">Yêu cầu / Ghi chú:</label>
-                        <textarea name="YeuCau" rows="3" placeholder="Ví dụ: Học sinh lớp 3, yếu môn toán, cần gia sư dạy toán...">@Model.YeuCau</textarea>
-                    </div>
-
-                    <button type="button" class="btn btn-info btn-sm center-block" data-toggle="collapse" data-target="#nangcao">Yêu cầu chi tiết</button>
-                    <div id="nangcao" class="collapse">
-                        <div class="form-group">
-                            <label class="control-label col-md-3">Gia sư Nam/Nữ?:</label>
-                            <select name="GioiTinh" id="selectGioiTinh" class="form-control">
-                                <option></option>
-                                <option value="0" @(Model.GioiTinh.HasValue && Model.GioiTinh.Value == PageEnums.GioiTinh.Male ? "selected" : string.Empty)>Nam</option>
-                                <option value="1" @(Model.GioiTinh.HasValue && Model.GioiTinh.Value == PageEnums.GioiTinh.Female ? "selected" : string.Empty)>Nữ</option>
-                            </select>
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a style="color:#fff">Thông tin cơ bản <i class="glyphicon glyphicon-pushpin pull-right"></i></a></h4>
+                            </div>
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <label class="control-label col-md-4">Họ tên phụ huynh:</label>
+                                    <input type="text" name="HoTen" class="form-control" value="@Model.HoTen" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4">Địa chỉ:</label>
+                                    <input type="text" name="DiaChi" class="form-control" value="@Model.DiaChi" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4">Số điện thoại:</label>
+                                    <input name="SDT" type="tel" class="form-control" value="@Model.SDT" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4">Email:</label>
+                                    <input name="Email" type="email" class="form-control" value="@Model.Email" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4">Yêu cầu / Ghi chú:</label>
+                                    <textarea name="YeuCau" rows="3" placeholder="Ví dụ: Học sinh lớp 3, yếu môn toán, cần gia sư dạy toán...">@Model.YeuCau</textarea>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label class="control-label col-md-3">Trình độ gia sư:</label>
-                            <select id="selectTrinhDo" name="TrinhDoId" class="form-control" value="@Model.TrinhDoId">
-                                <option></option>
-                            </select>
-                        </div>
-                        <div class="form-group hidden" id="trinhDoKhac">
-                            <label class="control-label col-md-3"></label>
-                            <input name="TrinhDoKhac" type="text" placeholder="Ví dụ: Cử nhân, Kỹ sư, Thạc sỹ,..." class="form-control" value="@Model.TrinhDoKhac"/>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-md-3">Trường/Cơ quan:</label>
-                            <input name="DonVi" type="text" placeholder="Nơi gia sư học tập, làm việc" class="form-control" value="@Model.DonVi"/>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-md-3">Chuyên ngành:</label>
-                            <input name="ChuyenNganh" type="text" placeholder="Chuyên ngành giảng dạy,theo học" class="form-control" value="@Model.ChuyenNganh"/>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Thông tin thêm (Không bắt buộc) <i class="glyphicon glyphicon-chevron-up pull-right"></i>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">Gia sư Nam/Nữ?:</label>
+                                        <select name="GioiTinh" id="selectGioiTinh" class="form-control">
+                                            <option></option>
+                                            <option value="0" @(Model.GioiTinh.HasValue && Model.GioiTinh.Value == PageEnums.GioiTinh.Male ? "selected" : string.Empty)>Nam</option>
+                                            <option value="1" @(Model.GioiTinh.HasValue && Model.GioiTinh.Value == PageEnums.GioiTinh.Female ? "selected" : string.Empty)>Nữ</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">Trình độ gia sư:</label>
+                                        <select id="selectTrinhDo" name="TrinhDoId" class="form-control" value="@Model.TrinhDoId">
+                                            <option></option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group hidden" id="trinhDoKhac">
+                                        <label class="control-label col-md-4"></label>
+                                        <input name="TrinhDoKhac" type="text" placeholder="Ví dụ: Cử nhân, Kỹ sư, Thạc sỹ,..." class="form-control" value="@Model.TrinhDoKhac" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">Trường/Cơ quan:</label>
+                                        <input name="DonVi" type="text" placeholder="Nơi gia sư học tập, làm việc" class="form-control" value="@Model.DonVi" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">Chuyên ngành:</label>
+                                        <input name="ChuyenNganh" type="text" placeholder="Chuyên ngành giảng dạy,theo học" class="form-control" value="@Model.ChuyenNganh" />
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
                 </div>
                 <div class="col-lg-5">
                     @Html.Partial("_DieuKhoanTimGiaSu")
@@ -141,11 +179,14 @@
                     <hr />
                 </div>
                 <div class="col-sm-12">
-                    <button class="btn btn-success center-block" type="submit">Gửi yêu cầu</button>
+                    <a class="btn btn-lg btn-success center-block btn-action-confirm" style="width: 200px"><i class="fa fa-send fa-fw"></i> GỬI YÊU CẦU</a>
                 </div>
             </form>
         </div>
     </div>
+    <hr />
+    @Html.Partial("_ThongBao", PageEnums.AlertMessage.DangKyTimGiaSuThanhCong)
+    @Html.Partial("_ThongBao", PageEnums.AlertMessage.DangKyTimGiaSuThatBai)
 </div>
 @section Scripts {
     <script src="~/Scripts/TrangChu/dangKyTimGiaSu.js"></script>

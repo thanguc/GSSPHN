@@ -1,9 +1,12 @@
-﻿using EmptyWeb.Shared;
+﻿using EmptyWeb.Contexts;
+using EmptyWeb.Shared;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace EmptyWeb.Models
 {
-    public class TimGiaSu
+    public class TimGiaSu : IValidatableObject
     {
         public string ID { get; set; } = Guid.NewGuid().ToString();
         public string HoTen { get; set; }
@@ -18,9 +21,20 @@ namespace EmptyWeb.Models
         public string DonVi { get; set; }
         public string ChuyenNganh { get; set; }
         public DateTime NgayTao { get; set; } = DateTime.Now;
-        public PageEnums.TrangThaiYeuCau TrangThai { get; set; }
+        public PageEnums.TrangThaiYeuCau TrangThai { get; set; } = PageEnums.TrangThaiYeuCau.Submitted;
 
         public virtual TrinhDo TrinhDo { get; set; }
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            using (var db = new EntityContext())
+            {
+                if (string.IsNullOrEmpty(this.HoTen))
+                    yield return new ValidationResult("Họ tên không được để trống", new[] { "HoTen" });
+                if (string.IsNullOrEmpty(this.SDT))
+                    yield return new ValidationResult("Số điện thoại không được để trống", new[] { "SDT" });
+            }
+        }
     }
 
 }

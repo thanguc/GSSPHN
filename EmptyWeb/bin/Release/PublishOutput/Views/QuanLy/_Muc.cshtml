@@ -258,11 +258,20 @@
         var currentActiveMucId = "";
 
         $('input[type="checkbox"][data-toggle="toggle"]').bootstrapToggle().change(function () {
-            $(this).AjaxPost({
+            var $this = $(this);
+            var id = $this.closest('tr').attr('data-mucid');
+            $this.AjaxPost({
                 url: '/QuanLy/SwitchMucAnHien',
                 data: {
-                    id: $(this).closest('tr').attr('data-mucid'),
-                    status: $(this).prop('checked')
+                    id: id,
+                    status: $this.prop('checked')
+                },
+                onSuccess: function () {
+                    if ($this.prop('checked') == false) {
+                        toastr.info("Đã ẩn mục " + $("a[data-pk='" + id + "']").text());
+                    } else {
+                        toastr.info("Đã hiện mục " + $("a[data-pk='" + id + "']").text());
+                    }
                 }
             });
         });
@@ -274,11 +283,14 @@
         });
         $('a[name="TieuDe"]').click(function (e) {
             e.stopPropagation();
+            var $e = $(e.target);
+            var oldName = $e.text();
             $(this).editable({
                 success: function (r) {
                     if (r.Error) {
                         return r.Error[0];
                     }
+                    toastr.success("Đã đổi tên mục " + oldName + " thành " + r);
                 }
             });
             $(this).editable('show');
@@ -295,6 +307,7 @@
                 url: '/QuanLy/ThemMuc',
                 data: data,
                 onSuccess: function () {
+                    toastr.success("Đã thêm mục " + data.TieuDe);
                     SITE.closeOpeningModal(function () {
                         $('.place-holder').AjaxHtml('/QuanLy/Muc', null);
                     });
@@ -338,6 +351,7 @@
                 url: form.action,
                 data: data,
                 onSuccess: function () {
+                    toastr.success("Đã lưu chuyên mục " + data.TieuDe);
                     SITE.closeOpeningModal(function () {
                         for (name in CKEDITOR.instances) {
                             if (name != "NoiDung-new") {
@@ -363,7 +377,8 @@
             $modal.AjaxPost({
                 url: '/QuanLy/XoaChuyenMuc',
                 data: { id: id },
-                onSuccess: function () {
+                onSuccess: function (r) {
+                    toastr.warning("Đã xóa chuyên mục " + r);
                     SITE.closeOpeningModal(function () {
                         for (name in CKEDITOR.instances) {
                             if (name != "NoiDung-new") {
@@ -391,7 +406,8 @@
             $(this).AjaxPost({
                 url: '/QuanLy/XoaMuc',
                 data: { id: currentActiveMucId },
-                onSuccess: function () {
+                onSuccess: function (r) {
+                    toastr.warning("Đã xóa mục " + r);
                     SITE.closeOpeningModal(function () {
                         $('.place-holder').AjaxHtml('/QuanLy/Muc', null);
                     });
@@ -410,6 +426,7 @@
                         value: -1
                     },
                     onSuccess: function () {
+                        toastr.info("Đã đổi vị trí 2 mục " + $("a[name='TieuDe']", row).text() + " và " + $("a[name='TieuDe']", row.prev()).text());
                         row.insertBefore(row.prev());
                     }
                 });
@@ -421,6 +438,7 @@
                         value: 1
                     },
                     onSuccess: function () {
+                        toastr.info("Đã đổi vị trí 2 mục " + $("a[name='TieuDe']", row).text() + " và " + $("a[name='TieuDe']", row.next()).text());
                         row.insertAfter(row.next());
                     }
                 });
