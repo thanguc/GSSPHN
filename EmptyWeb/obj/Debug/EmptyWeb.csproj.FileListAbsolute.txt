@@ -95,3 +95,4 @@ C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\Microsoft.Owin.Host.SystemWe
 C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\Microsoft.Owin.Security.xml
 C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\Microsoft.Owin.Security.Cookies.xml
 C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\obj\Debug\EmptyWeb.csproj.CopyComplete

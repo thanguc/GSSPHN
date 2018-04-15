@@ -89,7 +89,7 @@
                 </td>
                 <td class="col-md-3">
                     <a class="btn btn-xs btn-danger pull-right btn-remove" data-toggle="modal" data-target="#modal-confirm-delete-chuyen-muc--@cm.ChuyenMucId" title="Xóa chuyên mục"><i class="fa fa-trash"></i></a>
-                    <input type="checkbox" @(!cm.IsHidden ? "checked" : string.Empty) title="Ẩn/Hiện khỏi menu trang chủ"
+                    <input class="toggle-chuyen-muc-an-hien" type="checkbox" @(!cm.IsHidden ? "checked" : string.Empty) title="Ẩn/Hiện khỏi menu trang chủ"
                            data-toggle="toggle" data-on="<i class='fa fa-eye'></i>" data-off="<i class='fa fa-eye-slash'></i>"
                            data-onstyle="success" data-offstyle="danger" data-size="mini" data-style="android" />
                     @Html.Partial("_ModalThemChuyenMuc", cm)
@@ -129,6 +129,9 @@
     $(function () {
         $('.btn-order-up,.btn-order-down', '.chitietmuc').click(function () {
             var row = $(this).closest('tr');
+            if (row.is(":first-child") || row.is(":last-child")) {
+                return;
+            }
             var id = row.attr('data-chuyen-muc-id');
             if ($(this).is(".btn-order-up")) {
                 row.AjaxPost({
@@ -157,7 +160,7 @@
             }
         });
 
-        $('input[type="checkbox"][data-toggle="toggle"]').bootstrapToggle().change(function () {
+        $('.toggle-chuyen-muc-an-hien').bootstrapToggle().change(function () {
             var $this = $(this);
             var id = $this.closest('tr').attr('data-chuyen-muc-id');
             $this.AjaxPost({

@@ -1,6 +1,7 @@
 ﻿$(function () {
-    if ($(".intro-header").length == 0) {
-        $('.page-overlay-dangky').removeClass("hide");
+    if ($(".intro-header").length == 1) {
+        //$('.page-overlay-dangky').removeClass("hide");
+        $('nav').addClass('landing-header');
     }
 
     $('#datetimepicker').datetimepicker({
@@ -8,14 +9,16 @@
     });
 
     $(window).bind('scroll', function () {
-        if ($(window).scrollTop() > 144) {
-            $('nav').removeClass('affix-top');
-            $('nav').addClass('affix');
+        if ($(window).scrollTop() > 100) {
             $('.back-to-top').show();
+            if ($(".intro-header").length == 1) {
+                $('nav').removeClass('landing-header');
+            }
         } else {
-            $('nav').removeClass('affix');
-            $('nav').addClass('affix-top');
             $('.back-to-top').hide();
+            if ($(".intro-header").length == 1) {
+                $('nav').addClass('landing-header');
+            }
         }
     });
 

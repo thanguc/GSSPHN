@@ -9,8 +9,8 @@
     }
 }
 <div class="row-bv" onclick="location.href = '/TrangChu/BaiViet/@Model.UrlBaiViet'">
-    <div class="row-bv--anh-bia @(Model.IsPinned && Model.SortNumber < 6 ? "hvr-grow-shadow" : "hvr-forward hvr-icon-wobble-horizontal")">
-        <img src="@Model.UrlAnhBia" />
+    <div class="row-bv--anh-bia @(Model.IsPinned && Model.SortNumber < 6 ? "hvr-shadow" : "hvr-forward hvr-icon-wobble-horizontal")">
+        <img src="@Model.UrlAnhBia" class="@(Model.IsPinned && Model.SortNumber < 6 ? "hvr-grow" : string.Empty)"/>
         <div class="row-bv--tieu-de">
             <span>@Model.TieuDe</span>
         </div>

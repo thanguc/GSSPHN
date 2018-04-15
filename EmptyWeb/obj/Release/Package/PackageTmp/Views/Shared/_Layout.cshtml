@@ -9,9 +9,31 @@
     <meta name="author" content="">
     <title>@ViewBag.Title</title>
 
+    <!-- ****** faviconit.com favicons ****** -->
+    <link rel="shortcut icon" href="/Content/icons/favicon.ico">
+    <link rel="icon" sizes="16x16 32x32 64x64" href="/Content/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="196x196" href="/Content/icons/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="160x160" href="/Content/icons/favicon-160.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/Content/icons/favicon-96.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="/Content/icons/favicon-64.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Content/icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Content/icons/favicon-16.png">
+    <link rel="apple-touch-icon" href="/Content/icons/favicon-57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/Content/icons/favicon-114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/Content/icons/favicon-72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/Content/icons/favicon-144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/Content/icons/favicon-60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/Content/icons/favicon-120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/Content/icons/favicon-76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/Content/icons/favicon-152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/Content/icons/favicon-180.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="/Content/icons/favicon-144.png">
+    <meta name="msapplication-config" content="/Content/icons/browserconfig.xml">
+    <!-- ****** faviconit.com favicons ****** -->
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="~/Content/css/bootstrap.css">
-    @*<link rel="stylesheet" href="~/Content/bootstrap.yeti.css" />*@
     <link href="~/Content/Hover-master/css/hover-min.css" rel="stylesheet" media="all">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" />
     <link rel="stylesheet" href="~/Content/select2-bootstrap.css" />
@@ -23,7 +45,9 @@
     <!-- Custom Fonts -->
     <link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="~/Content/font-awesome/css/font-awesome-animation.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    @*<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">*@
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700&amp;subset=latin-ext,vietnamese" rel="stylesheet">
 
     <link href="~/Content/toastr.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/Croppie-2.5.1/croppie.css" rel="stylesheet" type="text/css" />
@@ -54,21 +78,11 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
     <div class="entire-wrapper">
-        <header id="header" class="navbar navbar-default topnav">
-            <div class="container topnav">
-                <a class="navbar-brand topnav" href="/" style="padding:0px;margin-top:8px;"><img src="https://uphinhnhanh.com/images/2017/03/28/logo.jpg" width="128" height="128" /></a>
-                <div class="pull-right phone-call">
-                    <a href="tel:+84981494418">
-                        <span class="fa-stack fa-lg">
-                            <i class="fa fa-circle-thin fa-stack-2x faa-burst animated"></i>
-                            <i class="fa fa-phone fa-stack-1x faa-ring animated fa-2x"></i>
-                        </span>
-                        0981 494 418
-                    </a>
+        @*<header id="header" class="navbar navbar-default topnav">
+                <div class="container topnav">
+                    <a class="navbar-brand topnav" href="/" style="padding:0px;margin-top:8px;"><img src="https://uphinhnhanh.com/images/2017/03/28/logo.jpg" width="128" height="128" /></a>
                 </div>
-
-            </div>
-        </header>
+            </header>*@
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top affix-top" role="navigation">
             <div class="container">
@@ -80,41 +94,38 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
+                    <a class="navbar-brand" href="/"></a>
+                    <div class="pull-right phone-call">
+                        <a href="tel:+84981494418">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle-thin fa-stack-2x faa-burst animated"></i>
+                                <i class="fa fa-phone fa-stack-1x faa-ring animated fa-2x"></i>
+                            </span>
+                            0981 494 418
+                        </a>
+                    </div>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-left">
-                        <li>@Html.ActionLink("GIỚI THIỆU", "GioiThieu", "TrangChu")</li>
-                        @{
-                            var mucs = PageHelper.GetAllMuc().Where(m => !m.IsHidden).OrderBy(m => m.SortNumber);
-                            foreach (var muc in mucs)
-                            {
-                                var cms = muc.ChuyenMucs.Where(c => !c.IsHidden).OrderBy(c => c.SortNumber).ToList();
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@muc.TieuDe.ToUpper() <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-
-                                        @foreach (var cm in cms)
-                                        {
-                                            <li><a href="/TrangChu/ChuyenMuc/@cm.Url">@cm.TieuDe.ToUpper()</a></li>
-                                            if (cms.IndexOf(cm) != cms.Count - 1)
-                                            {
-                                                <li role="separator" class="divider"></li>
-                                            }
-                                        }
-                                    </ul>
-                                </li>
-                            }
-                        }
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/" class="hvr-underline-from-center"><i class="fa fa-home fa-fw"></i> TRANG CHỦ</a></li>
+                        <li>@Html.ActionLink("TÌM GIA SƯ", "YeuCauTimGiaSu", "TrangChu", new { @class = "hvr-underline-from-center" })</li>
+                        <li>@Html.ActionLink("ĐĂNG KÝ LÀM GIA SƯ", "DangKyLamGiaSu", "TrangChu", new { @class = "hvr-underline-from-center" })</li>
+                        @*<li>@Html.ActionLink("DANH SÁCH LỚP", "DanhSachLop", "TrangChu", new { @class = "hvr-underline-from-center" })</li>*@
+                        <li><a class = "hvr-underline-from-center" href="https://docs.google.com/spreadsheets/d/1yfu6Ne3ZfpTQGW8OVGrMCVAiLaJMf0ipj2uAki5H9tA/">DANH SÁCH LỚP</a></li>
+                        <li>@Html.ActionLink("GIỚI THIỆU", "GioiThieu", "TrangChu", new { @class = "hvr-underline-from-center" })</li>
+                        <li>
+                            <a class="hvr-underline-from-center" data-toggle="modal" data-target="#feedback" style="cursor: pointer">LIÊN HỆ</a>
+                        </li>
                         @if (PageHelper.IsAuthenticated())
                         {
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@PageHelper.CurrentUserName() <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="/QuanLy/"><i class="fa fa-user-circle fa-fw"></i> Quản lý</a></li>
-                                    <li role="separator" class="divider"></li>
+                            <li class="dropdown hvr-underline-from-center" style="width:130px">
+                                <a href="#" class="dropdown-toggle text-right" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user fa-fw"></i> @PageHelper.CurrentUserName() <span class="caret"></span></a>
+                                <ul class="dropdown-menu" style="min-width:unset;">
+                                    <li><a href="/QuanLy/" style="padding-left:10px;width:128px;"><i class="fa fa-cogs fa-fw"></i> Quản lý</a></li>
+                                    <li role="separator" class="divider" style="margin: 4px 0;"></li>
                                     <li>
-                                        <a href="javascript:{}" onclick="$('.form-logout').submit();"><i class="fa fa-sign-out fa-fw"></i> Đăng xuất</a>
+                                        <a style="padding-left:10px;width:128px;" href="javascript:{}" onclick="$('.form-logout').submit();"><i class="fa fa-sign-out fa-fw"></i> Đăng xuất</a>
                                         <form action="/TaiKhoan/Logout" method="post" class="form-logout"></form>
                                     </li>
                                 </ul>
@@ -122,12 +133,10 @@
                         }
                         else
                         {
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Thành viên <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="/TrangChu/DangKyLamGiaSu"><i class="fa fa-user-plus fa-fw"></i> Đăng ký</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="/TaiKhoan/Login"><i class="fa fa-sign-in fa-fw"></i> Đăng nhập</a></li>
+                            <li class="dropdown hvr-underline-from-center" style="width:130px">
+                                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">THÀNH VIÊN <span class="caret"></span></a>
+                                <ul class="dropdown-menu" style="min-width:unset;">
+                                    <li><a href="/TaiKhoan/Login" style="padding-left:10px;width:128px;"><i class="fa fa-sign-in fa-fw"></i> Đăng nhập</a></li>
                                 </ul>
                             </li>
                         }
@@ -143,7 +152,7 @@
         @*</div>*@
         <div class="banner">
             <div class="container">
-                <div class="row" style="display:flex">
+                <div class="row">
                     <div class="col-lg-4">
                         <h3>HỆ THỐNG GIA SƯ 24H</h3>
                         <p id="about" class="text-justify" style="line-height: 24px;">
@@ -153,10 +162,10 @@
                     <div class="col-lg-4" style="border-left: 2px solid; border-right: 2px solid;">
                         <h3>LIÊN HỆ</h3>
                         <p>
-                            <i class="fa fa-phone fa-fw"></i> 098.149.4418 (Cô Mai)
+                            <i class="fa fa-phone fa-fw"></i> 0981.494.418 (Cô Mai)
                         </p>
                         <p>
-                            <i class="fa fa-phone fa-fw"></i> 0167.960.5047 (Cô Lan)
+                            <i class="fa fa-phone fa-fw"></i> 0971.545.212 (Cô Lan)
                         </p>
                         <p>
                             <i class="fa fa-envelope fa-fw"></i> hotro@giasu24h.hanoi.vn
@@ -167,24 +176,24 @@
                     </div>
                     <div class="col-lg-4">
                         <h3>FACEBOOK</h3>
-                        <div class="fb-page" data-href="https://www.facebook.com/HN.GiaSuSuPham/" data-height="250" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/HN.GiaSuSuPham/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/HN.GiaSuSuPham/">Gia Sư Sư Phạm Hà Nội</a></blockquote></div>
+                        <div class="fb-page" data-href="https://www.facebook.com/giasu24h.hanoi.vn" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/giasu24h.hanoi.vn" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/giasu24h.hanoi.vn">Gia Sư 24h Hà Nội</a></blockquote></div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="clear-bottom" style="height: 390px"></div>
+        @*<div class="clear-bottom" style="height: 390px"></div>*@
         <!-- Footer -->
-        <footer style="position: absolute; bottom: 0; left: 0; right: 0;">
+        <footer>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4">
                         <p class="ip small"></p>
                     </div>
                     <div class="col-lg-4">
-                        <p class="copyright text-center small">&copy; Hệ thống Gia Sư 24h</p>
+                        <p class="copyright small">&copy; Hệ thống Gia Sư 24h</p>
                     </div>
                     <div class="col-lg-4">
-                        <p class="credit small pull-right">Liên hệ thiết kế: <a href="mailto:thanguc.94@gmail.com">thanguc.94@gmail.com</a></p>
+                        <p class="credit small">Liên hệ thiết kế: <a href="mailto:thanguc.94@gmail.com">thanguc.94@gmail.com</a></p>
                     </div>
                 </div>
             </div>
@@ -215,7 +224,7 @@
                             <div class="col-lg-7">
                                 <div class="form-group">
                                     <label for="feedback-loinhan">Lời nhắn:</label>
-                                    <textarea class="form-control" id="feedback-loinhan" style="height: 182px; resize: none; font-weight: normal" placeholder="Yêu cầu, góp ý..."></textarea>
+                                    <textarea class="form-control" id="feedback-loinhan" style="height: 182px; resize: none; font-weight: 300" placeholder="Yêu cầu, góp ý..."></textarea>
                                 </div>
                             </div>
                             <div class="clearfix"></div>

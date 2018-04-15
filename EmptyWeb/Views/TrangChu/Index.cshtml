@@ -9,49 +9,172 @@
 <!-- Custom CSS -->
 <link href="~/Content/css/landing-page.css" rel="stylesheet">
 <!-- Header -->
-<div class="intro-header">
+<div class="intro-header flex-center-both">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8">
-                <div class="intro-message">
-                    <h1 style="text-align:center;">Hệ Thống Gia Sư 24H</h1>
-                    <h3 style="text-align:center;">Uy Tín - Chất Lượng - Thành Công</h3>
-                    <hr class="intro-divider">
-                    <ul class="list-inline intro-social-buttons" style="text-align:center;">
-                        <li>
-                            <a href="/TrangChu/YeuCauTimGiaSu/" class="btn btn-info btn-lg">
-                                <i class="fa fa-search fa-fw"></i> <span class="network-name">Tìm Gia Sư</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/TrangChu/DangKyLamGiaSu/" class="btn btn-primary btn-lg">
-                                <i class="fa fa-pencil-square-o fa-fw"></i> <span class="network-name">Đăng Ký Làm Gia Sư</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="btn btn-success btn-lg">
-                                <i class="fa fa-list-alt fa-fw"></i> <span class="network-name">Danh Sách Lớp</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+            <div class="intro-message">
+                <div class="p1">Chào mừng bạn đến với chúng tôi</div>
+                <div class="p2">GIA SƯ 24H HÀ NỘI</div>
+                <div class="p3">Uy Tín - Chất Lượng - Thành Công</div>
+                <hr class="intro-divider">
+                <ul class="list-inline intro-social-buttons" style="text-align:center;">
+                    <li>
+                        <a href="/TrangChu/YeuCauTimGiaSu/" class="btn btn-info btn-lg">
+                            <i class="fa fa-search fa-fw"></i> <span class="network-name">Tìm Gia Sư</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/TrangChu/DangKyLamGiaSu/" class="btn btn-primary btn-lg">
+                            <i class="fa fa-pencil-square-o fa-fw"></i> <span class="network-name">Đăng Ký Làm Gia Sư</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://docs.google.com/spreadsheets/d/1yfu6Ne3ZfpTQGW8OVGrMCVAiLaJMf0ipj2uAki5H9tA/" class="btn btn-success btn-lg">
+                            <i class="fa fa-list-alt fa-fw"></i> <span class="network-name">Danh Sách Lớp</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
     <!-- /.container -->
 </div>
 <!-- /.intro-header -->
-<div class="clear-header"></div>
+<div class="intro-criteria">
+    <div class="container">
+        <div class="col-md-12 no-padding">
+            <div class="col-md-4 flex-center-both">
+                <div class="row">
+                    <div class="col-md-3 flex-center-both">
+                        <i class="fa fa-graduation-cap fa-2x fa-inverse" style="padding: 23px 19px"></i>
+                    </div>
+                    <div class="col-md-9 no-padding">
+                        <h5>ĐỘI NGŨ GIA SƯ KINH NGHIỆM</h5>
+                        <p>Trình độ chuyên môn cao, phẩm chất đạo đức tốt, nhiệt huyết với công việc.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 flex-center-both">
+                <div class="row">
+                    <div class="col-md-3 flex-center-both">
+                        <i class="fa fa-users fa-2x fa-inverse" style="padding: 23px 22px"></i>
+                    </div>
+                    <div class="col-md-9 no-padding">
+                        <h5>HOẠT ĐỘNG TỔ CHỨC CHUYÊN NGHIỆP</h5>
+                        <p>Tận tình, nhanh chóng, quy mô trong toàn thành phố Hà Nội.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 flex-center-both">
+                <div class="row">
+                    <div class="col-md-3 flex-center-both">
+                        <i class="fa fa-calendar-check-o fa-2x fa-inverse" style="padding: 23px"></i>
+                    </div>
+                    <div class="col-md-9 no-padding">
+                        <h5>CHÍNH SÁCH ĐẢM BẢO QUYỀN LỢI</h5>
+                        <p>
+                            Học phí hợp lý, học thử và đổi gia sư miễn phí.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Page Content -->
 <div class="container">
-    <h3 class="">BẢNG TIN</h3>
-    <div class="row" style="height:4px; background-color: #ed2e2e; margin-bottom: 20px;"></div>
+    <h3 class="section-heading">CÁC CHUYÊN MỤC ĐÀO TẠO</h3>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="nav-side-menu">
+                <div class="brand">DANH MỤC GIẢNG DẠY</div>
+                <i class="fa fa-chevron-down fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+                <div class="menu-list">
+                    <ul id="menu-content" class="menu-content collapse out">
+                        @{
+                            var mucs = PageHelper.GetAllMuc().Where(m => !m.IsHidden).OrderBy(m => m.SortNumber);
+                            foreach (var muc in mucs)
+                            {
+                                var cms = muc.ChuyenMucs.Where(c => !c.IsHidden).OrderBy(c => c.SortNumber).ToList();
+                                <li data-toggle="collapse" data-target="#@muc.MucId" class="collapsed hvr-icon-hang">
+                                    <a>@muc.TieuDe</a>
+                                    <ul class="sub-menu collapse" id="@muc.MucId">
+                                        @foreach (var cm in cms)
+                                        {
+                                            <li class="hvr-forward"><a href="/TrangChu/ChuyenMuc/@cm.Url">@cm.TieuDe.ToUpper()</a></li>
+                                        }
+                                    </ul>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-8">
+                    <table class="table table-bordered table-responsive table-striped bang-gia">
+                        <thead>
+                            <tr>
+                                <th>BẢNG GIÁ GIA SƯ</th>
+                                <th>Sinh viên (vnđ/buổi)</th>
+                                <th>Giáo viên (vnđ/buổi)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Cấp 1</td>
+                                <td>100.000 - 120.000</td>
+                                <td>150.000 - 200.000</td>
+                            </tr>
+                            <tr>
+                                <td>Cấp 2</td>
+                                <td>100.000 - 120.000</td>
+                                <td>150.000 - 200.000</td>
+                            </tr>
+                            <tr>
+                                <td>Cấp 3</td>
+                                <td>120.000 - 150.000</td>
+                                <td>150.000 - 200.000</td>
+                            </tr>
+                            <tr>
+                                <td>Luyện thi Đại Học</td>
+                                <td>120.000 - 150.000</td>
+                                <td>200.000 - 250.000</td>
+                            </tr>
+                            <tr>
+                                <td>Học nhóm 2 người</td>
+                                <td>120.000 - 150.000</td>
+                                <td>200.000 - 250.000</td>
+                            </tr>
+                            <tr>
+                                <td>Học nhóm trên 2 người</td>
+                                <td>Theo số lượng học sinh</td>
+                                <td>Theo số lượng học sinh</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-4 flex-center-both no-padding" style="background-color:#00BCD4">
+                    <div class="contact-now">
+                        <p class="text-center">HÃY LIÊN HỆ NGAY VỚI CHÚNG TÔI ĐỂ ĐƯỢC TƯ VẤN GIA SƯ TỐT NHẤT</p>
+                        <p><h3 class="text-center">0981.494.418</h3></p>
+                        <p><h3 class="text-center">0971.545.212</h3></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h3 class="section-heading">BẢNG TIN</h3>
     @if (top12.Count > 0)
     {
         <div class="row top12">
             @foreach (var bv in top12)
             {
-                @Html.Partial("_BaiViet", bv)
+                <div class="col-md-6">
+                    @Html.Partial("_BaiViet", bv)
+                </div>
             }
         </div>
         <div class="clearfix"></div>
@@ -61,12 +184,14 @@
         <div class="row top345">
             @foreach (var bv in top345)
             {
-                @Html.Partial("_BaiViet", bv)
+                <div class="col-md-4">
+                    @Html.Partial("_BaiViet", bv)
+                </div>
             }
         </div>
         <div class="clearfix"></div>
     }
-    <div class="row" style="height:4px; background-color: #ed2e2e; margin-bottom: 20px;"></div>
+    <h3 class="section-heading"></h3>
     @if (recent.Count > 0)
     {
         <div class="row recent">

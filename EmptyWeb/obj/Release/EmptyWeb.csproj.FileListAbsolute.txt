@@ -86,3 +86,4 @@ C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\obj\Release\EmptyWeb.csprojResol
 C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\obj\Release\EmptyWeb.csproj.CoreCompileInputs.cache
 C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\obj\Release\EmptyWeb.dll
 C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\obj\Release\EmptyWeb.pdb
+C:\Users\thang\Documents\GitHub\GSSPHN\EmptyWeb\obj\Release\EmptyWeb.csproj.CopyComplete

@@ -155,9 +155,7 @@
     <Compile Include="Contexts\IdentityContext.cs" />
     <Compile Include="Contexts\LogContext.cs" />
     <Compile Include="Controllers\APIController.cs" />
-    <Compile Include="Controllers\BaiVietController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
-    <Compile Include="Controllers\ChuyenMucController.cs" />
     <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="Controllers\TaiKhoanController.cs" />
     <Compile Include="Controllers\TrangChuController.cs" />
@@ -546,13 +544,32 @@
     <Content Include="Content\Hover-master\photo-stack.png" />
     <Content Include="Content\Hover-master\sequence-logo.png" />
     <Content Include="Content\Hover-master\two-up.png" />
+    <Content Include="Content\icons\browserconfig.xml" />
+    <Content Include="Content\icons\favicon-114.png" />
+    <Content Include="Content\icons\favicon-120.png" />
+    <Content Include="Content\icons\favicon-144.png" />
+    <Content Include="Content\icons\favicon-150.png" />
+    <Content Include="Content\icons\favicon-152.png" />
+    <Content Include="Content\icons\favicon-16.png" />
+    <Content Include="Content\icons\favicon-160.png" />
+    <Content Include="Content\icons\favicon-180.png" />
+    <Content Include="Content\icons\favicon-192.png" />
+    <Content Include="Content\icons\favicon-310.png" />
+    <Content Include="Content\icons\favicon-32.png" />
+    <Content Include="Content\icons\favicon-57.png" />
+    <Content Include="Content\icons\favicon-60.png" />
+    <Content Include="Content\icons\favicon-64.png" />
+    <Content Include="Content\icons\favicon-70.png" />
+    <Content Include="Content\icons\favicon-72.png" />
+    <Content Include="Content\icons\favicon-76.png" />
+    <Content Include="Content\icons\favicon-96.png" />
+    <Content Include="Content\icons\favicon.ico" />
     <Content Include="Content\img\banner-bg.jpg" />
-    <Content Include="Content\img\dog.png" />
-    <Content Include="Content\img\intro-bg.jpg" />
-    <Content Include="Content\img\ipad.png" />
+    <Content Include="Content\img\banner-top.jpg" />
+    <Content Include="Content\img\footer.jpg" />
     <Content Include="Content\img\logo.jpg" />
+    <Content Include="Content\img\logo_512x512.png" />
     <Content Include="Content\img\no-image.png" />
-    <Content Include="Content\img\phones.png" />
     <Content Include="Content\img\topnav-bg.jpg" />
     <Content Include="Content\inputs-ext\address\address.css" />
     <Content Include="Content\inputs-ext\typeaheadjs\lib\typeahead.js-bootstrap.css" />
@@ -592,6 +609,7 @@
     <Content Include="Content\p-loading-master\src\js\p-loading.js" />
     <Content Include="Content\toastr.css" />
     <Content Include="Content\toastr.min.css" />
+    <Content Include="favicon.ico" />
     <Content Include="Scripts\bootstrap-editable\js\bootstrap-editable.js" />
     <Content Include="Scripts\bootstrap-editable\js\bootstrap-editable.min.js" />
     <Content Include="Scripts\bootstrap-toggle.js" />
@@ -654,7 +672,6 @@
     <Content Include="Content\kartik-v-bootstrap-fileinput-db72623\themes\gly\theme.js" />
     <Content Include="Content\select2-bootstrap.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -1066,8 +1083,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\BaiViet\" />
-    <Folder Include="Views\ChuyenMuc\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

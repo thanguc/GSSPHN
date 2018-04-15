@@ -8,18 +8,47 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Login</title>
+    <title>Đăng nhập</title>
+
+    <!-- ****** faviconit.com favicons ****** -->
+    <link rel="shortcut icon" href="/Content/icons/favicon.ico">
+    <link rel="icon" sizes="16x16 32x32 64x64" href="/Content/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="196x196" href="/Content/icons/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="160x160" href="/Content/icons/favicon-160.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/Content/icons/favicon-96.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="/Content/icons/favicon-64.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Content/icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Content/icons/favicon-16.png">
+    <link rel="apple-touch-icon" href="/Content/icons/favicon-57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/Content/icons/favicon-114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/Content/icons/favicon-72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/Content/icons/favicon-144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/Content/icons/favicon-60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/Content/icons/favicon-120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/Content/icons/favicon-76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/Content/icons/favicon-152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/Content/icons/favicon-180.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="/Content/icons/favicon-144.png">
+    <meta name="msapplication-config" content="/Content/icons/browserconfig.xml">
+    <!-- ****** faviconit.com favicons ****** -->
+
     <link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="~/Content/toastr.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/p-loading-master/dist/css/p-loading.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/p-loading-master/dist/css/p-loading.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700&amp;subset=latin-ext,vietnamese" rel="stylesheet">
     <style>
         body {
             background: #e9e9e9;
             color: #666666;
-            font-family: 'RobotoDraft', 'Roboto', sans-serif;
+            font-family: 'Quicksand', sans-serif;
             font-size: 14px;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+        }
+
+        .position-relative {
+            position: relative !important;
         }
 
         input:-webkit-autofill,
@@ -226,6 +255,7 @@
             .card .title {
                 position: relative;
                 z-index: 1;
+                border-right: 5px solid #ec2652;
                 border-left: 5px solid #ec2652;
                 margin: 0 0 35px;
                 padding: 10px 0 10px 50px;
@@ -395,7 +425,7 @@
             .card.alt {
                 position: absolute;
                 top: 70px;
-                right: -30px;
+                left: -30px;
                 z-index: 10;
                 width: 57px;
                 height: 57px;
@@ -426,7 +456,7 @@
                 }
 
                     .card.alt .toggle:before {
-                        content: '\f061';
+                        content: '\f060';
                         display: inline-block;
                         font: normal normal normal 14px/1 FontAwesome;
                         font-size: inherit;
@@ -548,17 +578,17 @@
                             <div class="bar"></div>
                         </div>
                         <div class="button-container">
-                            <button><span>Login</span></button>
+                            <button><span>ĐĂNG NHẬP <i class="fa fa-arrow-right fa-fw"></i></span></button>
                         </div>
-                        <div class="footer"><a href="#">Quên mật khẩu?</a></div>
+                        <div class="footer"><a onclick="window.history.back()" style="cursor:pointer"><i class="fa fa-arrow-left fa-fw"></i> Quay lại</a></div>
                     </form>
                 </div>
                 <div class="card alt">
-                    <div class="toggle"></div>
-                    <h1 class="title">
+                    @*<div class="toggle"></div>*@
+                    @*<h1 class="title">
                         Register
                         <div class="close"></div>
-                    </h1>
+                    </h1>*@
                 </div>
             </div>
         </div>
@@ -589,7 +619,6 @@
             //$('.toggle').on('click', function () {
             //    $('.container').stop().addClass('active');
             //});
-
             //$('.close').on('click', function () {
             //    $('.container').stop().removeClass('active');
             //});
@@ -598,7 +627,7 @@
                 var data = new FormData(this);
                 var $this = $(this);
                 e.preventDefault();
-                $this.AjaxFormData({
+                $this.find("button").AjaxFormData({
                     url: $this.attr("action"),
                     data: data,
                     onSuccess: function (r) {

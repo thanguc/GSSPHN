@@ -180,7 +180,7 @@
                                                 <i class="small text-muted" style="margin-left:4px;">(@item.ChuyenMucs.Count Chuyên mục)</i>
                                             </td>
                                             <td class="col-lg-1" style="padding-right:10px !important">
-                                                <input type="checkbox" @(!item.IsHidden ? "checked" : string.Empty)
+                                                <input class="toggle-muc-an-hien" type="checkbox" @(!item.IsHidden ? "checked" : string.Empty)
                                                        data-toggle="toggle" data-on="<i class='fa fa-eye'></i>" data-off="<i class='fa fa-eye-slash'></i>"
                                                        data-onstyle="success" data-offstyle="danger" data-size="mini" data-style="android" />
                                             </td>
@@ -257,7 +257,7 @@
     $(function () {
         var currentActiveMucId = "";
 
-        $('input[type="checkbox"][data-toggle="toggle"]').bootstrapToggle().change(function () {
+        $('.toggle-muc-an-hien').bootstrapToggle().change(function () {
             var $this = $(this);
             var id = $this.closest('tr').attr('data-mucid');
             $this.AjaxPost({
@@ -418,7 +418,7 @@
         $('.btn-order-up,.btn-order-down', '.muc').click(function () {
             var row = $(this).closest('tr');
             var id = row.attr('data-mucid');
-            if ($(this).is(".btn-order-up")) {
+            if ($(this).is(".btn-order-up") && !row.is(":first-child")) {
                 row.AjaxPost({
                     url: '/QuanLy/MoveMuc',
                     data: {
@@ -430,7 +430,7 @@
                         row.insertBefore(row.prev());
                     }
                 });
-            } else {
+            } else if ($(this).is(".btn-order-down") && !row.is(":last-child")){
                 row.AjaxPost({
                     url: '/QuanLy/MoveMuc',
                     data: {

@@ -5,7 +5,7 @@
         type: 'post',
         data: options.data,
         beforeSend: function () {
-            $this.ploading({ action: 'show' });
+            $this.addClass("position-relative").ploading({ action: 'show' });
         },
         success: function (r) {
             if (r.Error) {
@@ -26,7 +26,7 @@
             }
         },
         complete: function () {
-            $this.ploading({ action: 'hide' });
+            $this.removeClass("position-relative").ploading({ action: 'hide' });
         }
     });
 };
@@ -40,7 +40,7 @@ $.fn.AjaxFormData = function (options) {
         processData: false,
         contentType: false,
         beforeSend: function () {
-            $this.ploading({ action: 'show' });
+            $this.addClass("position-relative").ploading({ action: 'show' });
         },
         success: function (r) {
             if (r.Error) {
@@ -61,7 +61,7 @@ $.fn.AjaxFormData = function (options) {
             }
         },
         complete: function () {
-            $this.ploading({ action: 'hide' });
+            $this.removeClass("position-relative").ploading({ action: 'hide' });
         }
     });
 };
@@ -74,13 +74,14 @@ $.fn.AjaxHtml = function (url, params) {
         data: params,
         dataType: 'html',
         beforeSend: function () {
-            $this.ploading({ action: 'show' });
+            $this.addClass("position-relative").ploading({ action: 'show' });
         },
         success: function (html) {
+            $this.removeClass("position-relative").ploading({ action: 'hide' });
             $this.empty().html(html);
         },
         complete: function () {
-            $this.ploading({ action: 'hide' });
+            $this.removeClass("position-relative").ploading({ action: 'hide' });
         }
     });
 };

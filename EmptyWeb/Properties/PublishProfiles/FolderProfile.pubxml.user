@@ -20,10 +20,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/01/2017 20:15:13</publishTime>
     </File>
     <File Include="bin/EmptyWeb.dll">
-      <publishTime>01/13/2018 12:46:31</publishTime>
+      <publishTime>04/15/2018 12:27:51</publishTime>
     </File>
     <File Include="bin/EmptyWeb.pdb">
-      <publishTime>01/13/2018 12:46:31</publishTime>
+      <publishTime>04/15/2018 12:27:51</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>12/01/2017 20:15:13</publishTime>
@@ -1055,7 +1055,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/01/2017 20:15:13</publishTime>
     </File>
     <File Include="Content/css/landing-page.css">
-      <publishTime>01/12/2018 19:48:30</publishTime>
+      <publishTime>04/15/2018 12:04:35</publishTime>
     </File>
     <File Include="Content/css/select2.css">
       <publishTime>12/01/2017 20:15:13</publishTime>
@@ -1948,26 +1948,95 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/Hover-master/two-up.png">
       <publishTime>01/11/2018 22:47:09</publishTime>
     </File>
+    <File Include="Content/icons/browserconfig.xml">
+      <publishTime>01/14/2018 23:24:58</publishTime>
+    </File>
+    <File Include="Content/icons/favicon-114.png">
+      <publishTime>01/14/2018 23:24:58</publishTime>
+    </File>
+    <File Include="Content/icons/favicon-120.png">
+      <publishTime>01/14/2018 23:24:58</publishTime>
+    </File>
+    <File Include="Content/icons/favicon-144.png">
+      <publishTime>01/14/2018 23:24:58</publishTime>
+    </File>
+    <File Include="Content/icons/favicon-150.png">
+      <publishTime>01/14/2018 23:24:58</publishTime>
+    </File>
+    <File Include="Content/icons/favicon-152.png">
+      <publishTime>01/14/2018 23:24:58</publishTime>
+    </File>
+    <File Include="Content/icons/favicon-16.png">
+      <publishTime>01/14/2018 23:24:58</publishTime>
+    </File>
+    <File Include="Content/icons/favicon-160.png">
+      <publishTime>01/14/2018 23:24:58</publishTime>
+    </File>
+    <File Include="Content/icons/favicon-180.png">
+      <publishTime>01/14/2018 23:24:58</publishTime>
+    </File>
+    <File Include="Content/icons/favicon-192.png">
+      <publishTime>01/14/2018 23:24:58</publishTime>
+    </File>
+    <File Include="Content/icons/favicon-310.png">
+      <publishTime>01/14/2018 23:24:58</publishTime>
+    </File>
+    <File Include="Content/icons/favicon-32.png">
+      <publishTime>01/14/2018 23:24:58</publishTime>
+    </File>
+    <File Include="Content/icons/favicon-57.png">
+      <publishTime>01/14/2018 23:24:58</publishTime>
+    </File>
+    <File Include="Content/icons/favicon-60.png">
+      <publishTime>01/14/2018 23:24:58</publishTime>
+    </File>
+    <File Include="Content/icons/favicon-64.png">
+      <publishTime>01/14/2018 23:24:58</publishTime>
+    </File>
+    <File Include="Content/icons/favicon-70.png">
+      <publishTime>01/14/2018 23:24:58</publishTime>
+    </File>
+    <File Include="Content/icons/favicon-72.png">
+      <publishTime>01/14/2018 23:24:58</publishTime>
+    </File>
+    <File Include="Content/icons/favicon-76.png">
+      <publishTime>01/14/2018 23:24:58</publishTime>
+    </File>
+    <File Include="Content/icons/favicon-96.png">
+      <publishTime>01/14/2018 23:24:58</publishTime>
+    </File>
+    <File Include="Content/icons/favicon.ico">
+      <publishTime>01/14/2018 23:24:58</publishTime>
+    </File>
     <File Include="Content/img/banner-bg.jpg">
       <publishTime>12/01/2017 20:15:13</publishTime>
     </File>
+    <File Include="Content/img/banner-top.jpg">
+      <publishTime>01/14/2018 14:54:30</publishTime>
+    </File>
     <File Include="Content/img/dog.png">
-      <publishTime>12/01/2017 20:15:13</publishTime>
+      <publishTime>01/12/2017 20:15:13</publishTime>
+    </File>
+    <File Include="Content/img/footer.jpg">
+      <publishTime>04/14/2018 16:33:14</publishTime>
     </File>
     <File Include="Content/img/intro-bg.jpg">
-      <publishTime>12/01/2017 20:15:13</publishTime>
+      <publishTime>01/12/2017 20:15:13</publishTime>
     </File>
     <File Include="Content/img/ipad.png">
-      <publishTime>12/01/2017 20:15:13</publishTime>
+      <publishTime>01/12/2017 20:15:13</publishTime>
     </File>
     <File Include="Content/img/logo.jpg">
       <publishTime>12/01/2017 20:15:13</publishTime>
+    </File>
+    <File Include="Content/img/logo_512x512.png">
+      <publishTime>01/14/2018 13:24:54</publishTime>
     </File>
     <File Include="Content/img/no-image.png">
       <publishTime>01/09/2018 20:17:26</publishTime>
     </File>
     <File Include="Content/img/phones.png">
-      <publishTime>12/01/2017 20:15:13</publishTime>
+      <publishTime>01/12/2017 20:15:13</publishTime>
     </File>
     <File Include="Content/img/topnav-bg.jpg">
       <publishTime>12/01/2017 20:15:13</publishTime>
@@ -2264,7 +2333,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/01/2017 20:26:08</publishTime>
     </File>
     <File Include="Content/p-loading-master/dist/css/p-loading.css">
-      <publishTime>01/11/2018 20:01:19</publishTime>
+      <publishTime>01/13/2018 19:04:15</publishTime>
     </File>
     <File Include="Content/p-loading-master/dist/css/p-loading.min.css">
       <publishTime>01/11/2018 20:01:19</publishTime>
@@ -2303,7 +2372,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/01/2017 20:15:13</publishTime>
     </File>
     <File Include="Content/Site.css">
-      <publishTime>01/13/2018 12:45:42</publishTime>
+      <publishTime>04/15/2018 12:16:17</publishTime>
     </File>
     <File Include="Content/toastr.css">
       <publishTime>01/11/2018 21:35:01</publishTime>
@@ -2318,7 +2387,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/04/2018 21:28:23</publishTime>
     </File>
     <File Include="favicon.ico">
-      <publishTime>12/01/2017 20:15:13</publishTime>
+      <publishTime>01/14/2018 23:25:25</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.eot">
       <publishTime>12/01/2017 20:15:13</publishTime>
@@ -2369,7 +2438,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/01/2017 20:26:08</publishTime>
     </File>
     <File Include="Scripts/common.js">
-      <publishTime>01/11/2018 20:36:05</publishTime>
+      <publishTime>01/13/2018 19:13:41</publishTime>
     </File>
     <File Include="Scripts/DangKyLamGiaSu/index.js">
       <publishTime>08/10/2017 21:56:41</publishTime>
@@ -2597,7 +2666,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/01/2017 20:15:13</publishTime>
     </File>
     <File Include="Scripts/site.js">
-      <publishTime>01/13/2018 12:45:19</publishTime>
+      <publishTime>01/14/2018 18:49:44</publishTime>
     </File>
     <File Include="Scripts/toastr.js">
       <publishTime>01/04/2018 21:28:23</publishTime>
@@ -2648,7 +2717,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/26/2017 15:43:26</publishTime>
     </File>
     <File Include="Views/QuanLy/_ChiTietMuc.cshtml">
-      <publishTime>01/04/2018 23:02:30</publishTime>
+      <publishTime>01/13/2018 18:29:55</publishTime>
     </File>
     <File Include="Views/QuanLy/_ChuyenMuc.cshtml">
       <publishTime>12/03/2017 11:04:18</publishTime>
@@ -2666,7 +2735,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/24/2017 23:06:30</publishTime>
     </File>
     <File Include="Views/QuanLy/_Muc.cshtml">
-      <publishTime>01/04/2018 22:31:52</publishTime>
+      <publishTime>01/13/2018 18:33:42</publishTime>
     </File>
     <File Include="Views/QuanLy/_SystemLogs.cshtml">
       <publishTime>12/24/2017 23:49:15</publishTime>
@@ -2684,46 +2753,46 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/01/2017 20:15:13</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>01/13/2018 12:44:24</publishTime>
+      <publishTime>04/15/2018 12:13:39</publishTime>
     </File>
     <File Include="Views/Shared/_QuanLyLayout.cshtml">
-      <publishTime>01/11/2018 20:50:44</publishTime>
+      <publishTime>04/14/2018 23:30:35</publishTime>
     </File>
     <File Include="Views/Shared/_ThongBao.cshtml">
       <publishTime>01/10/2018 21:36:53</publishTime>
     </File>
     <File Include="Views/TaiKhoan/Login.cshtml">
-      <publishTime>01/11/2018 20:28:39</publishTime>
+      <publishTime>01/14/2018 23:24:22</publishTime>
     </File>
     <File Include="Views/TrangChu/ChiTietBaiViet.cshtml">
-      <publishTime>01/12/2018 21:59:46</publishTime>
+      <publishTime>04/15/2018 12:12:11</publishTime>
     </File>
     <File Include="Views/TrangChu/ChiTietChuyenMuc.cshtml">
-      <publishTime>01/12/2018 22:00:13</publishTime>
+      <publishTime>04/15/2018 12:27:24</publishTime>
     </File>
     <File Include="Views/TrangChu/DangKyLamGiaSu.cshtml">
-      <publishTime>01/13/2018 00:22:50</publishTime>
+      <publishTime>01/14/2018 18:56:33</publishTime>
     </File>
     <File Include="Views/TrangChu/GioiThieu.cshtml">
-      <publishTime>12/26/2017 22:39:53</publishTime>
+      <publishTime>01/14/2018 18:56:38</publishTime>
     </File>
     <File Include="Views/TrangChu/Index.cshtml">
-      <publishTime>01/13/2018 01:25:07</publishTime>
+      <publishTime>04/15/2018 11:46:42</publishTime>
     </File>
     <File Include="Views/TrangChu/TestSite.cshtml">
       <publishTime>01/13/2018 01:21:30</publishTime>
     </File>
     <File Include="Views/TrangChu/YeuCauTimGiaSu.cshtml">
-      <publishTime>01/13/2018 00:23:09</publishTime>
+      <publishTime>01/14/2018 18:56:54</publishTime>
     </File>
     <File Include="Views/TrangChu/_BaiViet.cshtml">
-      <publishTime>01/12/2018 00:28:39</publishTime>
+      <publishTime>04/15/2018 11:43:15</publishTime>
     </File>
     <File Include="Views/TrangChu/_DieuKhoanDangKyGiaSu.cshtml">
-      <publishTime>01/11/2018 00:30:51</publishTime>
+      <publishTime>01/13/2018 17:59:44</publishTime>
     </File>
     <File Include="Views/TrangChu/_DieuKhoanTimGiaSu.cshtml">
-      <publishTime>01/12/2018 23:45:59</publishTime>
+      <publishTime>01/13/2018 18:12:33</publishTime>
     </File>
     <File Include="Views/Users/Create.cshtml">
       <publishTime>12/01/2017 20:15:13</publishTime>

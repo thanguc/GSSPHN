@@ -7,6 +7,8 @@ body {
     /*padding-top: 50px;*/
     /*padding-bottom: 20px;*/
     height: 100%;
+    /*font-family: "Roboto", Lato, Helvetica, Arial, sans-serif;*/
+    font-family: 'Quicksand', sans-serif;
 }
 
     body.hide-scrollbar {
@@ -73,8 +75,50 @@ textarea {
     border: none;
 }
 
+    .navbar:not(.landing-header) {
+        box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, .15);
+    }
+
 nav {
-    background-color: #306b32 !important;
+    background: #3f51b5 !important;
+    font-weight: 500;
+}
+
+.navbar-nav > li > a {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+    line-height: 20px;
+}
+
+.navbar-nav > .dropdown.open > a,
+.navbar-nav > .dropdown.open > a:hover,
+.navbar-nav > .dropdown.open > a:focus {
+    background-color: unset;
+}
+
+.navbar-nav > .dropdown.hvr-underline-from-center {
+    overflow: unset;
+}
+
+    .navbar-nav > .dropdown.hvr-underline-from-center:hover > .dropdown-menu {
+        display: block;
+    }
+
+nav:not(.landing-header) .hvr-underline-from-center:before {
+    background: #00BCD4;
+}
+
+.navbar-nav > li > .dropdown-menu {
+    /*border-top: 1*/
+}
+
+.navbar-brand {
+    background: url(/Content/img/logo_512x512.png) no-repeat;
+    padding: 0;
+    background-size: contain;
+    background-position: center;
+    width: 100px;
+    height: 100px;
 }
 
 .nav > li > a {
@@ -89,13 +133,13 @@ nav {
 
 .phone-call {
     position: absolute;
-    top: 100px;
-    right: 5%;
+    top: 56px;
+    right: 15px;
 }
 
-/*.phone-call > a {
-        color: #bc393f;
-    }*/
+.phone-call > a {
+        color: #fff;
+    }
 
 @media(min-width:768px) {
     .back-to-top {
@@ -108,10 +152,6 @@ nav {
             cursor: pointer;
         }
 
-    .topnav > .container {
-        background: url(https://uphinhnhanh.com/images/2017/03/28/topnav-bg.jpg) no-repeat center center;
-    }
-
     .phone-call {
         display: none;
     }
@@ -119,25 +159,21 @@ nav {
 
 .affix-top {
     align-content: center;
-    position: absolute;
-    width: 100%;
+    position: fixed;
+    top: 0;
     left: 0;
+    right: 0;
     z-index: 10;
 }
 
-.affix {
-    top: 0;
-    width: 100%;
-}
-
 .banner {
-    position: absolute;
+    /*position: absolute;
     bottom: 56px;
     left: 0;
-    right: 0;
+    right: 0;*/
     padding: 40px 0;
     color: #f8f8f8;
-    background: url(https://uphinhnhanh.com/images/2017/03/28/banner-bg.jpg) no-repeat center center;
+    background: url(img/footer.jpg) no-repeat center center;
     background-size: cover;
 }
 
@@ -160,6 +196,7 @@ footer {
 
     footer p {
         margin: unset;
+        text-align: center;
     }
 
     footer .credit a:hover,
@@ -229,3 +266,15 @@ tr.active, tr.active:hover {
     #feedback textarea:focus {
         border-color: #66afe9;
     }
+
+.btn {
+    font-weight: 500;
+}
+
+.position-relative {
+    position: relative !important;
+}
+
+.landing-header {
+    background: linear-gradient(to bottom,rgba(0,0,0,.6) 0%,transparent 100%) !important;
+}

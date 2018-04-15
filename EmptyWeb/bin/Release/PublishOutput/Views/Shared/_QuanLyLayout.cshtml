@@ -8,6 +8,29 @@
     <meta name="author" content="">
     <title>@ViewBag.Title</title>
 
+    <!-- ****** faviconit.com favicons ****** -->
+    <link rel="shortcut icon" href="/Content/icons/favicon.ico">
+    <link rel="icon" sizes="16x16 32x32 64x64" href="/Content/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="196x196" href="/Content/icons/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="160x160" href="/Content/icons/favicon-160.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/Content/icons/favicon-96.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="/Content/icons/favicon-64.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Content/icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Content/icons/favicon-16.png">
+    <link rel="apple-touch-icon" href="/Content/icons/favicon-57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/Content/icons/favicon-114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/Content/icons/favicon-72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/Content/icons/favicon-144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/Content/icons/favicon-60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/Content/icons/favicon-120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/Content/icons/favicon-76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/Content/icons/favicon-152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/Content/icons/favicon-180.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="/Content/icons/favicon-144.png">
+    <meta name="msapplication-config" content="/Content/icons/browserconfig.xml">
+    <!-- ****** faviconit.com favicons ****** -->
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="~/Content/css/bootstrap.css">
     @*<link rel="stylesheet" href="~/Content/bootstrap.yeti.css" />*@
@@ -23,10 +46,11 @@
     <!-- Custom Fonts -->
     <link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="~/Content/font-awesome/css/font-awesome-animation.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    @*<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">*@
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700&amp;subset=latin-ext,vietnamese" rel="stylesheet">
 
     <link href="~/Content/toastr.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/p-loading-master/dist/css/p-loading.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/p-loading-master/dist/css/p-loading.css" rel="stylesheet" type="text/css" />
     <style>
         .glyphicon {
             margin-right: 10px;
@@ -51,6 +75,10 @@
         a:hover {
             cursor: pointer;
         }
+
+        td {
+            position: relative;
+        }
     </style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -74,9 +102,9 @@
 </head>
 <body>
     <div class="row">
-        <header id="header" class="navbar navbar-default topnav">
-            <div class="container topnav">
-                <a class="navbar-brand topnav" href="/" style="padding:0px;margin-top:0px;"><img src="https://uphinhnhanh.com/images/2017/03/28/logo.jpg" width="128" height="128" /></a>
+        <header id="header" class="navbar navbar-default topnav" style="background-color: #009688; height: unset;">
+            <div class="container topnav" style="height:unset;">
+                <a class="navbar-brand topnav" href="/" style="padding:0px;margin-top:0px;"></a>
                 <div class="pull-right phone-call">
                     <a href="tel:+84981494418">
                         <span class="fa-stack fa-lg">
@@ -90,7 +118,7 @@
             </div>
         </header>
     </div>
-    <div class="row">
+    <div class="row" style="padding-top: 10px;">
         <div class="col-md-2" style="padding:0;">
             <div class="panel-group" id="accordion">
                 <div class="panel panel-default">
